@@ -327,43 +327,10 @@ input::-webkit-inner-spin-button {
     </section>
 </body>
 
-<div style=" width: 90%; margin-top:10px; margin-bottom: 20px; margin-right: auto; margin-left: auto; background-color: #439D9E; border-radius: 5px;">
-  <div class="container-fluid">
-    <footer class="text-center text-lg-start">
-        <div class="container-fluid py-5">
-          <div class="row d-flex justify-content-center text-center">
-            <div class="col-lg-1 mb-2">
-              <button href='https://www.facebook.com/FrozenHubco' class="btn btn-primary btn-lg btn-floating mx-2" style="background-color:rgb(219, 94, 72); border:rgb(219, 94, 72);">
-                <i class="fab fa-facebook-f"></i>
-              </button>
-            </div>
-
-            <div class="col-lg-3 mb-2">
-              <button type="button" class="btn btn-primary btn-lg btn-floating" style="background-color:rgb(219, 94, 72); border:rgb(219, 94, 72); border:rgb(219, 94, 72);">
-                <i class="fa-solid fa-envelope" style="font-size: 1em;"></i><a> frozenhubhr@gmail.com</a>
-              </button>
-            </div>
-
-            <div class="col-lg-1 mb-2">
-              <button href='https://www.instagram.com/frozenhub_official/' class="btn btn-primary btn-lg btn-floating mx-2" style="background-color:rgb(219, 94, 72); border:rgb(219, 94, 72);">
-                <i class="fa-brands fa-square-instagram" style="font-size: 1em;"></i>
-              </button>
-            </div>
-
-            <div class="col-lg-3 mb-2">
-              <button type="button" class="btn btn-primary btn-lg btn-floating" style="background-color:rgb(219, 94, 72); border:rgb(219, 94, 72);">
-                <i class="bi bi-telephone" style="font-size: 1em; background-color:rgb(219, 94, 72);"></i><a> +63 962 071 8415</a>
-            </button>
-            </div>
-          </div>
-        </div>
-   </div>
-      <!-- Copyright -->
-      <div class="text-center text-white p-3"style="background-color: rgba(0, 0, 0, 0.2); margin-top:20px; margin-bottom: 20px;  border-radius: 5px;">
-        © 2023 Copyright:
-        <a class="text-white" href="https://Frozenhub.com/">Frozenhub.com</a>
-      </div>
-    </footer>
-      <!-- Copyright --> 
-</div>
+<footer style=" width: 90%; margin-top:10px; margin-bottom: 20px; margin-right: auto; margin-left: auto; background-color: #439D9E; border-radius: 5px;">
+  <div class="text-center text-white p-3"style="background-color: rgba(0, 0, 0, 0.2); margin-top:20px; margin-bottom: 20px;  border-radius: 5px;">
+    © 2023 Copyright:
+    <a class="text-white" href="https://Frozenhub.com/">Frozenhub.com</a>
+  </div>
+</footer>
 </html>

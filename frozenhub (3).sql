@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2023 at 10:37 AM
+-- Generation Time: Apr 13, 2023 at 10:57 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -54,7 +54,60 @@ INSERT INTO `application_table` (`application_id`, `firstName`, `lastName`, `ema
 (45, 'Princess Carl', 'Austria', 'princesscarl975@gmail.com', 9633660818, 'Brgy. Milagrosa Calamba City, Laguna', 'I am still looking for one.', 'PUP', '3-4', 'Self-operate', 'dito sa frozenhub', 'Pending'),
 (46, 'Princess Carl', 'Austria', 'princesscarl975@gmail.com', 9633660818, 'Brgy. Milagrosa Calamba City, Laguna', 'I have an existing space.', 'ChowKins', '3-4', 'Self-operate', 'hello', 'Pending'),
 (47, 'Princess Carl', 'Austria', 'princesscarl975@gmail.com', 9633660818, 'Brgy. Milagrosa Calamba City, Laguna', 'I have an existing space.', 'ChowKins', '3-4', 'Self-operate', 'trete', 'Pending'),
-(48, 'PANDA', 'PANDA', 'PANDA@GMAIL.COM', 9178886883, 'CALAMBA', 'I have an existing space.', 'PANDA KITCHEN', '3-4', 'Self-operate', '', 'Pending');
+(48, 'PANDA', 'PANDA', 'PANDA@GMAIL.COM', 9178886883, 'CALAMBA', 'I have an existing space.', 'PANDA KITCHEN', '3-4', 'Self-operate', '', 'Pending'),
+(53, 'Princess Carl', 'Austria', 'princesscarl975@gmail.com', 9633660818, 'Brgy. Milagrosa Calamba City, Laguna', 'I am still looking for one.', 'Mingyu', '3-4', 'Self-operate', 'KIMKIM', 'Pending');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `complaints_table`
+--
+
+CREATE TABLE `complaints_table` (
+  `com_id` int(11) NOT NULL,
+  `firstname` varchar(30) NOT NULL,
+  `lastname` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `phoneNum` varchar(30) NOT NULL,
+  `proNo` varchar(30) NOT NULL,
+  `comDate` date NOT NULL,
+  `proName` varchar(30) NOT NULL,
+  `boughtOn` date NOT NULL,
+  `details` varchar(100) NOT NULL,
+  `actions` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `complaints_table`
+--
+
+INSERT INTO `complaints_table` (`com_id`, `firstname`, `lastname`, `email`, `phoneNum`, `proNo`, `comDate`, `proName`, `boughtOn`, `details`, `actions`) VALUES
+(1, 'PRINCESS CARL', 'AUSTRIA', 'princesscarl975@gmail.com', '09633660818', '1221312fdgr9', '2023-04-06', 'frozen berries', '2023-04-02', '', 'palitan niyo to'),
+(2, 'PRINCESS CARL', 'AUSTRIA', 'princesscarl975@gmail.com', '09633660818', '1221312fdgr9', '2023-04-06', 'frozen berries', '2023-04-02', 'bulok na', 'palitan niyo to');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback_table`
+--
+
+CREATE TABLE `feedback_table` (
+  `id` int(11) NOT NULL,
+  `firstName` varchar(20) NOT NULL,
+  `lastName` varchar(20) NOT NULL,
+  `email` varchar(20) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `ratings` varchar(15) NOT NULL,
+  `feedback` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `feedback_table`
+--
+
+INSERT INTO `feedback_table` (`id`, `firstName`, `lastName`, `email`, `phone`, `ratings`, `feedback`) VALUES
+(1, 'PRINCESS CARL', 'AUSTRIA', 'princesscarl975@gmai', '09633660818', 'Excellent', 'sasasasasa'),
+(2, 'Mingyu', 'Kim', 'kiMingyu97@gmail.com', '09633660818', 'Very Good', 'ang galing, masarap.');
 
 -- --------------------------------------------------------
 
@@ -74,6 +127,15 @@ CREATE TABLE `job_table` (
   `comName` varchar(50) NOT NULL,
   `comAddress` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `job_table`
+--
+
+INSERT INTO `job_table` (`job_id`, `firstname`, `lastname`, `email`, `phoneNum`, `address`, `interview`, `jobTitle`, `comName`, `comAddress`) VALUES
+(1, 'princess', 'lastname', 'email@gmail.com', '09633660818', '#67 Purok 4, Brgy. Milagrosa Calamba City', 'feb 22,2023', 'web developer', 'frozenhub', 'margimel building, halang'),
+(2, 'princess', 'austria', 'email@gmail.com', '09633660818', 'assaa', 'asasasa', 'asdeds', 'asassas', 'sdsdsdsd'),
+(3, 'PRINCESS CARL', 'AUSTRIA', 'princesscarl975@gmail.com', '09633660818', 'Brgy. milagrosa', 'awdasdsda', 'adas', 'frozenhub', 'asdadsadsa');
 
 -- --------------------------------------------------------
 
@@ -106,6 +168,18 @@ ALTER TABLE `application_table`
   ADD PRIMARY KEY (`application_id`);
 
 --
+-- Indexes for table `complaints_table`
+--
+ALTER TABLE `complaints_table`
+  ADD PRIMARY KEY (`com_id`);
+
+--
+-- Indexes for table `feedback_table`
+--
+ALTER TABLE `feedback_table`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `job_table`
 --
 ALTER TABLE `job_table`
@@ -125,13 +199,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `application_table`
 --
 ALTER TABLE `application_table`
-  MODIFY `application_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `application_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+
+--
+-- AUTO_INCREMENT for table `complaints_table`
+--
+ALTER TABLE `complaints_table`
+  MODIFY `com_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `feedback_table`
+--
+ALTER TABLE `feedback_table`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `job_table`
 --
 ALTER TABLE `job_table`
-  MODIFY `job_id` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `job_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`

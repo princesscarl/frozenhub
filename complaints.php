@@ -1,24 +1,24 @@
 <?php
 include 'connect.php';
 
-    if(isset($_POST["submit-btn"])) {
+    if(isset($_POST["submit"])) {
 
 
-      $firstName = $_POST['firstName'];
-      $lastName = $_POST['lastName'];
+      $firstname = $_POST['firstname'];
+      $lastname = $_POST['lastname'];
       $email = $_POST['email'];
-      $phone = $_POST['phone'];
-      $location = $_POST['location'];
-      $radios = $_POST['radios'];
-      $business = $_POST['business'];
-      $checkYears = $_POST['checkYears'];
-      $radioType = $_POST['radioType'];
-      $message = $_POST['message'];
+      $phoneNum = $_POST['phoneNum'];
+      $proNo = $_POST['proNo'];
+      $comDate = $_POST['comDate'];
+      $proName = $_POST['proName'];
+      $boughtOn = $_POST['boughtOn'];
+      $details = $_POST['details'];
+      $actions = $_POST['actions'];
 
 
-      $insert_applicant_query = "INSERT INTO `application_table`
-      (`firstName`, `lastName`, `email`, `contact_number`, `temporary_location`, `isLookingForSpace`, `business_name`, `years`, `typeOfBusiness`, `inputMessage`,`status`) 
-      VALUES ('$firstName', '$lastName', '$email', '$phone', '$location', '$radios', '$business', '$checkYears', '$radioType', '$message','Pending')";
+      $insert_applicant_query = "INSERT INTO complaints_table
+      (firstname, lastname, email, phoneNum, proNo, comDate, proName, boughtOn, details, actions) 
+      VALUES ('$firstname', '$lastname', '$email', '$phoneNum', '$proNo', '$comDate', '$proName', '$boughtOn', '$details', '$actions')";
 
       $result_applicant = mysqli_query($conn, $insert_applicant_query);
 
@@ -110,11 +110,10 @@ input::-webkit-inner-spin-button {
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-8 mb-3">
-            <form class="applyNow" action="jobApplication.php" method="POST" enctype="multipart/form-data">
+            <form class="applyNow" method="POST" enctype="multipart/form-data">
               <div class="container-fluid mt-3" style="margin-left: 10px;">
-                <h1 style="text-align:left; padding: 3px; color:white; font-weight:bold;">We Are Hiring!</h1>
-                <p style="text-align:left; padding: 3px; color:white; font-size: 20px;">Join and achieve a bright future with us!</p>
-                <p style="text-align:left; padding: 3px; color:white; font-weight:bold;">Add your contact information:</p>
+                <h1 style="text-align:left; padding: 3px; color:white; font-weight:bold;">Complaint Form</h1>
+                <p style="text-align:left; padding: 3px; color:white; font-weight:bold;">Customer Details:</p>
               </div>
 
               <div class="form-row">
@@ -128,53 +127,59 @@ input::-webkit-inner-spin-button {
               </div>
             
                <div class="form-row">
-                <div class="col-md-6 p-3">
-                  <div class="divEmail">
-                    <input type="email" placeholder="Email" name="email" id="email" required>
+                  <div class="col-md-6 p-3">
+                    <div class="divEmail">
+                      <input type="email" placeholder="Email" name="email" id="email" required>
+                    </div>
                   </div>
+                
+                  <div class="col-md-6 p-3">
+                    <div class="divContact">
+                      <input type="number" placeholder="Contact Number" name="phoneNum" id="pNumber" required>
+                    </div>
+                  </div>
+              </div>
+              <div class="container-fluid">
+              <p style="text-align:left; padding: 3px; color:white; font-weight:bold;">Complaint Information:</p>
+              </div>
+              <div class="form-row">
+                  <div class="col-md-6 p-3">
+                    <input type="text" placeholder="Product Number" name="proNo" id="ProductNumber">
+                  </div>
+
+                  <div class="col-md-6 p-3">
+                      <input type="text" placeholder="Product Name" name="proName" id="ProductName" required>
+                    </div>
+             </div>
+               <div class="form-row">
+                <div class="col-md-6 p-3">
+                    <label style="color:white; font-weight:bold; float:left;">Bought On:</label>
+                    <input type="date" placeholder="Bought On" name="boughtOn" id="boughtOn" required>
                 </div>
-              
+
                 <div class="col-md-6 p-3">
-                  <div class="divContact">
-                    <input type="number" placeholder="Contact Number" name="phoneNum" id="pNumber" required>
-                  </div>
+                    <div class="divCDate">
+                        <label style="color:white; font-weight:bold; float:left;">Complain Date:</label>
+                        <input type="date" placeholder="Complaint Date" name="comDate" id="ComplaintDate" required>
+                    </div>
                 </div>
               </div>
-
-              <div class="form-group p-3">
-                <p for="inputAddress" style="color:white; font-weight:bold;">Address </p>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Address" name="address" required>
+              <div class="container-fluid">
+                <div class="form-group">
+                    <label for="inputMessage" style="color:white; font-weight:bold;">Complaint Details:</label>
+                    <textarea class="form-control" id="inputMessage" name="details" rows="3"></textarea>
+                </div>
               </div>
 
               <div class="container-fluid">
                 <div class="form-group">
-                  <label for="exampleFormControlFile1">Example file input</label>
-                  <input type="file" class="form-control-file" id="exampleFormControlFile1" style="height:70px">
-              </div> 
-
-                <div class="form-group">
-                  <label for="inputDate" style="color:white; font-weight:bold;">List dates and time ranges that you could do an interview:</label>
-                  <textarea class="form-control" id="inputMessage" name="interview" rows="3"></textarea>
-                </div>
-
-                <p style="text-align:left; padding: 3px; color:white; font-weight:bold;">Job Experience (Optional)</p>
-              </div>
-
-              <div class="form-row">
-                <div class="col-md-6 p-3">
-                  <input type="text" placeholder="Job Title" name="jobTitle" id="jTitle">
-                </div>
-        
-                <div class="col-md-6 p-3">
-                  <input type="text" placeholder="Company Name" name="comName" id="cName">
+                  
+                    <label for="inputMessage" style="color:white; font-weight:bold;">Proposed action:</label>
+                    <textarea class="form-control" id="inputMessage" name="actions" rows="3"></textarea>
                 </div>
               </div>
 
-              <div class="form-group p-3">
-                <p for="inputComAddress" style="color:white; font-weight:bold;"> Company Address</p>
-                <input type="text" class="form-control" id="inputComAddress" placeholder="Company Address" name="comAddress">
-              </div>
-
+             
               <div class="form-submit text-center mb-3">
                 <input type="submit" name="submit" class="button btn-lg">
               </div>

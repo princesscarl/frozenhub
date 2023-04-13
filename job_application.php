@@ -23,7 +23,7 @@ if (isset($_POST["submit"])) {
   if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
 
     $insert_job_query = "INSERT INTO `job_table`(`firstname`, `lastname`, `email`, `phoneNum`, `address`, `interview`, `jobTitle`, `comName`, `comAddress`,`status`, `file`) 
-            VALUES ('$firstname', '$lastname', '$email', '$phoneNum', '$address','$interview','$jobTitle', '$comName', '$comAddress', 'Pending','$fileName')";
+            VALUES ('$firstname', '$lastname', '$email', '$phoneNum', '$address','$interview','$jobTitle', '$comName', '$comAddress', 'Pending','$fileName's)";
 
     $result_job = mysqli_query($conn, $insert_job_query);
 

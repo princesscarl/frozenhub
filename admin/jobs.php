@@ -57,7 +57,7 @@ $result = $conn->query($sql);
 		<td>
     <form method ="post">
     <button class="btn btn-success">
-    <a href="done.php?id='.$job_id.'" class="text-light">Accept</a></button>
+    <a href="./approval/jobs_done.php?id='.$job_id.'" class="text-light">Accept</a></button>
    </td>
    <td>
     <button class="btn btn-secondary">

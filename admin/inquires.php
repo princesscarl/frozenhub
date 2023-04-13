@@ -54,11 +54,11 @@ $result = $conn->query($sql);
 		<td>
     <form method ="post">
     <button class="btn btn-success">
-    <a href="done.php?id='.$application_id.'" class="text-light">Accept</a></button>
+    <a href="approval\inquiry_done.php?id='.$application_id.'" class="text-light">Accept</a></button>
    </td>
    <td>
     <button class="btn btn-secondary">
-    <a href="pending.php?id='.$application_id.'" class="text-light">To Process</a></button>
+    <a href="approval\inquiry_pending.php?id='.$application_id.'" class="text-light">To Process</a></button>
    </td>
     </form> ';}
 ?>

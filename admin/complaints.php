@@ -11,8 +11,8 @@
             <th>Bought On</th>
             <th>Complain Date</th>
             <th>Complain Details</th>
-            <th> Status </th>
             <th> Picture </th>
+            <th> Status </th>
 		        <th colspan="2">Actions</th>
         </tr>
 </thead>
@@ -35,15 +35,12 @@ $result = $conn->query($sql);
 		<td>' . $row["email"] . '</td>
 		<td>' . $row['phoneNum'] . '</td>
 		<td>' . $row['proNo']. '</td>
-        <td>' . $row['comDate']. '</td>
-		<td>' . $row['proName'] . '</td>
-		<td>' . $row['details'] .'</td>
-		<td>'. $row['actions'] .'</td>
-        <td>' . $row['status'] .'</td>';
+    <td>' . $row['proName'] . '</td>
+    <td>' .$row['boughtOn']. '</td>
+    <td>' . $row['comDate']. '</td>
+		<td>' . $row['details'] .'</td>';
 ?>
         <td> <a href="../pictures/<?php echo $picture?>">view file</a></td>
-
-
     <?php
 
     if ($status == "Pending"){

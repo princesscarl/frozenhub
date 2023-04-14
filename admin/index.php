@@ -62,6 +62,16 @@ if(isset($_POST["delete"]))
                 <li class="nav-item ml-4">
                   <a class="nav-link" href="download.php" style="font-size: 20px; font-weight:bold;">Download</a>
                 </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 20px; font-weight:bold;">Forms</a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="index.php?jobs" style="font-size: 20px;">Job Application</a>
+                  <a class="dropdown-item" href="index.php?complaints" style="font-size: 20px;">Complaints</a>
+                  <a class="dropdown-item" href="index.php?inquiries" style="font-size: 20px;">Inquiries</a>
+                  <a class="dropdown-item" href="index.php?feedback" style="font-size: 20px;">Feedback</a>
+                  </div>
+                </li>
               </ul>
 
               <form class="form-inline my-2 my-lg-0 ml-4">
@@ -72,13 +82,7 @@ if(isset($_POST["delete"]))
             </div>
           </nav>
         </div>
-    </div>
-
-    <a class="nav-link" href="index.php?jobs" style="font-size: 20px; font-weight:bold;">Job Application</a>
-    <a class="nav-link" href="index.php?complaints" style="font-size: 20px; font-weight:bold;">Complaints</a>
-    <a class="nav-link" href="index.php?inquiries" style="font-size: 20px; font-weight:bold;">Inquiries</a>
-    <a class="nav-link" href="index.php?feedback" style="font-size: 20px; font-weight:bold;">Feedback</a>
-                
+    </div>      
 
 <?php
     

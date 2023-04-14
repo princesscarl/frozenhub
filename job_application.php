@@ -90,19 +90,34 @@ if (isset($_POST["submit"])) {
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="./hub.php #Announcement">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./hub.php #aboutUs">About Us</a>
-            </li>
+
+          <li class="nav-item">
+              <a class="nav-link" href="./home.php ">Home</a>
+          </li>
+
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">All Products</a>
+                <a class="dropdown-item" href="#">All Promos</a>
+              </div>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="./hub.php #Announcement">Announcement</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./hub.php #aboutUs">About Us</a>
+          </li>
+
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact Us</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="index.php #appform">Join Us - Franchise</a>
                 <a class="dropdown-item" href="feedback.php #feedback">Product Feedback</a>
                 <a class="dropdown-item" href="complaints.php #complaints">Complaints</a>
-                <a class="dropdown-item" href="#jobApp">Job Application</a>
+                <a class="dropdown-item" href="job_application.php">Job Application</a>
               </div>
             </li>
           </ul>
@@ -110,7 +125,7 @@ if (isset($_POST["submit"])) {
       </nav>
     </div>
   </div>
-
+  
   <section class="application" id="jobApp">
     <div class="container-fluid">
       <div class="row">

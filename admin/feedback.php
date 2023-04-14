@@ -8,7 +8,7 @@
             <th>Phone Number</th>
             <th>Rating</th>
             <th>Feedback</th>
-            <th>Image</th>
+            <th>Picture</th>
         </tr>
 </thead>
 <tbody>

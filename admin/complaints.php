@@ -12,6 +12,7 @@
             <th>Bought On</th>
             <th>Complain Date</th>
             <th>Complain Details</th>
+            <th> Actions </th>
             <th> Picture </th>
             <th> Status </th>
 		        <th colspan="2">Actions</th>
@@ -38,7 +39,8 @@ $result = $conn->query($sql);
     <td>' . $row['proName'] . '</td>
     <td>' .$row['boughtOn']. '</td>
     <td>' . $row['comDate']. '</td>
-		<td>' . $row['details'] .'</td>';
+		<td>' . $row['details'] .'</td>
+    <td>' . $row['actions'] .'</td>';
     
 ?>
         <td><a href="../pictures/<?php echo $picture?>">view file</a></td>

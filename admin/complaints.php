@@ -28,7 +28,6 @@ $result = $conn->query($sql);
     $status = $row["status"];
     $picture = $row['picture'];
 
-
     echo '<tr>
 		<td>'. $row["firstname"] . '</td>
 		<td>' . $row["lastname"] . '</td>
@@ -39,10 +38,11 @@ $result = $conn->query($sql);
     <td>' .$row['boughtOn']. '</td>
     <td>' . $row['comDate']. '</td>
 		<td>' . $row['details'] .'</td>';
+    
 ?>
-        <td> <a href="../pictures/<?php echo $picture?>">view file</a></td>
-    <?php
+        <td><a href="../pictures/<?php echo $picture?>">view file</a></td>
 
+    <?php
     if ($status == "Pending"){
       echo '
       <td style="background:lightgray;">'.$status.'</td>

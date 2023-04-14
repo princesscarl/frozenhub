@@ -153,8 +153,8 @@ if (isset($_POST["submit"])) {
 
               <div class="container-fluid">
                 <div class="form-group">
-                  <label for="exampleFormControlFile1">Example file input</label>
-                  <input type="file" class="form-control-file" id="exampleFormControlFile1" style="height:70px">
+                  <label for="exampleFormControlFile1">Upload your resume:</label>
+                  <input type="file" class="form-control-file" name="file" id="exampleFormControlFile1" style="height:70px">
               </div> 
 
               <div class="form-group">

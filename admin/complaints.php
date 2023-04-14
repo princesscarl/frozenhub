@@ -59,7 +59,7 @@ $result = $conn->query($sql);
 		<td>
     <form method ="post">
     <button class="btn btn-success">
-    <a href="done.php?id='.$com_id.'" class="text-light">Accept</a></button>
+    <a href="./approval/complaints_done.php?id='.$com_id.'" class="text-light">Accept</a></button>
    </td>
    <td>
     <button class="btn btn-secondary">

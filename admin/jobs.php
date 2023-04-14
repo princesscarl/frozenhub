@@ -34,7 +34,7 @@ $result = $conn->query($sql);
 		<td>' . $row["email"] . '</td>
 		<td>' . $row['phoneNum'] . '</td>
 		<td>' . $row['address']. '</td>
-        <td>' . $row['interview']. '</td>
+    <td>' . $row['interview']. '</td>
 		<td>' . $row['jobTitle'] . '</td>
 		<td>' . $row['comName'] .'</td>
 		<td>'. $row['comAddress'] .'</td>';

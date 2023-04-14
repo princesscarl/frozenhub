@@ -72,7 +72,7 @@ input::-webkit-inner-spin-button {
         <div class="container-fluid">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-9">
-              <img src="https://l.facebook.com/l.php?u=https%3A%2F%2Flh3.googleusercontent.com%2Fdrive-viewer%2FAAOQEORwsoHzWxoEoNlJ4n1bR4aji_r7jA7WPbQOMth5REabik_rDa7pptnu1lFtHraszS04eNS4JYmXW5SNTKBZsK4H7D2vRg%3Ds1600%3Ffbclid%3DIwAR3h2V1bSwN87w2jWtMFhMPDet3eL-U8KSNIyguxKKjN3oRmny296FI5G8s&h=AT3FBB5Wlpwq0c9UO5X8hhUSbC-vYUVLhRPENZN769vfcJRTkkXD4TNQK_umABrksQJs8pXqjavainYXvxaaurJ1__7gKS01wIlWwNFhadiLGYz27NlXcCPlu2KHkoCjlw_2fS5RWuwM_SR9ehN8eA" width="100%" height="auto">
+              <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEORwsoHzWxoEoNlJ4n1bR4aji_r7jA7WPbQOMth5REabik_rDa7pptnu1lFtHraszS04eNS4JYmXW5SNTKBZsK4H7D2vRg=s1600?fbclid=IwAR3h2V1bSwN87w2jWtMFhMPDet3eL-U8KSNIyguxKKjN3oRmny296FI5G8s" width="100%" height="auto">
             </div>
           </div>
         </div>

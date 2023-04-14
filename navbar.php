@@ -20,7 +20,7 @@
           <ul class="navbar-nav mx-auto">
 
           <li class="nav-item">
-              <a class="nav-link" href="./home.php ">Home</a>
+              <a class="nav-link" href="index.php">Home</a>
           </li>
 
           <li class="nav-item dropdown">
@@ -42,7 +42,7 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact Us</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="index.php #appform">Join Us - Franchise</a>
+                <a class="dropdown-item" href="inquiries.php #appform">Join Us - Franchise</a>
                 <a class="dropdown-item" href="feedback.php #feedback">Product Feedback</a>
                 <a class="dropdown-item" href="complaints.php #complaints">Complaints</a>
                 <a class="dropdown-item" href="job_application.php">Job Application</a>

@@ -171,7 +171,6 @@ input::-webkit-inner-spin-button {
                 </div>
               </div>
 
-
               <div class="container-fluid">
               <div class="form-group">
               <p style="text-align:left; padding: 3px; color:white; font-weight:bold;">Picture of the Product:</p>

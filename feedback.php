@@ -11,10 +11,15 @@ include 'connect.php';
       $ratings = $_POST['ratings'];
       $feedback = $_POST['feedback'];
 
+      $targetDir = "pictures/";
+      $fileName = $_FILES["file"]["name"];
+      $targetFilePath = $targetDir . $fileName;
+      $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
 
+      if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
       $insert_applicant_query = "INSERT INTO `feedback_table`
-      (`firstName`, `lastName`, `email`, `phone`, `ratings`, `feedback` ) 
-      VALUES ('$firstName', '$lastName', '$email', '$phone', '$ratings', '$feedback')";
+      (`firstName`, `lastName`, `email`, `phone`, `ratings`, `feedback`, `picture` ) 
+      VALUES ('$firstName', '$lastName', '$email', '$phone', '$ratings', '$feedback', '$filename')";
 
       $result_applicant = mysqli_query($conn, $insert_applicant_query);
 
@@ -25,7 +30,7 @@ include 'connect.php';
       else{
         echo "<script> alert ('Sorry, something went wrong.') </script>";
       }
-}
+}}
 ?>
 
 
@@ -135,6 +140,13 @@ input::-webkit-inner-spin-button {
                     <input type="number" placeholder="Contact Number" name="phone" id="number" required>
                   </div>
                 </div>
+              </div>
+
+              <div class="container-fluid">
+              <div class="form-group">
+              <p style="text-align:left; padding: 3px; color:white; font-weight:bold;">Picture of the Product:</p>
+                <input type="file" accept=".img,.jpg,.png" class="form-control-file" name="file" style="height:70px">
+              </div>
               </div>
 
               <div class="question p-3">

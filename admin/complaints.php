@@ -20,7 +20,7 @@
 <tbody>
 <?php
  
-$sql = "SELECT * FROM complaints_table";
+$sql = "SELECT * FROM complaints_table ORDER BY `complaints_table`.`com_id` DESC";
 $result = $conn->query($sql);
     while ($row = mysqli_fetch_assoc($result)){
  
@@ -64,7 +64,7 @@ $result = $conn->query($sql);
    </td>
    <td>
     <button class="btn btn-secondary">
-    <a href="pending.php?id='.$com_id.'" class="text-light">To Process</a></button>
+    <a href="./approval/complaints_pending.php?id='.$com_id.'" class="text-light">To Process</a></button>
    </td>
     </form> ';}
 ?>

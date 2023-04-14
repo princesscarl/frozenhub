@@ -20,7 +20,7 @@
 <tbody>
 <?php
  
-$sql = "SELECT * FROM application_table";
+$sql = "SELECT * FROM application_table ORDER BY `appliation_table`.`application_id` DESC";
 $result = $conn->query($sql);
     while ($row = mysqli_fetch_assoc($result)){
  
@@ -55,11 +55,11 @@ $result = $conn->query($sql);
 		<td>
     <form method ="post">
     <button class="btn btn-success">
-    <a href="approval\inquiry_done.php?id='.$application_id.'" class="text-light">Accept</a></button>
+    <a href="./approval/inquiry_done.php?id='.$application_id.'" class="text-light">Accept</a></button>
    </td>
    <td>
     <button class="btn btn-secondary">
-    <a href="approval\inquiry_pending.php?id='.$application_id.'" class="text-light">To Process</a></button>
+    <a href="./approval/inquiry_pending.php?id='.$application_id.'" class="text-light">To Process</a></button>
    </td>
     </form> ';}
 ?>

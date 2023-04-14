@@ -111,7 +111,7 @@ input::-webkit-inner-spin-button {
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-8 mb-3">
-            <form class="applyNow" method="POST">
+            <form class="applyNow" method="POST" enctype="multipart/form-data">
               <div class="container-fluid mt-3" style="margin-left: 10px;">
                 <h1 style="text-align:left; padding: 3px; color:white; font-weight:bold;">Feedback</h1>
                 <p style="text-align:left; padding: 3px; color:white; font-size: 20px;">Let us hear your opinion and suggestion to improve our service to serve you better!</p>

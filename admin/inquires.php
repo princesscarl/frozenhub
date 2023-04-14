@@ -20,7 +20,7 @@
 <tbody>
 <?php
  
-$sql = "SELECT * FROM application_table ORDER BY `appliation_table`.`application_id` DESC";
+$sql = "SELECT * FROM application_table ORDER BY `application_table`.`application_id` DESC";
 $result = $conn->query($sql);
     while ($row = mysqli_fetch_assoc($result)){
  

@@ -14,7 +14,7 @@
 <tbody>
 <?php
  
-$sql = "SELECT * FROM feedback_table";
+$sql = "SELECT * FROM feedback_table ORDER BY `feedback_table`.`feed_id` DESC";
 $result = $conn->query($sql);
     while ($row = mysqli_fetch_assoc($result)){
  

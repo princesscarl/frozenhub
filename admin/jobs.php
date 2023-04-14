@@ -19,7 +19,7 @@
 <tbody>
 <?php
  
-$sql = "SELECT * FROM job_table";
+$sql = "SELECT * FROM job_table ORDER BY `job_table`.`job_id` DESC";
 $result = $conn->query($sql);
     while ($row = mysqli_fetch_assoc($result)){
  
@@ -57,11 +57,11 @@ $result = $conn->query($sql);
 		<td>
     <form method ="post">
     <button class="btn btn-success">
-    <a href="./approval/jobs_done.php?id='.$job_id.'" class="text-light">Accept</a></button>
+    <a href="./approval/job_done.php?id='.$job_id.'" class="text-light">Accept</a></button>
    </td>
    <td>
     <button class="btn btn-secondary">
-    <a href="pending.php?id='.$job_id.'" class="text-light">To Process</a></button>
+    <a href="./approval/job_pending.php?id='.$job_id.'" class="text-light">To Process</a></button>
    </td>
     </form> ';}
 ?>

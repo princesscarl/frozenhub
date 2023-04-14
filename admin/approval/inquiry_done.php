@@ -8,7 +8,7 @@ if(isset($_GET['id'])){
 
   if($result){
     echo "<script> alert('Mark as done.')</script> ";    
-    header("location: index.php");      
+    header("location: ../index.php?inquiries");      
 }
 else {
     echo "<script> alert('Error.')</script> ";

@@ -23,8 +23,8 @@ include 'connect.php';
 
       if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
       $insert_applicant_query = "INSERT INTO complaints_table
-      (firstname, lastname, email, phoneNum, proNo, comDate, proName, boughtOn, details, actions, picture) 
-      VALUES ('$firstname', '$lastname', '$email', '$phoneNum', '$proNo', '$comDate', '$proName', '$boughtOn', '$details', '$actions', '$fileName')";
+      (firstname, lastname, email, phoneNum, proNo, comDate, proName, boughtOn, details, actions, picture, `status`) 
+      VALUES ('$firstname', '$lastname', '$email', '$phoneNum', '$proNo', '$comDate', '$proName', '$boughtOn', '$details', '$actions', '$fileName', 'Pending')";
 
       $result_applicant = mysqli_query($conn, $insert_applicant_query);
 

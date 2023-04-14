@@ -71,7 +71,7 @@ input::-webkit-inner-spin-button {
         <div class="container-fluid">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-9">
-              <img src="Images/header.png" width="100%" height="auto">
+              <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEORwsoHzWxoEoNlJ4n1bR4aji_r7jA7WPbQOMth5REabik_rDa7pptnu1lFtHraszS04eNS4JYmXW5SNTKBZsK4H7D2vRg=s1600?fbclid=IwAR31xX2o13KZKqA4iGZd6OUXCJ1CEzzBldzaso7vJkyMkq5i5dozuacVW6I" width="100%" height="auto">
             </div>
           </div>
         </div>

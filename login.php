@@ -28,7 +28,7 @@
     <div class="row d-flex justify-content-center align-items-center">
       <div class="col-lg-6" style="border-right: solid #E8E6E6 1px;">
         <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQrtES5zI9uck9Eib1zx7TYRa8mWInjfIlPV5P5HWLsMSQEuAfpz1XZWxyvOlz_pwdIM2J3Wn1C73GPkCs1Y0PN9c9X=s2560"
-          class="img-fluid" alt="Sample image" style="width: 100%;">
+          class="img-fluid" alt="Sample image" style="width: 91%;">
       </div>
       <div class="col-md-9 col-lg-6">
         <form>
@@ -87,16 +87,16 @@
 </section>
 </body>
 
-<footer class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5"
-style="position: absolute; bottom: 0; width:100%; background-color:#008080">
+<footer class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between mb-md-0 py-4 px-4 px-xl-5"
+style="width:100%; background-color:#008080">
     <!-- Copyright -->
     <div class="text-white">
-      Copyright © 2020. All rights reserved.
+      Copyright © 2023. Frozenhub. All rights reserved.
     </div>
     <!-- Copyright -->
 
     <!-- Right -->
-    <div>
+    <div class="mb-md-0">
       <a href="#!" class="text-white me-4">
         <i class="fab fa-facebook-f"></i>
       </a>

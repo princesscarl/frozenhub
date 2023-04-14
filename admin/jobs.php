@@ -26,7 +26,7 @@ $result = $conn->query($sql);
  
     $job_id = $row["job_id"];
     $status = $row["status"];
-    $file_content = $row['file'];
+    $file_content = $row["file"];
 
     echo '<tr>
 		<td>'. $row["firstname"] . '</td>

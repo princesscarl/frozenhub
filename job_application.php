@@ -153,15 +153,14 @@ if (isset($_POST["submit"])) {
 
               <div class="container-fluid">
                 <div class="form-group">
-                  <label for="exampleFormControlFile1">Upload Resume:</label>
-                  <input type="file" accept=".img,.jpg,.png, .pdf" class="form-control-file" name="file" id="exampleFormControlFile1" style="height:70px">
-               </div> 
-            
+                  <label for="exampleFormControlFile1">Example file input</label>
+                  <input type="file" class="form-control-file" id="exampleFormControlFile1" style="height:70px">
+              </div> 
 
-                <div class="form-group">
-                  <label for="inputDate" style="color:white; font-weight:bold;">List dates and time ranges that you could do an interview:</label>
-                  <textarea class="form-control" id="inputMessage" name="interview" rows="3"></textarea>
-                </div>
+              <div class="form-group">
+                <label for="inputDate" style="color:white; font-weight:bold;">List dates and time ranges that you could do an interview:</label>
+                <textarea class="form-control" id="inputMessage" name="interview" rows="3"></textarea>
+              </div>
 
                 <p style="text-align:left; padding: 3px; color:white; font-weight:bold;">Job Experience (Optional)</p>
              </div>

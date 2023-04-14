@@ -23,7 +23,6 @@
     <title>Frozenhub - Login</title>
 </head>
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
-<div class="container-fluid" style="width:95%">
 <section>
   <div class="container-fluid">
     <div class="row d-flex justify-content-center align-items-center">
@@ -83,13 +82,11 @@
             <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
                 class="link-danger">Register</a></p>
           </div>
-
         </form>
       </div>
     </div>
   </div>
-    </section>
-</div>
+</section>
 </body>
 
 <footer

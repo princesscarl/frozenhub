@@ -23,26 +23,26 @@
     <title>Frozenhub - Login</title>
 </head>
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
-<section>
+<section style="width: 95%; margin-top:30px; margin-bottom: 30px; margin-right: auto; margin-left: auto;">
   <div class="container-fluid">
     <div class="row d-flex justify-content-center align-items-center">
-      <div class="col-lg-6">
-        <img src="https://lh5.googleusercontent.com/iGgxjTSYPDYWB6pA-hzpwwjHIupFCCduVZPnbwKeiR6cTULCyrRwMcHsVAmfPV2yXIU=w2400"
+      <div class="col-lg-6" style="border-right: solid #E8E6E6 1px;">
+        <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQrtES5zI9uck9Eib1zx7TYRa8mWInjfIlPV5P5HWLsMSQEuAfpz1XZWxyvOlz_pwdIM2J3Wn1C73GPkCs1Y0PN9c9X=s2560"
           class="img-fluid" alt="Sample image" style="width: 100%;">
       </div>
       <div class="col-md-9 col-lg-6">
         <form>
-          <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+          <div class="d-flex align-items-center justify-content-center" style="margin:auto; width:50%;">
             <p class="lead fw-normal mb-0 me-3">Sign in with</p>
-            <button type="button" class="btn btn-primary btn-floating mx-1">
+            <button type="button" class="btn btn-floating mx-1" style="background-color: #008080; color:white">
               <i class="fab fa-facebook-f"></i>
             </button>
 
-            <button type="button" class="btn btn-primary btn-floating mx-1">
+            <button type="button" class="btn btn-floating mx-1" style="background-color:#008080; color:white">
               <i class="fab fa-twitter"></i>
             </button>
 
-            <button type="button" class="btn btn-primary btn-floating mx-1">
+            <button type="button" class="btn btn-floating mx-1" style="background-color: #008080; color:white">
               <i class="fab fa-linkedin-in"></i>
             </button>
           </div>
@@ -53,16 +53,14 @@
 
           <!-- Email input -->
           <div class="form-outline mb-4">
-            <input type="email" id="form3Example3" class="form-control form-control-lg"
-              placeholder="Enter a valid email address" />
-            <label class="form-label" for="form3Example3">Email address</label>
+          <label class="form-label" for="form3Example3">Email address</label>
+            <input type="email" id="form3Example3" class="form-control form-control-lg" placeholder="Enter a valid email address" />
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-3">
-            <input type="password" id="form3Example4" class="form-control form-control-lg"
-              placeholder="Enter password" />
-            <label class="form-label" for="form3Example4">Password</label>
+          <label class="form-label" for="form3Example4">Password</label>
+            <input type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Enter password" />
           </div>
 
           <div class="d-flex justify-content-between align-items-center">
@@ -77,10 +75,10 @@
           </div>
 
           <div class="text-center text-lg-start mt-4 pt-2">
-            <button type="button" class="btn btn-primary btn-lg"
-              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+            <button type="button" class="btn btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #008080; color:white; font-weight:bold;">Login</button>
             <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
-                class="link-danger">Register</a></p>
+                class="link-primary">Register</a></p>
           </div>
         </form>
       </div>
@@ -89,8 +87,8 @@
 </section>
 </body>
 
-<footer
-    class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+<footer class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5"
+style="position: absolute; bottom: 0; width:100%; background-color:#008080">
     <!-- Copyright -->
     <div class="text-white">
       Copyright © 2020. All rights reserved.

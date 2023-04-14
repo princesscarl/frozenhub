@@ -15,10 +15,16 @@ include 'connect.php';
       $details = $_POST['details'];
       $actions = $_POST['actions'];
 
+      // File upload path
+      $targetDir = "pictures/";
+      $fileName = $_FILES["file"]["name"];
+      $targetFilePath = $targetDir . $fileName;
+      $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
 
+      if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
       $insert_applicant_query = "INSERT INTO complaints_table
-      (firstname, lastname, email, phoneNum, proNo, comDate, proName, boughtOn, details, actions) 
-      VALUES ('$firstname', '$lastname', '$email', '$phoneNum', '$proNo', '$comDate', '$proName', '$boughtOn', '$details', '$actions')";
+      (firstname, lastname, email, phoneNum, proNo, comDate, proName, boughtOn, details, actions, picture) 
+      VALUES ('$firstname', '$lastname', '$email', '$phoneNum', '$proNo', '$comDate', '$proName', '$boughtOn', '$details', '$actions', '$fileName')";
 
       $result_applicant = mysqli_query($conn, $insert_applicant_query);
 
@@ -29,7 +35,7 @@ include 'connect.php';
       else{
         echo "<script> alert ('Sorry, something went wrong.') </script>";
       }
-}
+}}
 ?>
 
 
@@ -164,6 +170,16 @@ input::-webkit-inner-spin-button {
                     </div>
                 </div>
               </div>
+
+
+              <div class="container-fluid">
+              <div class="form-group">
+              <p style="text-align:left; padding: 3px; color:white; font-weight:bold;">Picture of the Product:</p>
+                <input type="file" accept=".img,.jpg,.png" class="form-control-file" name="file" style="height:70px">
+              </div>
+              </div>
+
+
               <div class="container-fluid">
                 <div class="form-group">
                     <label for="inputMessage" style="color:white; font-weight:bold;">Complaint Details:</label>

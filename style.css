@@ -13,6 +13,14 @@ height: calc(100% - 73px);
 height: 100%;
 }
 }
+.nav-item:hover>.dropdown-menu {
+    display: block;
+  }
+  
+.nav-item>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+      pointer-events: none;
+}
 
 .navigation{
     width: 90%; 

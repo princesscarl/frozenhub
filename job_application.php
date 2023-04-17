@@ -21,6 +21,7 @@ if (isset($_POST["submit"])) {
   $email = $_POST['email'];
   $phoneNum = $_POST['phoneNum'];
   $address = $_POST['address'];
+  $position = $_POST['position'];
   $interview = $_POST['interview'];
   $jobTitle = $_POST['jobTitle'];
   $comName = $_POST['comName'];
@@ -31,12 +32,12 @@ if (isset($_POST["submit"])) {
   $fileName = $_FILES["file"]["name"];
   $targetFilePath = $targetDir . $fileName;
   $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
-
+  $mail->SMTPDebug = SMTP::DEBUG_SERVER;
   $mail->isSMTP();
   $mail->Host = gethostbyname("smtp.gmail.com"); 
   $mail->SMTPAuth = true;
   $mail->Username = 'frozenhub2023@gmail.com';
-  $mail->Password = 'cvltkdpxhbymcabm';
+  $mail->Password = 'gnkyemgmxharaqqb';
   $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
   $mail->Port = 587;
   $mail->SMTPOptions = array(
@@ -58,13 +59,25 @@ if (isset($_POST["submit"])) {
   $message = file_get_contents($email_template);
 
   //replace string eg. %name%, name, message
-  $mail->Subject = 'message';
+  $mail->Subject = 'Frozenhub Job Application';
   $mail->MsgHTML($message);
+  $mail->Body = "<p>Good Day, Mr./Ms. {$lastname}!</p>
+  <p>We have received your application for the position of {$position}. Thank you for your interest in our company!</p>
+  <p>We are currently in the middle of our recruitment process. Please give us some time to process your application.</p>
+  <p>In the meantime, you can learn more about Frozenhub by following us on social media instagram.com/frozenhub_official and facebook.com/FrozenHubco for the latest updates.</p>
+  <p>You may contact us at frozenbhur@gmail.com if you have any questions regarding your application.</p>
+  <br>
+  <br>
+  <div>
+  <p>Regards</p>
+  <p><b>Frozenhub</b></p>
+  <p><b>frozenhubhr@gmail.com</b></p>
+  </div>";
 
   if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
 
-    $insert_job_query = "INSERT INTO `job_table`(`firstname`, `lastname`, `email`, `phoneNum`, `address`, `interview`, `jobTitle`, `comName`, `comAddress`,`status`, `file`) 
-            VALUES ('$firstname', '$lastname', '$email', '$phoneNum', '$address','$interview','$jobTitle', '$comName', '$comAddress', 'Pending','$fileName')";
+    $insert_job_query = "INSERT INTO `job_table`(`firstname`, `lastname`, `email`, `phoneNum`, `address`, `position`, `interview`, `jobTitle`, `comName`, `comAddress`,`status`, `file`) 
+            VALUES ('$firstname', '$lastname', '$email', '$phoneNum', '$address', '$position', '$interview','$jobTitle', '$comName', '$comAddress', 'Pending','$fileName')";
 
     $result_job = mysqli_query($conn, $insert_job_query);
 
@@ -153,6 +166,11 @@ if (isset($_POST["submit"])) {
             <div class="form-group p-3">
               <p for="inputAddress" style="color:white; font-weight:bold;">Address </p>
               <input type="text" class="form-control" id="inputAddress" placeholder="Address" name="address" required>
+            </div>
+
+            <div class="form-group p-3">
+              <p for="inputPosition" style="color:white; font-weight:bold;">Position you are applying for: </p>
+              <input type="text" class="form-control" id="inputPosition" placeholder="Position" name="position" required>
             </div>
 
               <div class="container-fluid">

@@ -7,6 +7,7 @@
             <th>Last Name</th>
             <th>Email</th>
             <th>Phone Number</th>
+            <th>Product Name</th>
             <th>Rating</th>
             <th>Feedback</th>
             <th>Picture</th>
@@ -28,6 +29,7 @@ $result = $conn->query($sql);
 		<td>' . $row["lastName"] . '</td>
 		<td>' . $row["email"] . '</td>
 		<td>' . $row["phone"] . '</td>
+        <td>' . $row["proName"] . '</td>
 		<td>' . $row["ratings"] . '</td>
 		<td>' . $row["feedback"] . '</td>';
 }

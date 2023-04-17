@@ -20,6 +20,7 @@ include './connect.php';
       $lastName = $_POST['lastName'];
       $email = $_POST['email'];
       $phone = $_POST['phone'];
+      $proName = $_POST['proName'];
       $ratings = $_POST['ratings'];
       $feedback = $_POST['feedback'];
 
@@ -60,13 +61,25 @@ include './connect.php';
   $message = file_get_contents($email_template);
 
   //replace string eg. %name%, name, message
-  $mail->Subject = 'message';
+  $mail->Subject = 'Product Feedback';
   $mail->MsgHTML($message);
+  $mail->Body = "<p>Good Day, Mr./Ms. {$lastName}!</p>
+  <p>Thank you for your valuable feedback.</p>
+  <p>We appreciate the time you took to share your experience with us.</p>
+  <p>What you shared with us will help us improve our services and products.</p>
+  <p>You may contact us at Frozenhubmarketing@gmail.com if you have any questions.</p>
+  <br>
+  <br>
+  <div>
+  <p>Regards</p>
+  <p><b>Frozenhub</b></p>
+  <p><b>Frozenhubmarketing@gmail.com</b></p>
+  </div>";
 
       if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
       $insert_applicant_query = "INSERT INTO `feedback_table`
-      (`firstName`, `lastName`, `email`, `phone`, `ratings`, `feedback`, `picture` ) 
-      VALUES ('$firstName', '$lastName', '$email', '$phone', '$ratings', '$feedback', '$fileName')";
+      (`firstName`, `lastName`, `email`, `phone`, `proName`, `ratings`, `feedback`, `picture` ) 
+      VALUES ('$firstName', '$lastName', '$email', '$phone', '$proName', '$ratings', '$feedback', '$fileName')";
 
       $result_applicant = mysqli_query($conn, $insert_applicant_query);
 
@@ -150,6 +163,13 @@ include './connect.php';
                   <div class="fieldContact">
                     <input type="number" placeholder="Contact Number" name="phone" id="number" required>
                   </div>
+                </div>
+              </div>
+
+              <div class="container-fluid">
+                <div class="form-group">
+                    <label for="inputProduct" style="color:white; font-weight:bold;">Product Name:</label>
+                    <input type="text" id="inputProduct" name="proName" rows="3" placeholder="Product Name">
                 </div>
               </div>
 

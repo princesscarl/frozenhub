@@ -65,8 +65,22 @@ $mail = new PHPMailer(true);
   $message = file_get_contents($email_template);
 
   //replace string eg. %name%, name, message
-  $mail->Subject = 'message';
+  $mail->Subject = 'Customer Complaint';
   $mail->MsgHTML($message);
+  $mail->Body = "<p>Good Day, Mr./Ms. {$lastName}!</p>
+  <p>We are grateful to you for letting us into this matter.</p>
+  <p>We apologized for the issues you encountered with our product/service.</p>
+  <p>What you shared with us will help us improve our services and products.</p>
+  <p>We take customer complaints very seriously and make every effort to find timely solutions.</p>
+  <p>I appreciate your cooperation as we work to find a solution.</p>
+  <p>For further questions, please contact us at 0928 373 3039 or email us at Frozenhubmarketing@gmail.com</p>
+  <br>
+  <br>
+  <div>
+  <p>Regards</p>
+  <p><b>Frozenhub</b></p>
+  <p><b>Frozenhubmarketing@gmail.com</b></p>
+  </div>";
 
       if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
       $insert_applicant_query = "INSERT INTO complaints_table

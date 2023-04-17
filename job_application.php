@@ -34,7 +34,7 @@ if (isset($_POST["submit"])) {
   $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
   $mail->SMTPDebug = SMTP::DEBUG_SERVER;
   $mail->isSMTP();
-  $mail->Host = gethostbyname("smtp.gmail.com"); 
+  $mail->Host = gethostbyname("smtp.gmail.com");
   $mail->SMTPAuth = true;
   $mail->Username = 'frozenhub2023@gmail.com';
   $mail->Password = 'gnkyemgmxharaqqb';
@@ -42,14 +42,14 @@ if (isset($_POST["submit"])) {
   $mail->Port = 587;
   $mail->SMTPOptions = array(
     'ssl' => array(
-        'verify_peer' => false,
-        'verify_peer_name' => false,
-        'allow_self_signed' => true
+      'verify_peer' => false,
+      'verify_peer_name' => false,
+      'allow_self_signed' => true
     )
-);
+  );
 
   //recipients
-  $mail->From= "frozenhub2023@gmail.com";
+  $mail->From = "frozenhub2023@gmail.com";
   $mail->FromName = "Frozen Hub";
   $mail->addAddress($email);
   $mail->isHTML(true);
@@ -74,7 +74,7 @@ if (isset($_POST["submit"])) {
   <p><b>frozenhubhr@gmail.com</b></p>
   </div>";
 
-  if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
+  if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
 
     $insert_job_query = "INSERT INTO `job_table`(`firstname`, `lastname`, `email`, `phoneNum`, `address`, `position`, `interview`, `jobTitle`, `comName`, `comAddress`,`status`, `file`) 
             VALUES ('$firstname', '$lastname', '$email', '$phoneNum', '$address', '$position', '$interview','$jobTitle', '$comName', '$comAddress', 'Pending','$fileName')";
@@ -126,8 +126,8 @@ if (isset($_POST["submit"])) {
 
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
 
-    <?php include './includes/navbar.php'; ?>
-  
+  <?php include './includes/navbar.php'; ?>
+
   <section class="application" id="jobApp">
     <div class="container-fluid">
       <div class="row">
@@ -173,20 +173,20 @@ if (isset($_POST["submit"])) {
               <input type="text" class="form-control" id="inputPosition" placeholder="Position" name="position" required>
             </div>
 
-              <div class="container-fluid">
-                <div class="form-group">
-                  <label for="exampleFormControlFile1">Upload Resume:</label>
-                  <input type="file" accept=".img,.jpg,.png, .pdf" class="form-control-file" name="file" id="exampleFormControlFile1" style="height:70px">
-               </div> 
-            
+            <div class="container-fluid">
+              <div class="form-group">
+                <label for="exampleFormControlFile1">Upload Resume:</label>
+                <input type="file" accept=".img,.jpg,.png, .pdf" class="form-control-file" name="file" id="exampleFormControlFile1" style="height:70px">
+              </div>
 
-                <div class="form-group">
-                  <label for="inputDate" style="color:white; font-weight:bold;">List dates and time ranges that you could do an interview:</label>
-                  <textarea class="form-control" id="inputMessage" name="interview" rows="3"></textarea>
-                </div>
 
-                <p style="text-align:left; padding: 3px; color:white; font-weight:bold;">Job Experience (Optional)</p>
-             </div>
+              <div class="form-group">
+                <label for="inputDate" style="color:white; font-weight:bold;">List dates and time ranges that you could do an interview:</label>
+                <textarea class="form-control" id="inputMessage" name="interview" rows="3"></textarea>
+              </div>
+
+              <p style="text-align:left; padding: 3px; color:white; font-weight:bold;">Job Experience (Optional)</p>
+            </div>
 
             <div class="form-row">
               <div class="col-md-6 p-3">

@@ -37,9 +37,9 @@
 </head>
 
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
-  
+
   <?php include 'navbar.php'; ?>
-  <div class="container-fluid" style="width: 90%;" >
+  <div class="container-fluid" style="width: 90%;">
     <div class="row">
       <div class="col-lg-8 mb-3">
         <div id="myCarousel" class="carousel slide" data-ride="carousel" style="display:flex; align-items:left;">
@@ -77,16 +77,16 @@
         </div>
       </div>
       <div class=" col-lg-4" id="contactUs">
-        <div class="contacts container-fluid" >
+        <div class="contacts container-fluid">
           <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEORwsoHzWxoEoNlJ4n1bR4aji_r7jA7WPbQOMth5REabik_rDa7pptnu1lFtHraszS04eNS4JYmXW5SNTKBZsK4H7D2vRg=s1600?fbclid=IwAR3h2V1bSwN87w2jWtMFhMPDet3eL-U8KSNIyguxKKjN3oRmny296FI5G8s" width="100%" height="100%">
         </div>
         <div class="contacts container-fluid " style=" margin-top: 20px;">
-        <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEORwsoHzWxoEoNlJ4n1bR4aji_r7jA7WPbQOMth5REabik_rDa7pptnu1lFtHraszS04eNS4JYmXW5SNTKBZsK4H7D2vRg=s1600?fbclid=IwAR3h2V1bSwN87w2jWtMFhMPDet3eL-U8KSNIyguxKKjN3oRmny296FI5G8s" width="100%" height="100%">
+          <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEORwsoHzWxoEoNlJ4n1bR4aji_r7jA7WPbQOMth5REabik_rDa7pptnu1lFtHraszS04eNS4JYmXW5SNTKBZsK4H7D2vRg=s1600?fbclid=IwAR3h2V1bSwN87w2jWtMFhMPDet3eL-U8KSNIyguxKKjN3oRmny296FI5G8s" width="100%" height="100%">
         </div>
       </div>
     </div>
   </div>
 
 </body>
+
 </html>
-  

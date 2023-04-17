@@ -34,7 +34,7 @@ if (isset($_POST["submit-btn"])) {
 
   //server settings
   $mail->isSMTP();
-  $mail->Host = gethostbyname("smtp.gmail.com"); 
+  $mail->Host = gethostbyname("smtp.gmail.com");
   $mail->SMTPAuth = true;
   $mail->Username = 'frozenhub2023@gmail.com';
   $mail->Password = 'cvltkdpxhbymcabm';
@@ -42,14 +42,14 @@ if (isset($_POST["submit-btn"])) {
   $mail->Port = 587;
   $mail->SMTPOptions = array(
     'ssl' => array(
-        'verify_peer' => false,
-        'verify_peer_name' => false,
-        'allow_self_signed' => true
+      'verify_peer' => false,
+      'verify_peer_name' => false,
+      'allow_self_signed' => true
     )
-);
+  );
 
   //recipients
-  $mail->From= "frozenhub2023@gmail.com";
+  $mail->From = "frozenhub2023@gmail.com";
   $mail->FromName = "Frozen Hub";
   $mail->addAddress($email);
   $mail->isHTML(true);
@@ -82,8 +82,8 @@ if (isset($_POST["submit-btn"])) {
   if ($mail->send() and $result_applicant) {
     echo "<script> alert ('sent.') </script>";
   } else {
-      // echo 'Mailer Error: ' . $mail->ErrorInfo;
-      echo "<script> alert ('Sorry, something went wrong.') </script>";
+    // echo 'Mailer Error: ' . $mail->ErrorInfo;
+    echo "<script> alert ('Sorry, something went wrong.') </script>";
   }
 }
 ?>
@@ -121,7 +121,7 @@ if (isset($_POST["submit-btn"])) {
 </head>
 
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
-  
+
   <?php include 'navbar.php'; ?>
 
   <section class="application" id="appform">

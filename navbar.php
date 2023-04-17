@@ -105,7 +105,7 @@ if (!$conn){
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="./user_area/edit_account.php">Edit Account</a>
             <a class="dropdown-item" href="#">View Orders</a>
-            <a class="dropdown-item" href="#">Change Password</a>
+            <a class="dropdown-item" href="./user_area/change_password.php">Change Password</a>
             <a class="dropdown-item" href="./user_area/logout.php">Logout</a>
           </div>
           </li>

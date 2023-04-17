@@ -1,70 +1,55 @@
 <?php
  session_start(); 
- $email = $_SESSION['email'];
  $conn = mysqli_connect('localhost','root','','frozenhub');
  if (!$conn){
      die("Connection Failed. " . mysqli_connect_error());
  }
 
-        if(isset($_POST['submit-btn'])){
+ if(isset($_POST["submit-btn"])) {     
+    $currentpassword = $_POST["currentpass"];
+    $newpassword = $_POST['newpass'];
+    $confirmpassword = $_POST['confirmpass'];
+
     
-            $fName = $_POST['fname'];
-            $lName = $_POST['lname'];
-            $email = $_POST['email'];
-            $mobile = $_POST['mobile_number'];
-            $address = $_POST['address'];
-            $province = $_POST['province'];
-            $city = $_POST['city'];
-            $zip = $_POST['zip'];
+    //QUERY for DATABASE
+    $passwordquery="SELECT * FROM `user_details` WHERE `email` ='".$_SESSION['email']."'";
+    $passwordresult= mysqli_query($conn,$passwordquery);
+    $count=mysqli_num_rows($passwordresult);
     
-    
-            $update_account ="UPDATE `user_details` SET
-            fname = '$fName',
-            lname = '$lName',
-            email = '$email',
-            user_mobile = '$mobile',
-            user_address = '$address',
-            user_province = '$province',
-            user_city = '$city',
-            user_zip = '$zip'
-            WHERE `email` = '$email'";
-    
-            $result = mysqli_query($conn, $update_account);
-    
-                if($result){
-                    echo "<script> alert('Credentials updated.')</script> ";          
-            }
-                else {
-                    echo "<script> alert('Error.')</script> ";        
+    if ($count==1) {
+        while($row = mysqli_fetch_assoc($passwordresult)) {
+
+        //Data from Database
+            $fetchpassword = $row['password']; 
+
+            if(!password_verify($currentpassword, $fetchpassword)){
+                header("Location: change_password.php?error=invalidcurrentpassword");
+
+            }elseif ($newpassword==$currentpassword){
+                header("Location: change_password.php?error=samepassword");
+
+            }else if(password_verify($currentpassword, $fetchpassword)) {
+
+                if ($newpassword != $confirmpassword) {
+                    header("Location: change_password.php?error=invalidconfirmpassword");
                 }
-     
-        }
-
-
-        
-
-    $user_details = "SELECT * FROM user_details WHERE email ='$email'";
-    $result_category= mysqli_query($conn,$user_details);
-    
-        if (mysqli_num_rows($result_category) == 0){
-        
-        }
-        
-        else { 
             
-        $row = mysqli_fetch_assoc($result_category); 
-    
-        $fname = $row['fname'];
-        $lname = $row['lname'];
-        $email = $row['email'];
-        $mobile = $row['user_mobile'];
-        $address = $row['user_address'];
-        $province = $row['user_province'];
-        $city = $row['user_city'];
-        $zip = $row['user_zip'];
-        }
+                if($newpassword == $confirmpassword) {
+                   $password_raw = $_POST['newpass']; //same in line 8
+                   $hash = password_hash($password_raw, PASSWORD_DEFAULT);
 
-?>
+                   $updatequery = "UPDATE `user_details` SET `password`='".$hash."' WHERE `email` ='".$_SESSION['email']."'";
+                   $updateresult= mysqli_query($conn,    $updatequery);
+                   header("Location: change_password.php?success=passwordchanged");
+                }
+                
+            }
+        }
+    } 
+}
+
+
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -200,7 +185,7 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="../user_area/edit_account.php">Edit Account</a>
             <a class="dropdown-item" href="#">View Orders</a>
-            <a class="dropdown-item" href="../user_area/change_password.php">Change Password</a>
+            <a class="dropdown-item" href="#">Change Password</a>
             <a class="dropdown-item" href="../user_area/logout.php">Logout</a>
           </div>
           </li>
@@ -236,39 +221,47 @@
 <div class=" col-lg-12 mb-3">
             <!-- Account details card-->
             <div class="card mb-4">
-                <div class="card-header">Account Details</div>
+                <div class="card-header">Change Password</div>
                 <div class="card-body">
                     <form method="POST">
+        
+                    <div style="width:50%">
+                    <?php 
+                            if(isset($_GET['error'])){
+                                if($_GET['error'] == 1){
+                                    echo '<p class="error">Invalid current and confirm password!<br>Please try again.</p>';
+                                } else if ($_GET['error'] == 'invalidcurrentpassword'){
+                                    echo '<p class="alert alert-danger mt-3">Invalid  current password!<br>Please try again.</p>';
+                                } else if ($_GET['error'] == 'invalidconfirmpassword'){
+                                    echo '<p class="alert alert-danger mt-3">Invalid confirm password!<br>Please try again.</p>';
+                                } else if ($_GET['error'] == 'samepassword'){
+                                echo '<p class="alert alert-danger mt-3">You currently used that password!<br>Please choose again.</p>';
+                                }
 
+                                    }
+                                
+                                    if (isset($_GET['success'])) {
+                                        if ($_GET['success'] == 'passwordchanged') {
+                                            echo '<p class="alert alert-success">You have successfully changed your password!</p>';
+                                        }
+                                    }
+                                  
+                       
+                        ?>
+                        </div>
                         <!-- Form Row-->
-                        <div class="row gx-3 mb-3">
+                        <div class="row gx-3 mb-3 d-flex">
                             <!-- Form Group (first name)-->
                             <div class="col-md-6">
-                                <label class="small mb-1" for="inputFirstName">First name</label>
-                                <input class="form-control" id="inputFirstName" value ="<?php echo $fname ?>" type="text" name="fname">
+                                <label class="small mb-1" for="inputFirstName"> Current Password</label>
+                                <input class="form-control" id="inputFirstName"  type="password" name="currentpass">
                                
-                                <label class="small mb-1" for="inputLastName">Last name</label>
-                                <input class="form-control" id="inputLastName" value ="<?php echo $lname ?>" type="text" name="lname">
+                                <label class="small mb-1" for="inputLastName">New Password</label>
+                                <input class="form-control" id="inputLastName"  type="password" name="newpass">
                                 
-                                <label class="small mb-1" for="inputOrgName">Email</label>
-                                <input class="form-control" id="inputOrgName" value ="<?php echo $email ?>" type="email" name="email">
+                                <label class="small mb-1" for="inputOrgName">Confirm Password</label>
+                                <input class="form-control" id="inputOrgName"  type="password" name="confirmpass">
                                
-                                <label class="small mb-1" for="inputLocation">Mobile Number</label>
-                                <input class="form-control" id="inputLocation" value ="<?php echo $mobile ?>" type="text" name="mobile_number" >
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="inputFirstName">Address</label>
-                                <input class="form-control" id="inputEmailAddress" value ="<?php echo $address ?>" type="text" name="address" >
-                            
-                                <label class="small mb-1" for="inputFirstName">City</label>
-                                <input class="form-control" value ="<?php echo $city ?>" type="text" name="city" >
-                                
-                                <label class="small mb-1" for="inputFirstName">Province</label>
-                                <input class="form-control" value ="<?php echo $province ?>"  type="text" name="province">
-                                
-                                <label class="small mb-1" for="inputFirstName">ZIP</label>
-                                <input class="form-control"value ="<?php echo $zip ?>" type="text" name="zip" >
                             </div>
 
                             </div>
@@ -279,6 +272,10 @@
                  
                         <!-- Save changes button-->
                         <button class="btn btn-primary" type="submit" name="submit-btn">Save changes</button>
+
+
+
+
                     </form>
                 </div>
             </div>

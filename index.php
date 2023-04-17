@@ -1,36 +1,6 @@
 <?php
-
 session_start();
-include './connect/connect.php';
 
-    if(isset($_POST["submit-btn"])) {
-
-      $firstName = $_POST['firstName'];
-      $lastName = $_POST['lastName'];
-      $email = $_POST['email'];
-      $phone = $_POST['phone'];
-      $location = $_POST['location'];
-      $radios = $_POST['radios'];
-      $business = $_POST['business'];
-      $checkYears = $_POST['checkYears'];
-      $radioType = $_POST['radioType'];
-      $message = $_POST['message'];
-
-
-      $insert_applicant_query = "INSERT INTO `application_table`
-      (`firstName`, `lastName`, `email`, `contact_number`, `temporary_location`, `isLookingForSpace`, `business_name`, `years`, `typeOfBusiness`, `inputMessage`,`status`) 
-      VALUES ('$firstName', '$lastName', '$email', '$phone', '$location', '$radios', '$business', '$checkYears', '$radioType', '$message','Pending')";
-
-      $result_applicant = mysqli_query($conn, $insert_applicant_query);
-
-      if($result_applicant){
-        echo "<script> alert ('Thank you for inquiry.') </script>";
-      }
-
-      else{
-        echo "<script> alert ('Sorry, something went wrong.') </script>";
-      }
-}
 ?>
 
 

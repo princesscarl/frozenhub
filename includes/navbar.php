@@ -46,7 +46,7 @@
               <a class="dropdown-item" href="inquiries.php #appform">Join Us - Franchise</a>
               <a class="dropdown-item" href="feedback.php #feedback">Product Feedback</a>
               <a class="dropdown-item" href="complaints.php #complaints">Complaints</a>
-              <a class="dropdown-item" href="job_application.php">Job Application</a>
+              <a class="dropdown-item" href="job_application.php #jobApp">Job Application</a>
             </div>
           </li>
 

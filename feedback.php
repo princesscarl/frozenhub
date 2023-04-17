@@ -1,5 +1,5 @@
 <?php
-include 'connect.php';
+include './connect/connect.php';
 
     if(isset($_POST["submit-btn"])) {
 
@@ -69,7 +69,7 @@ include 'connect.php';
 
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
 
-<?php include 'navbar.php'; ?>
+<?php include './includes/navbar.php'; ?>
 
     <section class="application" id="feedback">
       <div class="container-fluid">

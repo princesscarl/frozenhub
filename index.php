@@ -1,8 +1,9 @@
 <?php
-include 'connect.php';
+
+session_start();
+include './connect/connect.php';
 
     if(isset($_POST["submit-btn"])) {
-
 
       $firstName = $_POST['firstName'];
       $lastName = $_POST['lastName'];
@@ -68,5 +69,11 @@ include 'connect.php';
 
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
   
-  <?php include 'navbar.php'; ?>
-  
+  <?php include './includes/navbar.php'; ?>
+
+
+  <?php 
+    if(isset($_GET['login'])){
+      include './user_area/login.php';
+    }
+  ?>

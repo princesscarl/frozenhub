@@ -32,7 +32,7 @@
 </head>
 
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
-<?php include 'navbar.php'; ?>
+<?php include './includes/navbar.php'; ?>
     <div style="width: 90%; margin-top:30px; margin-bottom: 30px; margin-right: auto; margin-left: auto;">
       <section id="Announcement">
         <div class="container-fluid">

@@ -35,7 +35,6 @@
   </style>
 
 </head>
-
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
 
   <?php include 'navbar.php'; ?>

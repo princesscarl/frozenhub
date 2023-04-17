@@ -1,5 +1,4 @@
 <?php
-include './connect/connect.php';
 
 include 'connect.php';
 date_default_timezone_set('Asia/Manila');
@@ -122,7 +121,7 @@ $mail = new PHPMailer(true);
 
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
   
-<?php include './includes/navbar.php'; ?>
+<?php include './navbar.php'; ?>
   
 
     <section class="application" id="complaints">

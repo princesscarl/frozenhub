@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 ?>
 
@@ -39,7 +39,7 @@ session_start();
 
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
   
-  <?php include './includes/navbar.php'; ?>
+  <?php include './navbar.php'; ?>
 
 
   <?php 

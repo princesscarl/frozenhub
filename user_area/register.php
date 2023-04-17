@@ -1,5 +1,6 @@
 <?php 
-include '../connect/connect.php';
+session_start();
+include '../connect.php';
 if(isset($_POST['submit-btn'])){
     $firstName = $_POST['fname'];
     $lastName = $_POST['lname'];
@@ -110,51 +111,51 @@ if(isset($_POST['submit-btn'])){
         <!-- FIRST NAME-->
       <div class="form-outline mb-4">
           <label class="form-label" for="form3Example3">First Name</label>
-            <input type="text" id="form3Example3" name="fname" class="form-control form-control-lg" placeholder="Enter you first name" />
+            <input type="text" id="form3Example3" name="fname" class="form-control form-control-lg" placeholder="Enter you first name"required>
           </div>
 
 
              <!-- LAST NAME-->
           <div class="form-outline mb-4">
           <label class="form-label" for="form3Example3">Last Name</label>
-            <input type="text" id="form3Example3" name="lname" class="form-control form-control-lg" placeholder="Enter your last name" />
+            <input type="text" id="form3Example3" name="lname" class="form-control form-control-lg" placeholder="Enter your last name" required>
           </div>
 
    <!-- -->
           <div class="form-outline mb-4">
           <label class="form-label" for="form3Example3">Email</label>
-            <input type="email" id="form3Example3" name="email" class="form-control form-control-lg" placeholder="Enter your email address" />
+            <input type="email" id="form3Example3" name="email" class="form-control form-control-lg" placeholder="Enter your email address" required>
           </div>
 
                    <!-- MOBILE-->
           <div class="form-outline mb-4">
           <label class="form-label" for="form3Example3">Mobile Number</label>
-            <input type="number" id="form3Example3" name="mobile_number" class="form-control form-control-lg" placeholder="Enter your mobile number" />
+            <input type="number" id="form3Example3" name="mobile_number" class="form-control form-control-lg" placeholder="Enter your mobile number" required>
           </div>
 
           
                    <!-- ADDRESS-->
                    <div class="form-outline mb-4 ">
           <label class="form-label" for="form3Example3">Address</label>
-            <input type="text" id="form3Example3" name="address" class="form-control form-control-lg" placeholder="Enter your address" />
+            <input type="text" id="form3Example3" name="address" class="form-control form-control-lg" placeholder="Enter your address"required>
           </div>
           
                    <!-- PROVINCE-->
                    <div class="form-outline mb-4 d-flex">
           <label class="form-label" for="form3Example3"></label>
-            <input type="text" id="form3Example3" name="province" class="form-control form-control-lg" placeholder="Province" />
+            <input type="text" id="form3Example3" name="province" class="form-control form-control-lg" placeholder="Province"required>
         
           
                    <!-- CITY-->
                
           <label class="form-label" for="form3Example3"></label>
-            <input type="text" id="form3Example3" name="city" class="form-control form-control-lg" placeholder="City" />
+            <input type="text" id="form3Example3" name="city" class="form-control form-control-lg" placeholder="City"required>
         
           
                    <!-- ZIP-->
                   
           <label class="form-label" for="form3Example3"></label>
-            <input type="number" id="form3Example3" name="zip" class="form-control form-control-lg" placeholder="ZIP" />
+            <input type="number" id="form3Example3" name="zip" class="form-control form-control-lg" placeholder="ZIP" required/>
           </div>
 
 

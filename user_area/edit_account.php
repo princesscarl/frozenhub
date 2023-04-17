@@ -5,33 +5,6 @@
  if (!$conn){
      die("Connection Failed. " . mysqli_connect_error());
  }
- 
-
-
-    $user_details = "SELECT * FROM user_details WHERE email ='.$email.'";
-    $result_category= mysqli_query($conn,$user_details);
-    
-        if (mysqli_num_rows($result_category) == 0){
-        
-        }
-        
-        else { 
-            
-        $row = mysqli_fetch_assoc($result_category); 
-    
-        $fname = $row['fname'];
-        $lname = $row['lname'];
-        $email = $row['email'];
-        $mobile = $row['user_mobile'];
-        $address = $row['user_address'];
-        $province = $row['user_province'];
-        $city = $row['user_city'];
-        $zip = $row['user_zip'];
-        }
-    
-
-
-
 
         if(isset($_POST['submit-btn'])){
     
@@ -66,11 +39,33 @@
                 }
      
         }
+
+
+        
+
+    $user_details = "SELECT * FROM user_details WHERE email ='$email'";
+    $result_category= mysqli_query($conn,$user_details);
     
-
-
+        if (mysqli_num_rows($result_category) == 0){
+        
+        }
+        
+        else { 
+            
+        $row = mysqli_fetch_assoc($result_category); 
+    
+        $fname = $row['fname'];
+        $lname = $row['lname'];
+        $email = $row['email'];
+        $mobile = $row['user_mobile'];
+        $address = $row['user_address'];
+        $province = $row['user_province'];
+        $city = $row['user_city'];
+        $zip = $row['user_zip'];
+        }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -264,7 +259,7 @@
 
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputFirstName">Address</label>
-                                <input class="form-control" id="inputEmailAddress" value ="<?php echo $address ?>" type="email" name="address" >
+                                <input class="form-control" id="inputEmailAddress" value ="<?php echo $address ?>" type="text" name="address" >
                             
                                 <label class="small mb-1" for="inputFirstName">City</label>
                                 <input class="form-control" value ="<?php echo $city ?>" type="text" name="city" >
@@ -283,7 +278,7 @@
                         </div>
                  
                         <!-- Save changes button-->
-                        <button class="btn btn-primary" type="button">Save changes</button>
+                        <button class="btn btn-primary" type="submit" name="submit-btn">Save changes</button>
                     </form>
                 </div>
             </div>

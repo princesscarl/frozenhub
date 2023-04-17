@@ -31,7 +31,7 @@ if (isset($_POST["submit"])) {
   $fileName = $_FILES["file"]["name"];
   $targetFilePath = $targetDir . $fileName;
   $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
-
+  $mail->SMTPDebug = SMTP::DEBUG_SERVER;
   $mail->isSMTP();
   $mail->Host = gethostbyname("smtp.gmail.com"); 
   $mail->SMTPAuth = true;

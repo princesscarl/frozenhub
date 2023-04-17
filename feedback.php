@@ -11,7 +11,7 @@ require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
 $mail = new PHPMailer(true);
-include './connect/connect.php';
+include './connect.php';
 
 if (isset($_POST["submit-btn"])) {
 
@@ -128,7 +128,7 @@ if (isset($_POST["submit-btn"])) {
 
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
 
-  <?php include './includes/navbar.php'; ?>
+<?php include './includes/navbar.php'; ?>
 
   <section class="application" id="feedback">
     <div class="container-fluid">

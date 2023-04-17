@@ -1,5 +1,6 @@
 <?php
-include '../connect/connect.php';
+session_start();
+include '../connect.php';
 
 if(isset($_POST['submit-btn'])){
   
@@ -91,13 +92,13 @@ if(isset($_POST['submit-btn'])){
       <form method="POST">
           <div class="form-outline mb-4">
           <label class="form-label" for="form3Example3">Email address</label>
-            <input type="email" id="form3Example3" name="email" class="form-control form-control-lg" placeholder="Enter a valid email address" />
+            <input type="email" id="form3Example3" name="email" class="form-control form-control-lg" placeholder="Enter a valid email address" required>
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-3">
           <label class="form-label" for="form3Example4">Password</label>
-            <input type="password" id="form3Example4" name="password" class="form-control form-control-lg" placeholder="Enter password" />
+            <input type="password" id="form3Example4" name="password" class="form-control form-control-lg" placeholder="Enter password" required>
           </div>
 
           <div class="d-flex justify-content-between align-items-center">

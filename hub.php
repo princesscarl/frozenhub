@@ -32,25 +32,25 @@
 </head>
 
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
-  <?php include './includes/navbar.php'; ?>
-  <div style="width: 90%; margin-top:30px; margin-bottom: 30px; margin-right: auto; margin-left: auto;">
-    <section id="Announcement">
-      <div class="container-fluid">
-        <div class="row d-flex justify-content-center">
-          <h1 style="font-size: 2rem; margin-top: 2rem; margin-bottom: 1rem; font-weight: bolder; color:#439D9E;">Announcements</h1>
-          <div class="col-lg-4">
-            <img src="https://lh3.googleusercontent.com/UwY6TZbND2cMyqeCMcKeuPJrh9sGFfNYHpBiK43S4zXFdgOCevlZPWvtRfFS-_hADSM=w2400" alt="" style="width:100%; height: auto;">
-          </div>
-          <div class="col-lg-4">
-            <img src="https://lh3.googleusercontent.com/QfLNgJ61UFiBM2oxuMcLZOBJ_TG_VmiH6o3V1__0wEiHHuFbwRr6iqbroH6T9owlljQ=w2400" alt="" style="width: 100%; height:auto;">
-          </div>
-          <div class="col-lg-4">
-            <img src="https://lh3.googleusercontent.com/UwY6TZbND2cMyqeCMcKeuPJrh9sGFfNYHpBiK43S4zXFdgOCevlZPWvtRfFS-_hADSM=w2400" alt="" style="width:100%; height:auto;">
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+<?php include './includes/navbar.php'; ?>
+    <div style="width: 90%; margin-top:30px; margin-bottom: 30px; margin-right: auto; margin-left: auto;">
+      <section id="Announcement">
+        <div class="container-fluid">
+              <div class="row d-flex justify-content-center">
+              <h1 style="font-size: 2rem; margin-top: 2rem; margin-bottom: 1rem; font-weight: bolder; color:#439D9E;">Announcements</h1>
+                <div class="col-lg-4">
+                  <img src="https://lh3.googleusercontent.com/UwY6TZbND2cMyqeCMcKeuPJrh9sGFfNYHpBiK43S4zXFdgOCevlZPWvtRfFS-_hADSM=w2400" alt="" style="width:100%; height: auto;">
+                </div>
+                <div class="col-lg-4">
+                  <img src="https://lh3.googleusercontent.com/QfLNgJ61UFiBM2oxuMcLZOBJ_TG_VmiH6o3V1__0wEiHHuFbwRr6iqbroH6T9owlljQ=w2400" alt="" style="width: 100%; height:auto;">
+                </div>
+                <div class="col-lg-4">
+                  <img src="https://lh3.googleusercontent.com/UwY6TZbND2cMyqeCMcKeuPJrh9sGFfNYHpBiK43S4zXFdgOCevlZPWvtRfFS-_hADSM=w2400" alt="" style="width:100%; height:auto;">
+                </div>
+              </div>
+            </div>
+      </section>
+    </div>
 
   <div style="width: 90%; margin-top:30px; margin-bottom: 30px; margin-right: auto; margin-left: auto;">
     <section id="history mt-3">

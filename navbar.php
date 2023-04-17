@@ -8,12 +8,11 @@ if (!$conn){
 ?>
 
 <div class="navigation">
-<section class="header mt-3">
-      <div class="container-fluid">
-        <div class="row d-flex justify-content-center text-center">
-          <div class="col-lg-9">
-            <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEORwsoHzWxoEoNlJ4n1bR4aji_r7jA7WPbQOMth5REabik_rDa7pptnu1lFtHraszS04eNS4JYmXW5SNTKBZsK4H7D2vRg=s1600?fbclid=IwAR3h2V1bSwN87w2jWtMFhMPDet3eL-U8KSNIyguxKKjN3oRmny296FI5G8s" width="100%" height="auto">
-          </div>
+  <section class="header mt-3">
+    <div class="container-fluid">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-9">
+          <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEORwsoHzWxoEoNlJ4n1bR4aji_r7jA7WPbQOMth5REabik_rDa7pptnu1lFtHraszS04eNS4JYmXW5SNTKBZsK4H7D2vRg=s1600?fbclid=IwAR3h2V1bSwN87w2jWtMFhMPDet3eL-U8KSNIyguxKKjN3oRmny296FI5G8s" width="100%" height="auto">
         </div>
       </div>
     </div>
@@ -29,7 +28,7 @@ if (!$conn){
         <ul class="navbar-nav mx-auto">
 
           <li class="nav-item">
-            <a class="nav-link" href="index.php">Home</a>
+            <a class="nav-link" href="./index.php">Home</a>
           </li>
 
           <li class="nav-item dropdown">
@@ -87,13 +86,11 @@ if (!$conn){
             $row = mysqli_fetch_assoc($result);
             $user_id = $row['user_id'];
             $firstName = $row['fname'];
-
             $_SESSION['user_id'] = $user_id;
       }
   
       echo'<li class="nav-item">
-      <form method="POST">
-      <input type="text" hidden name="user_id" value='
+      <input type="text" hidden name="user_id" ='
       .$_SESSION['user_id'].'>
       </form>
       <a class="nav-link" href="#">Welcome '.$firstName.'</a>
@@ -109,7 +106,7 @@ if (!$conn){
             <a class="dropdown-item" href="./user_area/edit_account.php">Edit Account</a>
             <a class="dropdown-item" href="#">View Orders</a>
             <a class="dropdown-item" href="#">Change Password</a>
-            <a class="dropdown-item" href="./user_area/logout.php">Logout</a>
+            <a class="dropdown-item" href="../user_area/logout.php">Logout</a>
           </div>
           </li>
           ';
@@ -132,4 +129,4 @@ if (!$conn){
         </div>
         </div>
         </div>
-       
+

@@ -1,6 +1,5 @@
 <?php
-
-include 'connect.php';
+include './connect/connect.php';
 
 date_default_timezone_set('Asia/Manila');
 
@@ -60,8 +59,20 @@ if (isset($_POST["submit-btn"])) {
   $message = file_get_contents($email_template);
 
   //replace string eg. %name%, name, message
-  $mail->Subject = 'message';
+  $mail->Subject = 'Frozenhub Inquiry';
   $mail->MsgHTML($message);
+  $mail->Body = "<p>Good Day, Mr./Ms. {$lastName}!</p>
+  <p>Thank you for taking the time to inquire on our company products and services.</p>
+  <p>We have successfully recieved your inquiry.</p>
+  <p>Please give us some time to process your request</p>
+  <p>In case you have further queries, please reach us on our email provided below.</p>
+  <br>
+  <br>
+  <div>
+  <p>Regards</p>
+  <p><b>Frozenhub</b></p>
+  <p><b>Frozenhubmarketing@gmail.com</b></p>
+  </div>";
 
   $insert_applicant_query = "INSERT INTO `application_table` (`firstName`, `lastName`, `email`, `contact_number`, `temporary_location`, `isLookingForSpace`, `business_name`, `years`, `typeOfBusiness`, `inputMessage`,`status`) 
       VALUES ('$firstName', '$lastName', '$email', '$phone', '$location', '$radios', '$business', '$checkYears', '$radioType', '$msg','Pending')";
@@ -110,7 +121,7 @@ if (isset($_POST["submit-btn"])) {
 </head>
 
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
-
+  
   <?php include 'navbar.php'; ?>
 
   <section class="application" id="appform">

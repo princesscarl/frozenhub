@@ -1,5 +1,5 @@
 <?php
-include 'connect.php';
+include './connect/connect.php';
 
 include 'connect.php';
 date_default_timezone_set('Asia/Manila');
@@ -66,8 +66,22 @@ $mail = new PHPMailer(true);
   $message = file_get_contents($email_template);
 
   //replace string eg. %name%, name, message
-  $mail->Subject = 'message';
+  $mail->Subject = 'Customer Complaint';
   $mail->MsgHTML($message);
+  $mail->Body = "<p>Good Day, Mr./Ms. {$lastName}!</p>
+  <p>We are grateful to you for letting us into this matter.</p>
+  <p>We apologized for the issues you encountered with our product/service.</p>
+  <p>What you shared with us will help us improve our services and products.</p>
+  <p>We take customer complaints very seriously and make every effort to find timely solutions.</p>
+  <p>I appreciate your cooperation as we work to find a solution.</p>
+  <p>For further questions, please contact us at 0928 373 3039 or email us at Frozenhubmarketing@gmail.com</p>
+  <br>
+  <br>
+  <div>
+  <p>Regards</p>
+  <p><b>Frozenhub</b></p>
+  <p><b>Frozenhubmarketing@gmail.com</b></p>
+  </div>";
 
       if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
       $insert_applicant_query = "INSERT INTO complaints_table
@@ -121,60 +135,9 @@ $mail = new PHPMailer(true);
 </head>
 
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
-  <div class="navigation">
-    <section class="header mt-3">
-      <div class="container-fluid">
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-9">
-            <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEORwsoHzWxoEoNlJ4n1bR4aji_r7jA7WPbQOMth5REabik_rDa7pptnu1lFtHraszS04eNS4JYmXW5SNTKBZsK4H7D2vRg=s1600?fbclid=IwAR3h2V1bSwN87w2jWtMFhMPDet3eL-U8KSNIyguxKKjN3oRmny296FI5G8s" width="100%" height="auto">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto">
-
-          <li class="nav-item">
-              <a class="nav-link" href="./home.php ">Home</a>
-          </li>
-
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">All Products</a>
-                <a class="dropdown-item" href="#">All Promos</a>
-              </div>
-
-
-          <li class="nav-item">
-            <a class="nav-link" href="./hub.php #Announcement">Announcement</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="./hub.php #aboutUs">About Us</a>
-          </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact Us</a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="index.php #appform">Join Us - Franchise</a>
-                <a class="dropdown-item" href="feedback.php #feedback">Product Feedback</a>
-                <a class="dropdown-item" href="complaints.php #complaints">Complaints</a>
-                <a class="dropdown-item" href="job_application.php">Job Application</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </div>
+  
+<?php include './includes/navbar.php'; ?>
+  
 
     <section class="application" id="complaints">
       <div class="container-fluid">

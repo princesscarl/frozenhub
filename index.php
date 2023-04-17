@@ -89,3 +89,10 @@
 
 </body>
 </html>
+  
+
+  <?php 
+    if(isset($_GET['login'])){
+      include './user_area/login.php';
+    }
+  ?>

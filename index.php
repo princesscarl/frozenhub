@@ -35,6 +35,7 @@
   </style>
 
 </head>
+
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
 
   <?php include 'navbar.php'; ?>
@@ -80,9 +81,9 @@
   </div>
 
   <div class="container-fluid" style="width: 90%;">
-  <h2 style="text-align: center; font-weight: bold;">Top Products</h2>
+    <h2 style="text-align: center; font-weight: bold; padding:10px;">Top Products</h2>
     <div class="row">
-      <div class="col-lg-3">
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-1" align="center">
         <div class="card" style="width: 18rem;">
           <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ3Ux_B45xDr9B18efDjM_o7Kqty0QC7koksGUqaCJ7DR8HKn6UE_ysmzeWheJiTb119nKjepyxcHUxWNKYHljT4JuI=s1600?fbclid=IwAR1jb7ztdwKYhqZVy5ZM49eVvdw8FWp0nn2LqD60o1wAEhuDKDRENaqd-3w" class="card-img-top" alt="...">
           <div class="card-body">
@@ -91,8 +92,20 @@
             <a href="#" class="btn btn-primary">Add to cart</a>
           </div>
         </div>
+        <div class="row mt-5">
+          <div class="col-lg-12 col-xs-1" align="center">
+            <div class="card" style="width: 18rem;">
+              <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ3Ux_B45xDr9B18efDjM_o7Kqty0QC7koksGUqaCJ7DR8HKn6UE_ysmzeWheJiTb119nKjepyxcHUxWNKYHljT4JuI=s1600?fbclid=IwAR1jb7ztdwKYhqZVy5ZM49eVvdw8FWp0nn2LqD60o1wAEhuDKDRENaqd-3w" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-lg-3">
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-1" align="center">
         <div class="card" style="width: 18rem;">
           <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ3Ux_B45xDr9B18efDjM_o7Kqty0QC7koksGUqaCJ7DR8HKn6UE_ysmzeWheJiTb119nKjepyxcHUxWNKYHljT4JuI=s1600?fbclid=IwAR1jb7ztdwKYhqZVy5ZM49eVvdw8FWp0nn2LqD60o1wAEhuDKDRENaqd-3w" class="card-img-top" alt="...">
           <div class="card-body">
@@ -101,8 +114,20 @@
             <a href="#" class="btn btn-primary">Add to cart</a>
           </div>
         </div>
+        <div class="row mt-5">
+          <div class="col-lg-12 col-xs-1" align="center">
+            <div class="card" style="width: 18rem;">
+              <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ3Ux_B45xDr9B18efDjM_o7Kqty0QC7koksGUqaCJ7DR8HKn6UE_ysmzeWheJiTb119nKjepyxcHUxWNKYHljT4JuI=s1600?fbclid=IwAR1jb7ztdwKYhqZVy5ZM49eVvdw8FWp0nn2LqD60o1wAEhuDKDRENaqd-3w" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-lg-3">
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-1" align="center">
         <div class="card" style="width: 18rem;">
           <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ3Ux_B45xDr9B18efDjM_o7Kqty0QC7koksGUqaCJ7DR8HKn6UE_ysmzeWheJiTb119nKjepyxcHUxWNKYHljT4JuI=s1600?fbclid=IwAR1jb7ztdwKYhqZVy5ZM49eVvdw8FWp0nn2LqD60o1wAEhuDKDRENaqd-3w" class="card-img-top" alt="...">
           <div class="card-body">
@@ -111,8 +136,20 @@
             <a href="#" class="btn btn-primary">Add to cart</a>
           </div>
         </div>
+        <div class="row mt-5">
+          <div class="col-lg-12 col-xs-1" align="center">
+            <div class="card" style="width: 18rem;">
+              <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ3Ux_B45xDr9B18efDjM_o7Kqty0QC7koksGUqaCJ7DR8HKn6UE_ysmzeWheJiTb119nKjepyxcHUxWNKYHljT4JuI=s1600?fbclid=IwAR1jb7ztdwKYhqZVy5ZM49eVvdw8FWp0nn2LqD60o1wAEhuDKDRENaqd-3w" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-lg-3">
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-1" align="center">
         <div class="card" style="width: 18rem;">
           <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ3Ux_B45xDr9B18efDjM_o7Kqty0QC7koksGUqaCJ7DR8HKn6UE_ysmzeWheJiTb119nKjepyxcHUxWNKYHljT4JuI=s1600?fbclid=IwAR1jb7ztdwKYhqZVy5ZM49eVvdw8FWp0nn2LqD60o1wAEhuDKDRENaqd-3w" class="card-img-top" alt="...">
           <div class="card-body">
@@ -121,48 +158,20 @@
             <a href="#" class="btn btn-primary">Add to cart</a>
           </div>
         </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="card" style="width: 18rem;">
-          <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ3Ux_B45xDr9B18efDjM_o7Kqty0QC7koksGUqaCJ7DR8HKn6UE_ysmzeWheJiTb119nKjepyxcHUxWNKYHljT4JuI=s1600?fbclid=IwAR1jb7ztdwKYhqZVy5ZM49eVvdw8FWp0nn2LqD60o1wAEhuDKDRENaqd-3w" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
+        <div class="row mt-5">
+          <div class="col-lg-12 col-xs-1" align="center">
+            <div class="card" style="width: 18rem;">
+              <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ3Ux_B45xDr9B18efDjM_o7Kqty0QC7koksGUqaCJ7DR8HKn6UE_ysmzeWheJiTb119nKjepyxcHUxWNKYHljT4JuI=s1600?fbclid=IwAR1jb7ztdwKYhqZVy5ZM49eVvdw8FWp0nn2LqD60o1wAEhuDKDRENaqd-3w" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-3">
-        <div class="card" style="width: 18rem;">
-          <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ3Ux_B45xDr9B18efDjM_o7Kqty0QC7koksGUqaCJ7DR8HKn6UE_ysmzeWheJiTb119nKjepyxcHUxWNKYHljT4JuI=s1600?fbclid=IwAR1jb7ztdwKYhqZVy5ZM49eVvdw8FWp0nn2LqD60o1wAEhuDKDRENaqd-3w" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="card" style="width: 18rem;">
-          <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ3Ux_B45xDr9B18efDjM_o7Kqty0QC7koksGUqaCJ7DR8HKn6UE_ysmzeWheJiTb119nKjepyxcHUxWNKYHljT4JuI=s1600?fbclid=IwAR1jb7ztdwKYhqZVy5ZM49eVvdw8FWp0nn2LqD60o1wAEhuDKDRENaqd-3w" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="card" style="width: 18rem;">
-          <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ3Ux_B45xDr9B18efDjM_o7Kqty0QC7koksGUqaCJ7DR8HKn6UE_ysmzeWheJiTb119nKjepyxcHUxWNKYHljT4JuI=s1600?fbclid=IwAR1jb7ztdwKYhqZVy5ZM49eVvdw8FWp0nn2LqD60o1wAEhuDKDRENaqd-3w" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      
+
     </div>
   </div>
 </body>

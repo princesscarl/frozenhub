@@ -6,6 +6,14 @@
      die("Connection Failed. " . mysqli_connect_error());
  }
 
+
+ 
+if(!isset($_SESSION['email'])){
+    header("Location: ../index.php");
+}
+else{
+
+
         if(isset($_POST['submit-btn'])){
     
             $fName = $_POST['fname'];
@@ -297,7 +305,7 @@
 
 
 
-
+<?php } ?>
 
 
 </body>

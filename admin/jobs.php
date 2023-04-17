@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <h1 class="text-center" style="padding: 20px; font-weight:bold">Job Applications</h1>
-        <table id="table" class="table table-bordered text-center" style="width:100%; margin:auto; border-collapse:collapse;">
+        <table id="table" class="table table-stripped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed printTable darkBG" role="grid" cellspacing="0" style="width:100%">
  
         <tr>
             <th>First Name</th>

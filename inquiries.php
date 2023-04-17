@@ -1,6 +1,5 @@
 <?php
-
-include 'connect.php';
+include './connect/connect.php';
 
 date_default_timezone_set('Asia/Manila');
 
@@ -122,7 +121,7 @@ if (isset($_POST["submit-btn"])) {
 </head>
 
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
-
+  
   <?php include 'navbar.php'; ?>
 
   <section class="application" id="appform">

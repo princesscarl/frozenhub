@@ -1,3 +1,54 @@
+<?php 
+include '../connect/connect.php';
+if(isset($_POST['submit-btn'])){
+    $firstName = $_POST['fname'];
+    $lastName = $_POST['lname'];
+    $email = $_POST['email'];
+    $mobile = $_POST['mobile_number'];
+    $address = $_POST['address'];
+    $province = $_POST['province'];
+    $city = $_POST['city'];
+    $zip = $_POST['zip'];
+    $password = $_POST['password'];
+    $confirmpassword = $_POST['confirm_password'];
+
+
+    $emailquery = "SELECT * FROM user_details WHERE email = '$email'";
+    $result_email = mysqli_query($conn, $emailquery);
+    $count = mysqli_num_rows($result_email);
+
+    if($count > 0){
+
+        echo "<script> alert('Email is already in use. Please try another one.')</script> ";
+    }
+    else{
+        if ($password != $confirmpassword){
+
+            echo "<script> alert('Passwords do not match.')</script> ";
+        }
+
+        else{
+            $hash = password_hash($password, PASSWORD_DEFAULT);
+
+            $insert_user = "INSERT INTO `user_details`(`fname`, `lname`, `email`, `password`, `user_address`, `user_province`, `user_city`, `user_zip`, `user_mobile`) VALUES ('$firstName', '$lastName', '$email', '$hash', '$address', '$province', '$city', '$zip', '$mobile')";
+
+            $result = mysqli_query ($conn, $insert_user);
+
+            if($result){
+            echo "<script> alert('Successfully registered.')</script> ";    
+            $_SESSION["email"] = $_POST["email"];
+            $email = $_SESSION["email"];
+            header("Location: ../index.php");      
+        }
+    }
+       
+    }
+    }
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +71,7 @@
   <script src="https://kit.fontawesome.com/faf8bee4ee.js" crossorigin="anonymous"></script>
   <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
 
-    <title>Frozenhub - Login</title>
+    <title>Frozenhub - Register</title>
 </head>
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
 <section style="width: 95%; margin-top:30px; margin-bottom: 30px; margin-right: auto; margin-left: auto;">
@@ -31,7 +82,6 @@
           class="img-fluid" alt="Sample image" style="width: 91%;">
       </div>
       <div class="col-md-9 col-lg-6">
-        <form>
           <div class="d-flex align-items-center justify-content-center" style="margin:auto; width:50%;">
             <p class="lead fw-normal mb-0 me-3">Sign in with</p>
             <button type="button" class="btn btn-floating mx-1" style="background-color: #008080; color:white">
@@ -51,17 +101,79 @@
             <p class="text-center fw-bold mx-3 mb-0">Or</p>
           </div>
 
-          <!-- Email input -->
+
+
+
+
+        
+      <form method="POST">
+        <!-- FIRST NAME-->
+      <div class="form-outline mb-4">
+          <label class="form-label" for="form3Example3">First Name</label>
+            <input type="text" id="form3Example3" name="fname" class="form-control form-control-lg" placeholder="Enter you first name" />
+          </div>
+
+
+             <!-- LAST NAME-->
           <div class="form-outline mb-4">
-          <label class="form-label" for="form3Example3">Email address</label>
-            <input type="email" id="form3Example3" class="form-control form-control-lg" placeholder="Enter a valid email address" />
+          <label class="form-label" for="form3Example3">Last Name</label>
+            <input type="text" id="form3Example3" name="lname" class="form-control form-control-lg" placeholder="Enter your last name" />
+          </div>
+
+   <!-- -->
+          <div class="form-outline mb-4">
+          <label class="form-label" for="form3Example3">Email</label>
+            <input type="email" id="form3Example3" name="email" class="form-control form-control-lg" placeholder="Enter your email address" />
+          </div>
+
+                   <!-- MOBILE-->
+          <div class="form-outline mb-4">
+          <label class="form-label" for="form3Example3">Mobile Number</label>
+            <input type="number" id="form3Example3" name="mobile_number" class="form-control form-control-lg" placeholder="Enter your mobile number" />
+          </div>
+
+          
+                   <!-- ADDRESS-->
+                   <div class="form-outline mb-4 ">
+          <label class="form-label" for="form3Example3">Address</label>
+            <input type="text" id="form3Example3" name="address" class="form-control form-control-lg" placeholder="Enter your address" />
+          </div>
+          
+                   <!-- PROVINCE-->
+                   <div class="form-outline mb-4 d-flex">
+          <label class="form-label" for="form3Example3"></label>
+            <input type="text" id="form3Example3" name="province" class="form-control form-control-lg" placeholder="Province" />
+        
+          
+                   <!-- CITY-->
+               
+          <label class="form-label" for="form3Example3"></label>
+            <input type="text" id="form3Example3" name="city" class="form-control form-control-lg" placeholder="City" />
+        
+          
+                   <!-- ZIP-->
+                  
+          <label class="form-label" for="form3Example3"></label>
+            <input type="number" id="form3Example3" name="zip" class="form-control form-control-lg" placeholder="ZIP" />
+          </div>
+
+
+
+
+          
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+          <label class="form-label" for="form3Example4">Password</label>
+            <input type="password" id="form3Example4" name="password" class="form-control form-control-lg" placeholder="Enter password" />
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-3">
-          <label class="form-label" for="form3Example4">Password</label>
-            <input type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Enter password" />
+          <label class="form-label" for="form3Example4"> Confirm Password</label>
+            <input type="password" id="form3Example4" name="confirm_password" class="form-control form-control-lg" placeholder="Enter password" />
           </div>
+
+
 
           <div class="d-flex justify-content-between align-items-center">
             <!-- Checkbox -->
@@ -75,10 +187,10 @@
           </div>
 
           <div class="text-center text-lg-start mt-4 pt-2">
-            <button type="button" class="btn btn-lg"
-              style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #008080; color:white; font-weight:bold;">Login</button>
-            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
-                class="link-primary">Register</a></p>
+            <button name="submit-btn" type="submit" class="btn btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #008080; color:white; font-weight:bold;">Register</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Have an account? <a href="login.php"
+                class="link-primary">Login.</a></p>
           </div>
         </form>
       </div>
@@ -113,3 +225,5 @@ style="width:100%; background-color:#008080">
     <!-- Right -->
 </footer>
 </html>
+
+

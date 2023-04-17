@@ -1,5 +1,5 @@
 <?php
-include 'connect.php';
+
 date_default_timezone_set('Asia/Manila');
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -11,6 +11,7 @@ require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
 $mail = new PHPMailer(true);
+include './connect/connect.php';
 
     if(isset($_POST["submit-btn"])) {
 
@@ -115,7 +116,7 @@ $mail = new PHPMailer(true);
 
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
 
-<?php include 'navbar.php'; ?>
+<?php include './includes/navbar.php'; ?>
 
     <section class="application" id="feedback">
       <div class="container-fluid">

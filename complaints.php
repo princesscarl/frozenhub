@@ -1,6 +1,19 @@
 <?php
 include 'connect.php';
 
+include 'connect.php';
+date_default_timezone_set('Asia/Manila');
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
+$mail = new PHPMailer(true);
+
     if(isset($_POST["submit"])) {
 
 
@@ -21,6 +34,41 @@ include 'connect.php';
       $targetFilePath = $targetDir . $fileName;
       $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
 
+      //email is invalid return error
+  //invalid input return error
+
+  //if no error send mail to inputed email
+
+  //server settings
+  $mail->isSMTP();
+  $mail->Host = gethostbyname("smtp.gmail.com"); 
+  $mail->SMTPAuth = true;
+  $mail->Username = 'frozenhub2023@gmail.com';
+  $mail->Password = 'cvltkdpxhbymcabm';
+  $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+  $mail->Port = 587;
+  $mail->SMTPOptions = array(
+    'ssl' => array(
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+        'allow_self_signed' => true
+    )
+);
+
+  //recipients
+  $mail->From= "frozenhub2023@gmail.com";
+  $mail->FromName = "Frozen Hub";
+  $mail->addAddress($email);
+  $mail->isHTML(true);
+
+  //template
+  $email_template = 'email_template/contact_email_template.html';
+  $message = file_get_contents($email_template);
+
+  //replace string eg. %name%, name, message
+  $mail->Subject = 'message';
+  $mail->MsgHTML($message);
+
       if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
       $insert_applicant_query = "INSERT INTO complaints_table
       (firstname, lastname, email, phoneNum, proNo, comDate, proName, boughtOn, details, actions, picture, `status`) 
@@ -28,7 +76,7 @@ include 'connect.php';
 
       $result_applicant = mysqli_query($conn, $insert_applicant_query);
 
-      if($result_applicant){
+      if ($mail->send() and $result_applicant){
         echo "<script> alert ('Thank you for inquiry.') </script>";
       }
 

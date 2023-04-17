@@ -8,6 +8,7 @@
             <th>Email</th>
             <th>Phone Number</th>
             <th>Location</th>
+            <th>Applying For</th>
             <th>Time of Interview</th>
             <th>Job Title</th>
             <th>Company Name</th>
@@ -35,6 +36,7 @@ $result = $conn->query($sql);
 		<td>' . $row["email"] . '</td>
 		<td>' . $row['phoneNum'] . '</td>
 		<td>' . $row['address']. '</td>
+    <td>' . $row['position']. '</td>
     <td>' . $row['interview']. '</td>
 		<td>' . $row['jobTitle'] . '</td>
 		<td>' . $row['comName'] .'</td>

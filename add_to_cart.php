@@ -12,12 +12,13 @@ if(isset($_GET['add_to_cart'])) {
        
         if($result_query){
             echo "<script> alert ('Item is added to cart.') </script>";
-            echo "<script>windows.open('index.php','_self')</script>";
+            header("Location: ./index.php");
         }
      
         } else {
             echo "<script> alert('Item is already in your cart.')</script> ";
-            echo "<script>windows.open('index.php','_self')</script>";
+            header("Location: ./index.php");
+    
         }
 
     ?>

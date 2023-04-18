@@ -34,8 +34,8 @@ if (!$conn){
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">All Products</a>
-              <a class="dropdown-item" href="#">All Promos</a>
+              <a class="dropdown-item" href="index.php?all_products">All Products</a>
+              <a class="dropdown-item" href="index.php?all_promos">All Promos</a>
             </div>
 
 
@@ -124,6 +124,10 @@ if (!$conn){
             </li>
           ';
           } ?>
+          
+     <li class="nav-item">
+          <a class="nav-link" href="index.php?cart"><i class="fa fa-shopping-cart" style="font-size:20px"></i></a>
+        </li>
   </ul>
 
         </div>

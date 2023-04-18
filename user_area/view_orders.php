@@ -1,64 +1,12 @@
+
 <?php
 
- session_start(); 
- $conn = mysqli_connect('localhost','root','','frozenhub');
- if (!$conn){
-     die("Connection Failed. " . mysqli_connect_error());
- }
-
-
-
-if(!isset($_SESSION['email'])){
-    header("Location: ../index.php");
+session_start();
+$conn = mysqli_connect('localhost','root','','frozenhub');
+if (!$conn){
+    die("Connection Failed. " . mysqli_connect_error());
 }
-else{
-
-
- if(isset($_POST["submit-btn"])) {     
-    $currentpassword = $_POST["currentpass"];
-    $newpassword = $_POST['newpass'];
-    $confirmpassword = $_POST['confirmpass'];
-
-    
-    //QUERY for DATABASE
-    $passwordquery="SELECT * FROM `user_details` WHERE `email` ='".$_SESSION['email']."'";
-    $passwordresult= mysqli_query($conn,$passwordquery);
-    $count=mysqli_num_rows($passwordresult);
-    
-    if ($count==1) {
-        while($row = mysqli_fetch_assoc($passwordresult)) {
-
-        //Data from Database
-            $fetchpassword = $row['password']; 
-
-            if(!password_verify($currentpassword, $fetchpassword)){
-                header("Location: change_password.php?error=invalidcurrentpassword");
-
-            }elseif ($newpassword==$currentpassword){
-                header("Location: change_password.php?error=samepassword");
-
-            }else if(password_verify($currentpassword, $fetchpassword)) {
-
-                if ($newpassword != $confirmpassword) {
-                    header("Location: change_password.php?error=invalidconfirmpassword");
-                }
-            
-                if($newpassword == $confirmpassword) {
-                   $password_raw = $_POST['newpass']; //same in line 8
-                   $hash = password_hash($password_raw, PASSWORD_DEFAULT);
-
-                   $updatequery = "UPDATE `user_details` SET `password`='".$hash."' WHERE `email` ='".$_SESSION['email']."'";
-                   $updateresult= mysqli_query($conn,    $updatequery);
-                   header("Location: change_password.php?success=passwordchanged");
-                }
-                
-            }
-        }
-    } 
-}
-
-
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -78,11 +26,6 @@ else{
   <link rel="stylesheet" href="https://kit.fontawesome.com/faf8bee4ee.css" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/faf8bee4ee.js" crossorigin="anonymous"></script>
-  <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
 
   <style>
     input::-webkit-outer-spin-button,
@@ -94,6 +37,7 @@ else{
 </head>
 
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
+<!-- NAVBAR-->
 
 
 <div class="navigation">
@@ -140,10 +84,10 @@ else{
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact Us</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="inquiries.php #appform">Join Us - Franchise</a>
-              <a class="dropdown-item" href="feedback.php #feedback">Product Feedback</a>
-              <a class="dropdown-item" href="complaints.php #complaints">Complaints</a>
-              <a class="dropdown-item" href="job_application.php #jobApp">Job Application</a>
+              <a class="dropdown-item" href="../inquiries.php #appform">Join Us - Franchise</a>
+              <a class="dropdown-item" href="../feedback.php #feedback">Product Feedback</a>
+              <a class="dropdown-item" href="../complaints.php #complaints">Complaints</a>
+              <a class="dropdown-item" href="../job_application.php #jobApp">Job Application</a>
             </div>
           </li>
 
@@ -243,88 +187,87 @@ else{
        
 
 
+<!-- NAVBAR-->
 
-<!-- END OF NAVBAR -->
-<div style="width: 90%; margin-top:30px; margin-bottom: 30px; margin-right: auto; margin-left: auto;">
-<div class=" col-lg-12 mb-3">
-            <!-- Account details card-->
-            <div class="card mb-4">
-                <div class="card-header">Change Password</div>
-                <div class="card-body">
-                    <form method="POST">
-        
-                    <div style="width:50%">
-                    <?php 
-                            if(isset($_GET['error'])){
-                                if($_GET['error'] == 1){
-                                    echo '<p class="error">Invalid current and confirm password!<br>Please try again.</p>';
-                                } else if ($_GET['error'] == 'invalidcurrentpassword'){
-                                    echo '<p class="alert alert-danger mt-3">Invalid  current password!<br>Please try again.</p>';
-                                } else if ($_GET['error'] == 'invalidconfirmpassword'){
-                                    echo '<p class="alert alert-danger mt-3">Invalid confirm password!<br>Please try again.</p>';
-                                } else if ($_GET['error'] == 'samepassword'){
-                                echo '<p class="alert alert-danger mt-3">You currently used that password!<br>Please choose again.</p>';
-                                }
+<?php
 
-                                    }
-                                
-                                    if (isset($_GET['success'])) {
-                                        if ($_GET['success'] == 'passwordchanged') {
-                                            echo '<p class="alert alert-success">You have successfully changed your password!</p>';
-                                        }
-                                    }
-                                  
-                       
-                        ?>
-                        </div>
-                        <!-- Form Row-->
-                        <div class="row gx-3 mb-3 d-flex">
-                            <!-- Form Group (first name)-->
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="inputFirstName"> Current Password</label>
-                                <input class="form-control" id="inputFirstName"  type="password" name="currentpass">
-                               
-                                <label class="small mb-1" for="inputLastName">New Password</label>
-                                <input class="form-control" id="inputLastName"  type="password" name="newpass">
-                                
-                                <label class="small mb-1" for="inputOrgName">Confirm Password</label>
-                                <input class="form-control" id="inputOrgName"  type="password" name="confirmpass">
-                               
-                            </div>
+      $user_id = $_SESSION['user_id'];
+                    $category_query="SELECT * FROM order_details WHERE`user_id` = $user_id ORDER BY `date` DESC";
+                    $result_category= mysqli_query($conn,$category_query);
 
-                            </div>
-            
-                          
-                        </div>
-                        </div>
-                 
-                        <!-- Save changes button-->
-                        <button class="btn btn-primary" type="submit" name="submit-btn">Save changes</button>
+                    $count = mysqli_num_rows($result_category);
+                    if ($count == 0){
+                      echo'<h1 class="text-center">No orders yet. Shop now!</h1>';
+                    }
+
+                    else { 
+
+echo'
+<h1 class="text-center" id="reqsHeading" style="margin-bottom: 12px;padding-bottom: 8px;padding-top: 12px;">Orders</h1>
+<table class="table">
+
+    <thead>
+        <tr>
+          
+            <th> Invoice</th>
+            <th colspan ="2"> Items </th>
+            <th> Date Ordered</th>
+            <th> Total </th>
+            <th> Status</th>
+            <th> Action </th>
+          
+        </tr>
+    </thead>
+    <tbody>';
 
 
+                    while($row = mysqli_fetch_assoc($result_category)) {
 
+                      $order_id = $row['order_id'];
+                      $invoice = $row['invoice'];
+                      $date = $row['date'];
+                      $items = $row['items'];
+                      $status = $row['status'];
+                      $total = $row['amount'];
+            echo'
+            <tr>
+       
+            <td>#'.$invoice.'</td>
+            <td>'.$items .'</td>
 
-                    </form>
-                </div>
-            </div>
-        </div>
+            <td><a href="fetch_orders.php?order_id='.$order_id.'" class="text-decoration-none text-info">View items</a></td>
+      
+            <td>'. $date.'</td>
+            <td>'.$total.'</td>
+
+            <td>'.$status.'</td>
+            <td> 
+            <button class="btn btn-success">
+            <a href="received.php?id='.$order_id.'" class="text-light">Received</a></button>
+            </td>
+            ';
+             
+            }}?>    
+
+      </tr>  
+    </tbody>
+        </table>
+
+        <footer style=" width: 90%; margin-top:10px; margin-bottom: 20px; margin-right: auto; margin-left: auto; background-color: #439D9E; border-radius: 5px;">
+    <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2); margin-top:20px; margin-bottom: 20px;  border-radius: 5px;">
+      © 2023 Copyright: <a class="text-white" href="https://Frozenhub.com/">Frozenhub.com</a>
     </div>
-</div>
-
-
-<?php     
-} ?>
+  </footer>
 
 
 
 
-
-
-
-
-
-
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/faf8bee4ee.js" crossorigin="anonymous"></script>
+  <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </body>
+
 </html>

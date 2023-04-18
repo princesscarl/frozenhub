@@ -38,8 +38,21 @@
   } 
 
   elseif (isset($_GET['cart'])) {
-    include './shop/cart.php';
-  } 
+        include ('./shop/cart.php');
+  }
+
+  elseif(isset($_GET['checkout'])){
+      // $email = $_SESSION['email'];
+      // $select_query = "SELECT * FROM cart_details JOIN user_details WHERE cart_details.user_id = user_details.user_id AND `email`='$email'";
+      // $result_query = mysqli_query($conn, $select_query);
+      // $count_cart_items = mysqli_num_rows($result_query);
+
+      // if ($count_cart_items == 0) {
+      //   header("Location:./shop/cart.php");
+      // } else {
+        include ('./shop/payment.php');
+      }
+  // }
 
   elseif (isset($_GET['view_orders'])) {
     include './user_area/view_orders.php';

@@ -233,7 +233,7 @@ else{
       <?php if (isset($_SESSION['email'])) {
               echo'
      <li class="nav-item">
-          <a class="nav-link" href="index.php?cart"><i class="fa fa-shopping-cart" style="font-size:20px"></i></a>
+          <a class="nav-link" href="../index.php?cart"><i class="fa fa-shopping-cart" style="font-size:20px"></i></a>
         </li>';}
 
         elseif(!isset($_SESSION['email'])){

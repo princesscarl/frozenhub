@@ -1,11 +1,8 @@
-<?php
 
-?>
 
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,12 +18,7 @@
   <link rel="stylesheet" href="https://kit.fontawesome.com/faf8bee4ee.css" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/faf8bee4ee.js" crossorigin="anonymous"></script>
-  <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
-
+  
   <style>
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
@@ -37,9 +29,16 @@
 </head>
 
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
-
   <?php include 'navbar.php'; ?>
-  <div class="container-fluid" style="width: 90%;">
+
+  <?php if(isset($_GET['all_products'])){
+      include './shop/all_products.php';
+ }     elseif(isset($_GET['all_promos'])){
+      include './shop/all_promos.php';
+ }
+      else{
+        echo'
+        <div class="container-fluid" style="width: 90%;">
     <div class="row">
       <div class="col-lg-8 mb-3">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -78,107 +77,43 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="container-fluid" style="width: 90%;">
-    <h2 style="text-align: center; font-weight: bold; padding:10px;">Top Products</h2>
-    <div class="row">
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-1" align="center">
-        <div class="card" style="width: 18rem;">
-          <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ3Ux_B45xDr9B18efDjM_o7Kqty0QC7koksGUqaCJ7DR8HKn6UE_ysmzeWheJiTb119nKjepyxcHUxWNKYHljT4JuI=s1600?fbclid=IwAR1jb7ztdwKYhqZVy5ZM49eVvdw8FWp0nn2LqD60o1wAEhuDKDRENaqd-3w" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col-lg-12 col-xs-1" align="center">
-            <div class="card" style="width: 18rem;">
-              <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ3Ux_B45xDr9B18efDjM_o7Kqty0QC7koksGUqaCJ7DR8HKn6UE_ysmzeWheJiTb119nKjepyxcHUxWNKYHljT4JuI=s1600?fbclid=IwAR1jb7ztdwKYhqZVy5ZM49eVvdw8FWp0nn2LqD60o1wAEhuDKDRENaqd-3w" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Add to cart</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-1" align="center">
-        <div class="card" style="width: 18rem;">
-          <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ3Ux_B45xDr9B18efDjM_o7Kqty0QC7koksGUqaCJ7DR8HKn6UE_ysmzeWheJiTb119nKjepyxcHUxWNKYHljT4JuI=s1600?fbclid=IwAR1jb7ztdwKYhqZVy5ZM49eVvdw8FWp0nn2LqD60o1wAEhuDKDRENaqd-3w" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col-lg-12 col-xs-1" align="center">
-            <div class="card" style="width: 18rem;">
-              <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ3Ux_B45xDr9B18efDjM_o7Kqty0QC7koksGUqaCJ7DR8HKn6UE_ysmzeWheJiTb119nKjepyxcHUxWNKYHljT4JuI=s1600?fbclid=IwAR1jb7ztdwKYhqZVy5ZM49eVvdw8FWp0nn2LqD60o1wAEhuDKDRENaqd-3w" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Add to cart</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-1" align="center">
-        <div class="card" style="width: 18rem;">
-          <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ3Ux_B45xDr9B18efDjM_o7Kqty0QC7koksGUqaCJ7DR8HKn6UE_ysmzeWheJiTb119nKjepyxcHUxWNKYHljT4JuI=s1600?fbclid=IwAR1jb7ztdwKYhqZVy5ZM49eVvdw8FWp0nn2LqD60o1wAEhuDKDRENaqd-3w" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col-lg-12 col-xs-1" align="center">
-            <div class="card" style="width: 18rem;">
-              <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ3Ux_B45xDr9B18efDjM_o7Kqty0QC7koksGUqaCJ7DR8HKn6UE_ysmzeWheJiTb119nKjepyxcHUxWNKYHljT4JuI=s1600?fbclid=IwAR1jb7ztdwKYhqZVy5ZM49eVvdw8FWp0nn2LqD60o1wAEhuDKDRENaqd-3w" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Add to cart</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-1" align="center">
-        <div class="card" style="width: 18rem;">
-          <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ3Ux_B45xDr9B18efDjM_o7Kqty0QC7koksGUqaCJ7DR8HKn6UE_ysmzeWheJiTb119nKjepyxcHUxWNKYHljT4JuI=s1600?fbclid=IwAR1jb7ztdwKYhqZVy5ZM49eVvdw8FWp0nn2LqD60o1wAEhuDKDRENaqd-3w" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col-lg-12 col-xs-1" align="center">
-            <div class="card" style="width: 18rem;">
-              <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQ3Ux_B45xDr9B18efDjM_o7Kqty0QC7koksGUqaCJ7DR8HKn6UE_ysmzeWheJiTb119nKjepyxcHUxWNKYHljT4JuI=s1600?fbclid=IwAR1jb7ztdwKYhqZVy5ZM49eVvdw8FWp0nn2LqD60o1wAEhuDKDRENaqd-3w" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Add to cart</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
+  </div>';
+        include './shop/top_products.php';
+ } ?>
+    
+ </div>
+  </div> 
   <footer style=" width: 90%; margin-top:10px; margin-bottom: 20px; margin-right: auto; margin-left: auto; background-color: #439D9E; border-radius: 5px;">
     <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2); margin-top:20px; margin-bottom: 20px;  border-radius: 5px;">
       © 2023 Copyright: <a class="text-white" href="https://Frozenhub.com/">Frozenhub.com</a>
     </div>
-  </footer>
-</body>
 
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">    You are not logged in. Do you want to login? </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-success"><a class="text-light text-decoration-none" href="./user_area/login.php">YES</a></button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal"><a href="index.php" class="text-light text-decoration-none">NO</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/faf8bee4ee.js" crossorigin="anonymous"></script>
+  <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>
 </html>

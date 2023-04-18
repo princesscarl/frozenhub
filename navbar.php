@@ -104,7 +104,7 @@ if (!$conn){
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="./user_area/edit_account.php">Edit Account</a>
-            <a class="dropdown-item" href="#">View Orders</a>
+            <a class="dropdown-item" href="./user_area/view_orders.php">View Orders</a>
             <a class="dropdown-item" href="./user_area/change_password.php">Change Password</a>
             <a class="dropdown-item" href="./user_area/logout.php">Logout</a>
           </div>
@@ -124,13 +124,44 @@ if (!$conn){
             </li>
           ';
           } ?>
-          
+
+
+
+            <?php if (isset($_SESSION['email'])) {
+              echo'
      <li class="nav-item">
           <a class="nav-link" href="index.php?cart"><i class="fa fa-shopping-cart" style="font-size:20px"></i></a>
-        </li>
-  </ul>
+        </li>';}
 
+        elseif(!isset($_SESSION['email'])){
+          echo'
+          <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-shopping-cart" style="font-size:20px"></i></a>
+          
+        </li>';}
+        ?>
+
+
+
+            </ul>
         </div>
         </div>
         </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"> You are not logged in. Do you want to login? </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success"><a class="text-light text-decoration-none" href="./user_area/login.php">YES</a></button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal"><a href="index.php" class="text-light text-decoration-none">NO</a></button>
+          </div>
+        </div>
+      </div>
+    </div>

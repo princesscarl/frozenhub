@@ -30,7 +30,7 @@ echo"
 <?php
   if(!isset($_SESSION['email'])){
     echo"
-    <a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info'>Add to Cart</a>    
+    <a href='' data-toggle='modal' data-target='#exampleModal' class='btn btn-info'>Add to Cart</a>    
     </div>
     </div>
     </div> 
@@ -41,7 +41,7 @@ echo"
   if(isset($_SESSION['email'])){
     echo"
  
-    <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to Cart</a>";
+    <a href='add_to_cart.php?=$product_id' class='btn btn-info'>Add to Cart</a>";
     echo"
     </div>
     </div>
@@ -51,3 +51,21 @@ echo"
 
 <?php
     }}  ?>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"> You are not logged in. Do you want to login? </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success"><a class="text-light text-decoration-none" href="./user_area/login.php">YES</a></button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal"><a href="index.php" class="text-light text-decoration-none">NO</a></button>
+          </div>
+        </div>
+      </div>
+    </div>

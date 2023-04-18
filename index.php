@@ -1,8 +1,6 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +16,7 @@
   <link rel="stylesheet" href="https://kit.fontawesome.com/faf8bee4ee.css" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-  
+
   <style>
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
@@ -31,13 +29,24 @@
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
   <?php include 'navbar.php'; ?>
 
-  <?php if(isset($_GET['all_products'])){
-      include './shop/all_products.php';
- }     elseif(isset($_GET['all_promos'])){
-      include './shop/all_promos.php';
- }
-      else{
-        echo'
+  <?php if (isset($_GET['all_products'])) {
+    include './shop/all_products.php';
+  } 
+  
+  elseif (isset($_GET['all_promos'])) {
+    include './shop/all_promos.php';
+  } 
+
+  elseif (isset($_GET['cart'])) {
+    include './shop/cart.php';
+  } 
+
+  elseif (isset($_GET['view_orders'])) {
+    include './user_area/view_orders.php';
+  } 
+
+  else {
+    echo '
         <div class="container-fluid" style="width: 90%;">
     <div class="row">
       <div class="col-lg-8 mb-3">
@@ -78,11 +87,11 @@
       </div>
     </div>
   </div>';
-        include './shop/top_products.php';
- } ?>
-    
- </div>
-  </div> 
+    include './shop/top_products.php';
+  } ?>
+
+  </div>
+  </div>
   <footer style=" width: 90%; margin-top:10px; margin-bottom: 20px; margin-right: auto; margin-left: auto; background-color: #439D9E; border-radius: 5px;">
     <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2); margin-top:20px; margin-bottom: 20px;  border-radius: 5px;">
       © 2023 Copyright: <a class="text-white" href="https://Frozenhub.com/">Frozenhub.com</a>
@@ -90,23 +99,23 @@
 
 
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">    You are not logged in. Do you want to login? </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-success"><a class="text-light text-decoration-none" href="./user_area/login.php">YES</a></button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal"><a href="index.php" class="text-light text-decoration-none">NO</a></button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"> You are not logged in. Do you want to login? </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success"><a class="text-light text-decoration-none" href="./user_area/login.php">YES</a></button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal"><a href="index.php" class="text-light text-decoration-none">NO</a></button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
@@ -116,4 +125,5 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </body>
+
 </html>

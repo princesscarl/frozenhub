@@ -54,6 +54,17 @@ function getproducts()
     <p class='card-text'>$product_description</p>
     <p class='card-text'><strong>Price:&nbsp$product_price</strong></p>"; ?>
 <?php
+
+if(isset($_SESSION['email'])){
+    echo"
+ 
+    <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to Cart</a>";
+    echo"
+    </div>
+    </div>
+    </div> 
+";}?> 
+<?php
             if (!isset($_SESSION['email'])) {
                 echo "
 <a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info'>Add to Cart</a>    

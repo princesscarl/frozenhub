@@ -6,14 +6,3 @@
 getproducts();
 ?>
 
-<?php
-  if(isset($_SESSION['email'])){
-    echo"
- 
-    <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to Cart</a>";
-    echo"
-    </div>
-    </div>
-    </div> 
-";}?>
-</form>

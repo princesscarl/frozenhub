@@ -24,6 +24,8 @@ function total_cart_price()
     echo $total;
 }
 
+include './shop/category.php';
+
 function getproducts()
 {
     global $conn;
@@ -45,7 +47,7 @@ function getproducts()
             $product_image = $row['product_image'];
             echo "
 
-  <div class='col-lg-3 col-md-3 col-sm-6 col-xs-1 d-flex justify-content-center'>
+  <div class='col-lg-3 col-md-3 col-sm-6 col-xs-1 d-flex justify-content-center mb-4'>
     <div class='card' style='width: 18rem;'>
     <img src='./admin/products_images/$product_image' class='card-img-top'>
     <div class='card-body'>

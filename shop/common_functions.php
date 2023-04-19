@@ -89,6 +89,22 @@ function getproducts()
             }
         }
     }
+    echo'
+<nav aria-label="Page navigation example" >
+  <ul class="pagination justify-content-end"  >
+    <li class="page-item disabled" style="border-style: solid;">
+      <a class="page-link" href="#" tabindex="-1" style="background-color: #439D9E; color: white;">Previous</a>
+    </li>
+    <li class="page-item"  style="border-style: solid;" ><a class="page-link" href="#">1</a></li>
+    <li class="page-item"  style="border-style: solid;"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"  style="border-style: solid;"><a class="page-link" href="#">3</a></li>
+    <li class="page-item" style="border-style: solid;" >
+      <a class="page-link" href="#" style="background-color: #439D9E; color: white; ">Next</a>
+    </li>
+  </ul>
+</nav>
+';
+
 }
 
 

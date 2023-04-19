@@ -1,5 +1,23 @@
 <?php
 
+function cart_items()
+{
+    global $conn;
+    if (isset($_SESSION['email'])) {
+        $email = $_SESSION['email'];
+        $select_query = "SELECT * FROM cart_details JOIN user_details WHERE cart_details.user_id = user_details.user_id AND `email`='$email'";
+        $result_query = mysqli_query($conn, $select_query);
+        $count_cart_items = mysqli_num_rows($result_query);
+
+        if ($count_cart_items == 0) {
+            $count_cart_items = 0;
+            echo $count_cart_items;
+        } else {
+            echo $count_cart_items;
+        }
+    }
+}
+
 
 function total_cart_price()
 {
@@ -65,7 +83,14 @@ function getproducts()
         
                 if ($rows == 0) {
                 echo "
-    <a href='index.php?add_to_cart=$product_id' class='btn btn' style='background-color: #439D9E; color: white;'>Add to Cart</a>";}
+                <form id='add-to-cart-form'>
+                <input type='hidden' name='product_id' value='$product_id'>
+                <button  id='add-to-cart-button' type='button' class='btn btn' style='background-color: #439D9E; color: white;'>Add to Cart</button>
+                </form>";
+                }
+
+    // <a href='index.php?add_to_cart=$product_id' class='btn btn' style='background-color: #439D9E; color: white;'>Add to Cart</a>";
+
                 else{
                     echo" 
     <a href='index.php?cart' class='btn btn-warning'>View Cart</a>";

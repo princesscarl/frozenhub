@@ -4,7 +4,6 @@ include './shop/common_functions.php';
 $user_id = $_SESSION['user_id'];
 
 if (isset($_POST['submit-btn'])) {
-
   $invoice =  mt_rand(10000, 99999);
   $total = 0;
   // INSERT ORDER - Working
@@ -17,17 +16,19 @@ if (isset($_POST['submit-btn'])) {
     $orders = $_POST['order'];
     $products = $_POST['product'];
     $quantities = $_POST['quantity'];
+if($result_query){
+      // Prepare the SQL statement with placeholders for each value
+      $sql = 'INSERT INTO items (`user_id`, `order_id`, `product_id`, `quantity`) VALUES (?, ?, ?, ?)';
+      $stmt = mysqli_prepare($conn, $sql);
 
-    // Prepare the SQL statement with placeholders for each value
-    $sql = 'INSERT INTO items (`user_id`, `order_id`, `product_id`, `quantity`) VALUES (?, ?, ?, ?)';
-    $stmt = mysqli_prepare($conn, $sql);
+      // Loop through the arrays and execute the SQL statement for each set of values
+      for ($i = 0; $i < $count_cart_items; $i++) {
+      mysqli_stmt_bind_param($stmt, 'iiii', $user_id, $orders[$i], $products[$i], $quantities[$i]);
+      mysqli_stmt_execute($stmt);
+      }
 
-    // Loop through the arrays and execute the SQL statement for each set of values
-    for ($i = 0; $i < $count_cart_items; $i++) {
-    mysqli_stmt_bind_param($stmt, 'iiii', $user_id, $orders[$i], $products[$i], $quantities[$i]);
-    mysqli_stmt_execute($stmt);
-    }
-
+}
+    
     
     if ($stmt) {
       $delete_query = "DELETE FROM cart_details WHERE `user_id`=$user_id";

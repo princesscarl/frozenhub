@@ -24,6 +24,38 @@ function total_cart_price()
     echo $total;
 }
 
+echo '    
+<div class="row p-3">
+<div class="col-md-3">
+    <div class="card p-2">
+        <div class="d-flex justify-content-center align-items-center p-2">
+            <span>Mobile Phones</span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3">
+    <div class="card p-2">
+        <div class="d-flex justify-content-center align-items-center p-2">
+            <div class="flex-column lh-1 imagename"> <span>Head</span> <span>Phones</span> </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-3">
+    <div class="card p-2">
+        <div class="d-flex justify-content-center align-items-center p-2">
+            <div class="flex-column lh-1 imagename"> <span>Smart</span> <span>Watches</span> </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-3">
+    <div class="card p-2">
+        <div class="d-flex justify-content-center align-items-center p-2">
+            <div class="flex-column lh-1 imagename"> <span>Air</span> <span>Purifiers</span> </div>
+        </div>
+    </div>
+</div>
+</div>';
+
 
 function getproducts()
 {
@@ -46,7 +78,7 @@ function getproducts()
             $product_image = $row['product_image'];
             echo "
 
-  <div class='col-lg-3 col-md-3 col-sm-6 col-xs-1'>
+  <div class='col-lg-3 col-md-3 col-sm-6 col-xs-1 d-flex justify-content-center'>
     <div class='card' style='width: 18rem;'>
     <img src='./admin/products_images/$product_image' class='card-img-top'>
     <div class='card-body'>
@@ -55,15 +87,16 @@ function getproducts()
     <p class='card-text'><strong>Price:&nbsp$product_price</strong></p>"; ?>
 <?php
 
-if(isset($_SESSION['email'])){
-    echo"
+            if (isset($_SESSION['email'])) {
+                echo "
  
     <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to Cart</a>";
-    echo"
+                echo "
     </div>
     </div>
     </div> 
-";}?> 
+";
+            } ?> 
 <?php
             if (!isset($_SESSION['email'])) {
                 echo "

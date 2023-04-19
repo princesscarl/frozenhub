@@ -21,6 +21,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/faf8bee4ee.js" crossorigin="anonymous"></script>
   <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
+  
+
+
 
 
   <style>
@@ -62,6 +65,10 @@
 
   elseif (isset($_GET['view_orders'])) {
     include './user_area/view_orders.php';
+  } 
+
+  elseif (isset($_GET['add_to_cart'])) {
+    include './add_to_cart.php';
   } 
 
   else {
@@ -135,12 +142,42 @@
       </div>
     </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/faf8bee4ee.js" crossorigin="anonymous"></script>
-  <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+      
+      // $(document).ready(function() {
+      //     $('#add-to-cart-form').click(function() {
+      //         var product_id = $('input[name="product_id"]').val();
+      //         $.ajax({
+      //             type: 'POST',
+      //             url: 'add_to_cart.php',
+      //             data: { product_id: product_id },
+      //             // success: function(data) {
+      //             //     alert('Product added to cart!');
+      //             }
+      //         // }
+      //             );
+      //     });
+      // });
+      // $(document).ready(function(){
+      //   $("#add-to-cart-form").submit(function(event){
+      //       var product_id =  $('input[name="product_id"]').val();
+      //       $.POST("add_to_cart.php", product_id, functon(response)
+      //       {
+      //         alert(product_id);
+      //       })
+      //       return false;
+      //   });
+      // });
+</script>
+   
+          
 
 </body>
+</html>   
 
-</html>
+
+
+
+

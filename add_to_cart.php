@@ -1,7 +1,24 @@
 <?php
-session_start();
-
 include '../connect.php'; 
+// if(isset($_POST['product_id'])) {
+//         $user_id = $_SESSION['user_id'];
+//         $get_product_id = $_POST['product_id'];
+
+//         $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_id=$get_product_id";
+//         $result_query = mysqli_query($conn, $select_query);
+//         $rows = mysqli_num_rows($result_query);
+
+       
+//         if($result_query){
+//             echo "<script> alert ('Item is added to cart.') </script>";
+//             header("Location: ./index.php");
+//         }
+     
+//         } else {
+//             echo "<script> alert('Item is already in your cart.')</script> ";
+//             echo "<script>windows.open('index.php','_self')</script>";
+//         }
+
 if(isset($_GET['add_to_cart'])) {
         $user_id = $_SESSION['user_id'];
         $get_product_id = $_GET['add_to_cart'];
@@ -9,16 +26,16 @@ if(isset($_GET['add_to_cart'])) {
         $result_query = mysqli_query($conn, $select_query);
         $rows = mysqli_num_rows($result_query);
 
-       
-        if($result_query){
+        if ($rows == 0) {
+            $insert_query = "INSERT INTO cart_details (product_id, quantity, `user_id`) VALUES ('$get_product_id','1', '$user_id')";
+            $result_query = mysqli_query($conn, $insert_query);
+
             echo "<script> alert ('Item is added to cart.') </script>";
-            header("Location: ./index.php");
-        }
-     
+            echo "<script>windows.open('index.php','_self')</script>";
         } else {
             echo "<script> alert('Item is already in your cart.')</script> ";
-            header("Location: ./index.php");
-    
+            echo "<script>windows.open('index.php','_self')</script>";
         }
+    }
 
-    ?>
+    ?> 

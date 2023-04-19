@@ -4,6 +4,7 @@ $conn = mysqli_connect('localhost','root','','frozenhub');
 if (!$conn){
     die("Connection Failed. " . mysqli_connect_error());
 }
+
 ?>
 
 <div class="navigation">
@@ -103,7 +104,7 @@ if (!$conn){
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="./user_area/edit_account.php">Edit Account</a>
-            <a class="dropdown-item" href="#">View Orders</a>
+            <a class="dropdown-item" href="./user_area/view_orders.php">View Orders</a>
             <a class="dropdown-item" href="./user_area/change_password.php">Change Password</a>
             <a class="dropdown-item" href="./user_area/logout.php">Logout</a>
           </div>

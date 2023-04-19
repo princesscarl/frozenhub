@@ -24,10 +24,11 @@ function total_cart_price()
     echo $total;
 }
 
-include './shop/category.php';
+
 
 function getproducts()
 {
+    include './shop/category.php';
     global $conn;
 
     $products_query = "SELECT * FROM products ORDER BY date";
@@ -64,7 +65,7 @@ function getproducts()
         
                 if ($rows == 0) {
                 echo "
-    <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to Cart</a>";}
+    <a href='index.php?add_to_cart=$product_id' class='btn btn' style='background-color: #439D9E; color: white;'>Add to Cart</a>";}
                 else{
                     echo" 
     <a href='index.php?cart' class='btn btn-warning'>View Cart</a>";

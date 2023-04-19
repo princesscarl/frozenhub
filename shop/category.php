@@ -54,21 +54,21 @@
     <div class="carousel-inner w-100 text-center">
         <div class="carousel-item active">
             <div class="col-md-3 p-2">
-                <div class="card card-body" style="background-color: #2C7083;">
+                <div class="card card-body" style="background-color: #7BB4BD;">
                     <div class="flex-column lh-1 imagename"> <span>Meats</span> </div>
                 </div>
             </div>
         </div>
         <div class="carousel-item">
             <div class="col-md-3 p-2">
-                <div class="card card-body" style="background-color: #87695F;">
+                <div class="card card-body" style="background-color: #7BB4BD;">
                     <div class="flex-column lh-1 imagename"> <span>Meats</span> </div>
                 </div>
             </div>
         </div>
         <div class="carousel-item">
             <div class="col-md-3 p-2">
-                <div class="card card-body" style="background-color: #F1D9BD;">
+                <div class="card card-body" style="background-color: #7BB4BD;">
                 <div class="flex-column lh-1 imagename"> <span>Meats</span> </div>
                 </div>
             </div>
@@ -82,28 +82,28 @@
         </div>
         <div class="carousel-item">
             <div class="col-md-3 p-2">
-                <div class="card card-body" style="background-color: #DBA879;">
+                <div class="card card-body" style="background-color: #7BB4BD;">
                 <div class="flex-column lh-1 imagename"> <span>Meats</span> </div>
                 </div>
             </div>
         </div>
         <div class="carousel-item">
             <div class="col-md-3 p-2">
-                <div class="card card-body" style="background-color: #413D3E;">
+                <div class="card card-body" style="background-color: #7BB4BD;">
                     <div class="flex-column lh-1 imagename"> <span>Meats</span> </div>
                 </div>
             </div>
         </div>
         <div class="carousel-item">
             <div class="col-md-3 p-2">
-                <div class="card card-body" style="background-color: #01A1B1;">
+                <div class="card card-body" style="background-color: #7BB4BD;">
                 <div class="flex-column lh-1 imagename"> <span>Meats</span> </div>
                 </div>
             </div>
         </div>
         <div class="carousel-item">
             <div class="col-md-3 p-2">
-                <div class="card card-body" style="background-color: #DFE8F1;">
+                <div class="card card-body" style="background-color: #7BB4BD;">
                 <div class="flex-column lh-1 imagename"> <span>Meats</span> </div>
                 </div>
             </div>

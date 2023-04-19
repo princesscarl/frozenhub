@@ -29,7 +29,7 @@ echo '
 <div class="col-md-3">
     <div class="card p-2">
         <div class="d-flex justify-content-center align-items-center p-2">
-            <span>Mobile Phones</span>
+            <div class="flex-column lh-1 imagename"> <span>Mobile</span> <span>Phones</span> </div>
         </div>
     </div>
 </div>

@@ -176,7 +176,7 @@ if (isset($_POST["submit"])) {
             <div class="container-fluid">
               <div class="form-group">
                 <label for="exampleFormControlFile1">Upload Resume:</label>
-                <input type="file" accept=".img,.jpg,.png, .pdf" class="form-control-file" name="file" id="exampleFormControlFile1" style="height:70px">
+                <input type="file" accept=".img,.jpg,.png, .pdf" class="form-control-file" name="file" id="exampleFormControlFile1" style="height:70px" required>
               </div>
 
 

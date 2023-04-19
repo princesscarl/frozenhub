@@ -54,13 +54,9 @@ if (isset($_POST["submit-btn"])) {
   $mail->addAddress($email);
   $mail->isHTML(true);
 
-  //template
-  $email_template = 'email_template/contact_email_template.html';
-  $message = file_get_contents($email_template);
-
   //replace string eg. %name%, name, message
   $mail->Subject = 'Frozenhub Inquiry';
-  $mail->MsgHTML($message);
+  $mail->MsgHTML($msg);
   $mail->Body = "<p>Good Day, Mr./Ms. {$lastName}!</p>
   <p>Thank you for taking the time to inquire on our company products and services.</p>
   <p>We have successfully recieved your inquiry.</p>
@@ -177,7 +173,7 @@ if (isset($_POST["submit-btn"])) {
             </div>
 
             <div class="form-group p-3">
-              <p for="inputBusiness" style="color:white; font-weight:bold;">Existing Business: </p>
+              <p for="inputBusiness" style="color:white; font-weight:bold;">Existing Business or N/A (if you have no existing business): </p>
               <input type="text" class="form-control" id="inputBusiness" placeholder="Business Name" name="business">
             </div>
 
@@ -186,6 +182,7 @@ if (isset($_POST["submit-btn"])) {
               <label for="inputYears" style="color:white; font-weight:bold;">Years in Business: </label>
               <select name="checkYears" id="years" class="form-select" required>
                 <option value="" selected="" disabled="">Select Years</option>
+                <option value="1-2">N/A</option>
                 <option value="1-2">1-2 Years</option>
                 <option value="3-4">3-4 Years</option>
                 <option value="5-6">5-6 Years</option>

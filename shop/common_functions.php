@@ -55,9 +55,21 @@ function getproducts()
 <?php
 
             if (isset($_SESSION['email'])) {
+                $user_id = $_SESSION['user_id'];
+                $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_id=$product_id";
+                $result_query = mysqli_query($conn, $select_query);
+                $rows = mysqli_num_rows($result_query);
+        
+                if ($rows == 0) {
                 echo "
- 
-    <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to Cart</a>";
+    <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to Cart</a>";}
+                else{
+                    echo" 
+    <a href='index.php?cart' class='btn btn-warning'>View Cart</a>";
+                }
+
+
+
                 echo "
     </div>
     </div>

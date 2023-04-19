@@ -1,17 +1,16 @@
-<?php session_start();
-
-$conn = mysqli_connect('localhost', 'root', '', 'frozenhub');
-if (!$conn) {
-  die("Connection Failed. " . mysqli_connect_error());
+<?php 
+session_start(); 
+$conn = mysqli_connect('localhost','root','','frozenhub');
+if (!$conn){
+    die("Connection Failed. " . mysqli_connect_error());
 }
-
 ?>
 
 <div class="navigation">
   <section class="header mt-3">
     <div class="container-fluid">
       <div class="row d-flex justify-content-center">
-        <div class="col-lg-10">
+        <div class="col-lg-9">
           <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEORwsoHzWxoEoNlJ4n1bR4aji_r7jA7WPbQOMth5REabik_rDa7pptnu1lFtHraszS04eNS4JYmXW5SNTKBZsK4H7D2vRg=s1600?fbclid=IwAR3h2V1bSwN87w2jWtMFhMPDet3eL-U8KSNIyguxKKjN3oRmny296FI5G8s" width="100%" height="auto">
         </div>
       </div>
@@ -57,51 +56,54 @@ if (!$conn) {
             </div>
           </li>
 
+        
 
-
-          <!--           
+<!--           
           <li class="nav-item">
             <a class="nav-link">LOGOUT</a>
           </li> -->
 
 
-          <?php
-          if (!isset($_SESSION['email'])) {
-            echo '
+          <?php 
+    if(!isset($_SESSION['email'])){
+    echo'
       <li class="nav-item">
         <a class="nav-link" href="#">Welcome Guest</a>
       </li>';
-          } elseif (isset($_SESSION['email'])) {
-            $email = $_SESSION['email'];
+    }
 
-            $name_query = "SELECT * FROM user_details WHERE `email` = '$email'";
-            $result = mysqli_query($conn, $name_query);
+    elseif(isset($_SESSION['email'])){
+      $email = $_SESSION['email'];
 
-
-            if (mysqli_num_rows($result) == 0) {
-            } else {
-              $row = mysqli_fetch_assoc($result);
-              $user_id = $row['user_id'];
-              $firstName = $row['fname'];
-              $_SESSION['user_id'] = $user_id;
-            }
-
-            echo '<li class="nav-item">
+      $name_query = "SELECT * FROM user_details WHERE `email` = '$email'";
+      $result = mysqli_query($conn, $name_query);
+     
+  
+      if (mysqli_num_rows($result) == 0) {
+  
+          } else {
+            $row = mysqli_fetch_assoc($result);
+            $user_id = $row['user_id'];
+            $firstName = $row['fname'];
+            $_SESSION['user_id'] = $user_id;
+      }
+  
+      echo'<li class="nav-item">
       <input type="text" hidden name="user_id" ='
-              . $_SESSION['user_id'] . '>
+      .$_SESSION['user_id'].'>
       </form>
-      <a class="nav-link" href="#">Welcome ' . $firstName . '</a>
+      <a class="nav-link" href="#">Welcome '.$firstName.'</a>
     </li>
 ';
-          } ?>
+    }?>
 
-          <?php if (isset($_SESSION['email'])) {
-            echo '
+<?php if(isset($_SESSION['email'])){
+            echo'
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="./user_area/edit_account.php">Edit Account</a>
-            <a class="dropdown-item" href="./user_area/view_orders.php">View Orders</a>
+            <a class="dropdown-item" href="#">View Orders</a>
             <a class="dropdown-item" href="./user_area/change_password.php">Change Password</a>
             <a class="dropdown-item" href="./user_area/logout.php">Logout</a>
           </div>
@@ -122,12 +124,26 @@ if (!$conn) {
           ';
           } ?>
           
+          <?php if (!isset($_SESSION['email'])) {
+            echo'
+     <li class="nav-item">
+          <a class="nav-link"    data-toggle="modal" data-target="#exampleModal"><i class="fa fa-shopping-cart" style="font-size:20px"></i></a>
+        </li>
+          ';}?>
+
+
+            
+          <?php if (isset($_SESSION['email'])) {
+            echo'
      <li class="nav-item">
           <a class="nav-link" href="index.php?cart"><i class="fa fa-shopping-cart" style="font-size:20px"></i></a>
         </li>
+          ';}?>
+
   </ul>
 
         </div>
         </div>
         </div>
 
+    

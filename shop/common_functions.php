@@ -46,7 +46,10 @@ function total_cart_price()
 
 function getproducts()
 {
+    if(isset($_GET['all_products']) || isset($_GET['all_promos'])){
+
     include './shop/category.php';
+        }
     global $conn;
 
     $products_query = "SELECT * FROM products ORDER BY date";

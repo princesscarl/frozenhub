@@ -87,9 +87,9 @@ function getproducts()
                 if ($rows == 0) {
                 echo "
                 <form id='add-to-cart-form'>
-                <input type='hidden' name='product_id' value='$product_id'>
-                <button  id='add-to-cart-button' type='button' class='btn btn' style='background-color: #439D9E; color: white;'>Add to Cart</button>
-                </form>";
+              
+                <button  class='btn add-to-cart-button' data-id='$product_id' type='button' class='btn btn' style='background-color: #439D9E; color: white;'>Add to Cart</button>
+         ";
                 }
 
     // <a href='index.php?add_to_cart=$product_id' class='btn btn' style='background-color: #439D9E; color: white;'>Add to Cart</a>";

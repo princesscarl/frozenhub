@@ -3,7 +3,7 @@
 <!-- CART TABLE -->
 <div class="container">
   <h1 style="text-align: center; padding: 4px; font-weight: bold;"><i class="fa fa-shopping-cart"></i> My Cart</h1>
-    <div class="row"> 
+    <div class="row" style="overflow-x:auto;"> 
         <table class="table table-borderd text-center">
            <?php
            if(isset($_SESSION['email'])){

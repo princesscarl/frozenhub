@@ -76,12 +76,13 @@ if($result_query){
   <div class="container mt-3">
     <h2 class="text-center"> Check Out </h2>
     <p class="text-center">Select one of payment methods:</p>
-    <div class="text-center">
 
-      <a href="index.php?checkout=cod" class="btn btn-info btn-lg"> Cash on Delivery</a>
-      <input type="button" value="Gcash" class="btn btn-outline-info btn-lg" data-toggle='modal' data-target='#exampleModal'>
+    <div class="text-center">
+      <a href="index.php?checkout=cod" class="btn btn-info btn-lg mb-3" style="width: 20%; height:auto;"> Cash on Delivery</a> <br>
+      <input type="button" value="Gcash" class="btn btn-outline-info btn-lg mb-5" data-toggle='modal' data-target='#exampleModal' style="width: 20%; height:auto;">
     </div>
   </div>
+
   <?php
   if (isset($_GET['checkout'])) {
     $cod = $_GET['checkout'];
@@ -100,11 +101,11 @@ if($result_query){
       $zip = $rows["user_zip"];
 
       echo '
-        <div class="container text-center">
-        <br><br>
-        <h2>Personal Information:</h2>
+        <div class="container" style="width:80%;background-color: #f2f2f2; border: gray solid 2px;">
+        <br>
+        <h3>Personal Information:</h3>
 
-        <table class="table">
+        <table class="table" style="border-bottom:gray solid 1px;">
           <tr>
             <th>Name:</th>
             <td>' . $fname . ' &nbsp' . $lname . '</td>
@@ -121,9 +122,9 @@ if($result_query){
           </tr>
         </table> '; ?>
 
-      <h2>Cart details:</h2>
+      <h3>Cart details:</h3>
 
-      <table class="table">
+      <table class="table" style="border-bottom:gray solid 1px;">
         <tr>
           <th>Product Title</th>
           <th>Price</th>
@@ -177,9 +178,9 @@ if($result_query){
 
 
       <br>
-      <h2>Product Total:</h2>
+      <h3>Product Total:</h3>
 
-      <table class="table">
+      <table class="table" style="border-bottom:gray solid 1px;">
         <tr>
           <th>Total:</th>
           <td><strong><?php total_cart_price() ?></strong></td>

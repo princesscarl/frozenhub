@@ -116,7 +116,8 @@ if (!$conn){
           <?php if (!isset($_SESSION['email'])) {
             echo '
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class="fa fa-user" style="font-size:20px></i></a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+              <i class="fa fa-user"></i>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="./user_area/login.php">Login</a>
                 <a class="dropdown-item" href="./user_area/register.php">Register</a>
@@ -128,7 +129,7 @@ if (!$conn){
           <?php if (!isset($_SESSION['email'])) {
             echo'
      <li class="nav-item">
-          <a class="nav-link"    data-toggle="modal" data-target="#exampleModal"><i class="fa fa-shopping-cart" style="font-size:20px"></i></a>
+          <a class="nav-link"  data-toggle="modal" data-target="#exampleModal"><i class="fa fa-shopping-cart" style="font-size:20px"></i></a>
         </li>
           ';}?>
 

@@ -90,9 +90,6 @@ if (!$conn){
       }
   
       echo'<li class="nav-item">
-      <input type="text" hidden name="user_id" ='
-      .$_SESSION['user_id'].'>
-      </form>
       <a class="nav-link" href="#">'.$firstName.'</a>
     </li>
 ';

@@ -86,7 +86,7 @@ function getproducts()
         
                 if ($rows == 0) {
                 echo "
-          <button  class='btn add-to-cart-button' data-id='$product_id' type='button' class='btn btn' style='background-color: #439D9E; color: white;'>Add to Cart</button>
+          <button class='btn add-to-cart-button' data-id='$product_id' type='button' class='btn btn' style='background-color: #439D9E; color: white;'>Add to Cart</button>
                 ";
                 }
 

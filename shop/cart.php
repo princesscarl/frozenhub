@@ -91,7 +91,7 @@
                 <input type='submit' name='update-btn' class='btn btn-sm btn-primary'>
 
                 <td>
-                <a href = 'index.php?delete_items=$product_id' class='text-danger' data-toggle='modal' data-target='#deletemodal'><i class='fa-solid fa-trash'></i></a>
+                <a href = '' class='text-danger' data-toggle='modal' data-target='#deletemodal' data-id='$product_id'><i class='fa-solid fa-trash'></i></a>
                 </td>
               "; ?>
                 
@@ -111,7 +111,7 @@
 
 
         <!-- Modal -->
-<div class="modal fade" id="deletemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deletemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-id="<?php echo $product_id;?>'">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -121,7 +121,7 @@
         </button>
       </div>
       <div class="modal-footer">
-        <button type="button" name="delete-btn" class="btn btn-success"><a class="text-light text-decoration-none" href="./index.php?cart=<?php echo $product_id?>">YES</a></button>
+        <button type="submit" value="<?php echo $product_id;?>" name="delete-btn" class="btn btn-success"><a class="text-light text-decoration-none">YES</a></button>
         <button type="button" class="btn btn-danger" data-dismiss="modal"><a href="index.php?cart.php" class="text-light text-decoration-none">NO</a></button>
        
       </div>

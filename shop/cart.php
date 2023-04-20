@@ -70,16 +70,13 @@
                     $update_cart = "UPDATE cart_details SET `quantity`='$quantity' WHERE `user_id`=$user_id AND `product_id` =$product_id";
                     $result_update = mysqli_query($conn, $update_cart);
 
-                    $update_items = "UPDATE items SET `quantity`=$quantity' WHERE `user_id`=$user_id AND `product_id` =$product_id";
-                    $result_items = mysqli_query($conn, $update_items);
-                
-                    // if($result_update){
-                    //     echo "<script> alert ('Quantity has been updated.') </script>";
-                    // }
+                    if($result_update){
+                        echo "<script> alert ('Quantity has been updated.') </script>";
+                    }
 
-                    // else{
-                    //   echo "<script> alert ('Error!') </script>";
-                    // }
+                    else{
+                      echo "<script> alert ('Error!') </script>";
+                    }
                     
                     }
                   }

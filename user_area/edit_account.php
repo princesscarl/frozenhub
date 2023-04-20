@@ -265,37 +265,37 @@ else{
 <div style="width: 90%; margin-top:30px; margin-bottom: 30px; margin-right: auto; margin-left: auto;">
 <div class=" col-lg-12 mb-3">
             <!-- Account details card-->
-            <div class="card mb-4">
-                <div class="card-header">Account Details</div>
+            <div class="card mb-4" style="border: #439D9E solid 2px;">
+                <div class="card-header text-white" style="background-color: #439D9E; font-weight:bold;">Account Details</div>
                 <div class="card-body">
                     <form method="POST">
 
                         <!-- Form Row-->
                         <div class="row gx-3 mb-3">
                             <!-- Form Group (first name)-->
-                            <div class="col-md-6">
+                            <div class="col-md-6 p-2">
                                 <label class="small mb-1" for="inputFirstName">First name</label>
-                                <input class="form-control" id="inputFirstName" value ="<?php echo $fname ?>" type="text" name="fname">
+                                <input class="form-control  mb-3" id="inputFirstName" value ="<?php echo $fname ?>" type="text" name="fname">
                                
                                 <label class="small mb-1" for="inputLastName">Last name</label>
-                                <input class="form-control" id="inputLastName" value ="<?php echo $lname ?>" type="text" name="lname">
+                                <input class="form-control  mb-3" id="inputLastName" value ="<?php echo $lname ?>" type="text" name="lname">
                                 
                                 <label class="small mb-1" for="inputOrgName">Email</label>
-                                <input class="form-control" id="inputOrgName" value ="<?php echo $email ?>" type="email" name="email">
+                                <input class="form-control  mb-3" id="inputOrgName" value ="<?php echo $email ?>" type="email" name="email">
                                
                                 <label class="small mb-1" for="inputLocation">Mobile Number</label>
-                                <input class="form-control" id="inputLocation" value ="<?php echo $mobile ?>" type="text" name="mobile_number" >
+                                <input class="form-control  mb-3" id="inputLocation" value ="<?php echo $mobile ?>" type="text" name="mobile_number" >
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 p-2">
                                 <label class="small mb-1" for="inputFirstName">Address</label>
-                                <input class="form-control" id="inputEmailAddress" value ="<?php echo $address ?>" type="text" name="address" >
+                                <input class="form-control  mb-3" id="inputEmailAddress" value ="<?php echo $address ?>" type="text" name="address" >
                             
                                 <label class="small mb-1" for="inputFirstName">City</label>
-                                <input class="form-control" value ="<?php echo $city ?>" type="text" name="city" >
+                                <input class="form-control mb-3" value ="<?php echo $city ?>" type="text" name="city" >
                                 
                                 <label class="small mb-1" for="inputFirstName">Province</label>
-                                <input class="form-control" value ="<?php echo $province ?>"  type="text" name="province">
+                                <input class="form-control  mb-3" value ="<?php echo $province ?>"  type="text" name="province">
                                 
                                 <label class="small mb-1" for="inputFirstName">ZIP</label>
                                 <input class="form-control"value ="<?php echo $zip ?>" type="text" name="zip" >

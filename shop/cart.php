@@ -91,7 +91,7 @@
                 <input type='submit' name='update-btn' class='btn btn-sm btn-primary'>
 
                 <td>
-                <a href = 'index.php?delete_items=$product_id' class='text-danger' data-toggle='modal' data-target='#exampleModal'><i class='fa-solid fa-trash'></i></a>
+                <a href = 'index.php?delete_items=$product_id' class='text-danger' data-toggle='modal' data-target='#deletemodal'><i class='fa-solid fa-trash'></i></a>
                 </td>
               "; ?>
                 
@@ -111,7 +111,7 @@
 
 
         <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deletemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -121,7 +121,7 @@
         </button>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success"><a class="text-light text-decoration-none" href="./index.php?cart=<?php echo $product_id?>">YES</a></button>
+        <button type="button" name="delete-btn" class="btn btn-success"><a class="text-light text-decoration-none" href="./index.php?cart=<?php echo $product_id?>">YES</a></button>
         <button type="button" class="btn btn-danger" data-dismiss="modal"><a href="index.php?cart.php" class="text-light text-decoration-none">NO</a></button>
        
       </div>
@@ -142,7 +142,7 @@
 </div>
 
 <?php
-if (isset($_GET['cart'])){
+if (isset($_POST['delete-btn'])){
     $user_id = $_SESSION['user_id'];
     $product = $_GET['cart'];
     $delete_query = "DELETE FROM cart_details WHERE product_id=$product AND `user_id`=$user_id";

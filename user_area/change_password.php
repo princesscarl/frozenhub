@@ -246,10 +246,11 @@ else{
 
 <!-- END OF NAVBAR -->
 <div style="width: 90%; margin-top:30px; margin-bottom: 30px; margin-right: auto; margin-left: auto;">
-<div class=" col-lg-12 mb-3">
+<div class="row d-flex justify-content-center">
+<div class=" col-lg-8 mb-3 text-center">
             <!-- Account details card-->
-            <div class="card mb-4">
-                <div class="card-header">Change Password</div>
+            <div class="card mb-4" style="border: #439D9E solid 2px;">
+                <div class="card-header text-white" style="background-color: #439D9E; font-weight:bold;">Change Password</div>
                 <div class="card-body">
                     <form method="POST">
         
@@ -278,14 +279,14 @@ else{
                         ?>
                         </div>
                         <!-- Form Row-->
-                        <div class="row gx-3 mb-3 d-flex">
+                        <div class="row gx-3 mb-3 d-flex justify-content-center">
                             <!-- Form Group (first name)-->
-                            <div class="col-md-6">
+                            <div class="col-md-6 p-2">
                                 <label class="small mb-1" for="inputFirstName"> Current Password</label>
-                                <input class="form-control" id="inputFirstName"  type="password" name="currentpass">
+                                <input class="form-control mb-3" id="inputFirstName"  type="password" name="currentpass">
                                
                                 <label class="small mb-1" for="inputLastName">New Password</label>
-                                <input class="form-control" id="inputLastName"  type="password" name="newpass">
+                                <input class="form-control mb-3" id="inputLastName"  type="password" name="newpass">
                                 
                                 <label class="small mb-1" for="inputOrgName">Confirm Password</label>
                                 <input class="form-control" id="inputOrgName"  type="password" name="confirmpass">
@@ -308,6 +309,7 @@ else{
                 </div>
             </div>
         </div>
+                                  </div>
     </div>
 </div>
 

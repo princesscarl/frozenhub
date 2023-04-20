@@ -297,11 +297,12 @@ else{
             
                           
                         </div>
+                        <!-- Save changes button-->
+                        <button class="btn btn-primary m-3 p-2" type="submit" name="submit-btn" style="width: 30%; justify-content:center;" >Save changes</button>
+
                         </div>
                  
-                        <!-- Save changes button-->
-                        <button class="btn btn-primary" type="submit" name="submit-btn">Save changes</button>
-
+                        
 
 
 

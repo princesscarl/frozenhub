@@ -172,7 +172,7 @@ else{
     if(!isset($_SESSION['email'])){
     echo'
       <li class="nav-item">
-        <a class="nav-link" href="#">Welcome Guest</a>
+        <a class="nav-link" href="#">Guest</a>
       </li>';
     }
 
@@ -196,7 +196,7 @@ else{
       <input type="text" hidden name="user_id" ='
       .$_SESSION['user_id'].'>
       </form>
-      <a class="nav-link" href="#">Welcome '.$firstName.'</a>
+      <a class="nav-link" href="#">'.$firstName.'</a>
     </li>
 ';
     }?>

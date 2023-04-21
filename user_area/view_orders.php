@@ -204,6 +204,7 @@ if (!$conn){
 
 echo'
 <h1 class="text-center" id="reqsHeading" style="margin-bottom: 12px;padding-bottom: 8px;padding-top: 12px;">Orders</h1>
+<div class= "container-fluid" style="width: 90%; display: flex; justify-content: center;">
 <table class="table">
 
     <thead>
@@ -245,6 +246,7 @@ echo'
             <button class="btn btn-success">
             <a href="received.php?id='.$order_id.'" class="text-light">Received</a></button>
             </td>
+
             ';
              
             }}?>    
@@ -252,6 +254,7 @@ echo'
       </tr>  
     </tbody>
         </table>
+        </div>
 
         <footer style=" width: 90%; margin-top:10px; margin-bottom: 20px; margin-right: auto; margin-left: auto; background-color: #439D9E; border-radius: 5px;">
     <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2); margin-top:20px; margin-bottom: 20px;  border-radius: 5px;">

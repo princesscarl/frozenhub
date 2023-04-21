@@ -1,5 +1,5 @@
 <?php 
-include './shop/common_functions.php';
+
 ?>
 
 <!-- CART TABLE -->

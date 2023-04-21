@@ -82,22 +82,44 @@ include './shop/common_functions.php';
                 <input type='submit' name='update-btn' class='btn btn-sm btn-primary'>
 
                 <td>
-                <a class='text-danger text-decoration-none' href'=./'index.php?cart=<?php echo $product_id?'><i class='fa-solid fa-trash'></i></a></button>
+                <a href = 'index.php?delete_items=$product_id' class='text-danger' data-toggle='modal' data-target='#exampleModal'><i class='fa-solid fa-trash'></i></a>
                 </td>
               "; ?>
-                   <!-- <a href = 'index.php?delete_items=$product_id' class='text-danger' data-toggle='modal' data-target='#exampleModal'><i class='fa-solid fa-trash'></i></a> -->
+                
                 </form>
                
                   <?php }}
                   
-                  else{
-                    echo "<h2> Cart is empty </h2>";
-                  }
+                
+                    else{
+                      echo "<h2> Cart is empty </h2>";
+                    }
+               
                   
                   ?>
             </tbody>    
         </table>
 
+
+        <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">    Are you sure you want to delete this item? </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success"><a class="text-light text-decoration-none" href="./index.php?cart=<?php echo $product_id?>">YES</a></button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal"><a href="index.php?cart.php" class="text-light text-decoration-none">NO</a></button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+      
         <!-- SUBTOTAL -->
         <div class="d-flex mb-5">
             <h4 class="px-3"> Subtotal:<strong class="text-info">&nbsp <?php total_cart_price() ?></strong></h4>
@@ -111,41 +133,18 @@ include './shop/common_functions.php';
 </div>
 
 <?php
-if (isset($_GET['cart']) && isset($_POST['delete-btn'])){
+if (isset($_GET['cart'])){
     $user_id = $_SESSION['user_id'];
     $product = $_GET['cart'];
     $delete_query = "DELETE FROM cart_details WHERE product_id=$product AND `user_id`=$user_id";
+    $delete_items = "DELETE FROM items WHERE product_id=$product AND `user_id`=$user_id";
     $result_delete= mysqli_query ($conn, $delete_query);
     $result_items= mysqli_query ($conn, $delete_items);
 }
+
 ?>
 
  </form>
-<!-- CART TABLE -->
-
-
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">    Are you sure you want to delete this item? </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-footer">
-        <button type="button" name ="delete-btn" class="btn btn-success"><a class="text-light text-decoration-none" href="./index.php?cart=<?php echo $product_id?>">YES</a></button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal"><a href="index.php?cart.php" class="text-light text-decoration-none">NO</a></button>
-       
-      </div>
-    </div>
-  </div>
-</div>
-      
-
-
 
 
 </body>

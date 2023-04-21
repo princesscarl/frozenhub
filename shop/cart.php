@@ -2,7 +2,6 @@
 
 <!-- CART TABLE -->
 <div class="container">
-<<<<<<< Updated upstream
     <div class="row"> 
         <table class="table table-borderd text-center">
            <?php
@@ -14,20 +13,6 @@
             $result_count = mysqli_num_rows($result);
               if($result_count>0){
                 echo "
-=======
-  <div class="row">
-    <table class="table table-borderd text-center">
-      <form id=myForm>
-        <?php
-        if (isset($_SESSION['email'])) {
-          $user_id = $_SESSION['user_id'];
-          $total = 0;
-          $cart_query = "SELECT * FROM cart_details WHERE `user_id`=$user_id";
-          $result = mysqli_query($conn, $cart_query);
-          $result_count = mysqli_num_rows($result);
-          if ($result_count > 0) {
-            echo "
->>>>>>> Stashed changes
                 <thead>
                 <tr>
                     <th>Product Title</th>
@@ -77,7 +62,6 @@
 
 
                 <?php
-<<<<<<< Updated upstream
                   if(isset($_POST['update-btn'])){
                     $user_id = $_SESSION['user_id'];
                     $product_id = $_POST['product_id'];
@@ -86,7 +70,7 @@
                     $result_update = mysqli_query($conn, $update_cart);
 
                     if($result_update){
-                        echo "<script> alert ('Quantity has been updated.') </script>";
+                        echo "<   > alert ('Quantity has been updated.') </   >";
                     }
 
                     else{
@@ -95,9 +79,6 @@
                     
                     }
                   }
-=======
-              }
->>>>>>> Stashed changes
                 ?>
 
                 <?php echo "
@@ -154,7 +135,6 @@
 
   </div>
 </div>
-<<<<<<< Updated upstream
       
         <!-- SUBTOTAL -->
         <div class="d-flex mb-5">
@@ -162,8 +142,6 @@
             <a href="./index.php" class="text-dark text-decoration-none" style="font-weight: bold;" ><button class="bg-warning p-2 py-2 border-0 mx-3" style="border-radius: 10px; background-color:  #eefc5e;">Continue Shopping</a></button>
             <a href="index.php?checkout" class="text-dark text-decoration-none" style="font-weight: bold;"> <button class=" p-2 py-2 border-0" style="border-radius: 10px; background-color: #f69697;">Checkout</a></button>
         </div>
-=======
->>>>>>> Stashed changes
 
 </form>
 <!-- CART TABLE -->

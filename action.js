@@ -3,7 +3,7 @@ $(document).ready(function()
     insert_item()
     delete_item()
     update_quantity()
-})
+});
 
 function insert_item() {
   $('.add-to-cart-button').on('click', function () {
@@ -16,8 +16,8 @@ function insert_item() {
         alert('Item is added to cart.');
         console.log(data);
       }
-    });
-  });
+    })
+  })
 }
 
 function delete_item(){
@@ -30,8 +30,8 @@ function delete_item(){
       success: function (data) {
         alert('Item is deleted in your cart.');
       }
-    });
-  });
+    })
+  })
 }
 
 
@@ -47,6 +47,6 @@ $('.update-btn').on('click', function () {
     success: function (data) {
       alert(data);
     }
-  });
-});
+  })
+})
 }

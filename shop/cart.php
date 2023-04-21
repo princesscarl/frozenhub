@@ -136,12 +136,6 @@
   </div>
 </div>
       
-        <!-- SUBTOTAL -->
-        <div class="d-flex mb-5">
-            <h4 class="px-3"> Subtotal:<strong class="text-info">&nbsp <?php total_cart_price() ?></strong></h4>
-            <a href="./index.php" class="text-dark text-decoration-none" style="font-weight: bold;" ><button class="bg-warning p-2 py-2 border-0 mx-3" style="border-radius: 10px; background-color:  #eefc5e;">Continue Shopping</a></button>
-            <a href="index.php?checkout" class="text-dark text-decoration-none" style="font-weight: bold;"> <button class=" p-2 py-2 border-0" style="border-radius: 10px; background-color: #f69697;">Checkout</a></button>
-        </div>
 
 </form>
 <!-- CART TABLE -->

@@ -25,16 +25,16 @@ $result = $conn->query($sql);
     $picture = $row['picture'];
 
     echo '<tr>
-		<td>'. $row["firstName"] . '</td>
-		<td>' . $row["lastName"] . '</td>
-		<td>' . $row["email"] . '</td>
-		<td>' . $row["phone"] . '</td>
-        <td>' . $row["proName"] . '</td>
-		<td>' . $row["ratings"] . '</td>
-		<td>' . $row["feedback"] . '</td>';
+		<td data-label="First name">'. $row["firstName"] . '</td>
+		<td data-label="Last Name">' . $row["lastName"] . '</td>
+		<td data-label="Email">' . $row["email"] . '</td>
+		<td data-label="Phone Number">' . $row["phone"] . '</td>
+        <td data-label="Product Name">' . $row["proName"] . '</td>
+		<td data-label="Ratings">' . $row["ratings"] . '</td>
+		<td data-label="Feedback">' . $row["feedback"] . '</td>';
 }
 ?>
 
-        <td> <a href="../pictures/<?php echo $picture?>">view file</a></td>
+        <td data-label="Pictures"> <a href="../pictures/<?php echo $picture?>">view file</a></td>
       </table>
   </div>

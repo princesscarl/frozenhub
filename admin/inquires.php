@@ -28,31 +28,31 @@ $result = $conn->query($sql);
     $application_id = $row["application_id"];
     $status = $row["status"];
     echo '<tr>
-		<td>'. $row["firstName"] . '</td>
-		<td>' . $row["lastName"] . '</td>
-		<td>' . $row["email"] . '</td>
-		<td>' . $row["contact_number"] . '</td>
-		<td>' . $row["temporary_location"] . '</td>
-		<td>' . $row["isLookingForSpace"] . '</td>
-		<td>' . $row["business_name"] .'</td>
-		<td>' . $row["years"] . '</td>
-		<td>'. $row["typeOfBusiness"] .'</td>
-    <td>'. $row["inputMessage"] .'</td>';
+		<td data-label="First name">'. $row["firstName"] . '</td>
+		<td data-label="Last name">' . $row["lastName"] . '</td>
+		<td data-label="Email">' . $row["email"] . '</td>
+		<td data-label="Phone Number">' . $row["contact_number"] . '</td>
+		<td data-label="Location">' . $row["temporary_location"] . '</td>
+		<td data-label="Existing/Looking">' . $row["isLookingForSpace"] . '</td>
+		<td data-label="Business Name">' . $row["business_name"] .'</td>
+		<td data-label="Year/s in Business">' . $row["years"] . '</td>
+		<td data-label="Type of Business">'. $row["typeOfBusiness"] .'</td>
+    <td data-label="Message">'. $row["inputMessage"] .'</td>';
     
     if ($status == "Pending"){
       echo '
-      <td style="background:lightgray;">'.$status.'</td>
+      <td style="background:lightgray;" data-label="Status">'.$status.'</td>
       ';
     }
  
     if ($status == "Done"){
       echo '
-      <td style="background:green;">'.$status.'</td>
+      <td style="background:green;" data-label="Status">'.$status.'</td>
       ';
     }
  
     echo'
-		<td>
+		<td data-label="Actions">
     <form method ="post">
     <button class="btn btn-success">
     <a href="./approval/inquiry_done.php?id='.$application_id.'" class="text-light">Accept</a></button>

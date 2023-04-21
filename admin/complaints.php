@@ -12,7 +12,7 @@
             <th>Bought On</th>
             <th>Complain Date</th>
             <th>Complain Details</th>
-            <th> Actions </th>
+            <th> Proposed Action/s </th>
             <th> Picture </th>
             <th> Status </th>
 		        <th colspan="2">Actions</th>
@@ -31,16 +31,16 @@ $result = $conn->query($sql);
     $picture = $row['picture'];
 
     echo '<tr>
-		<td>'. $row["firstname"] . '</td>
-		<td>' . $row["lastname"] . '</td>
-		<td>' . $row["email"] . '</td>
-		<td>' . $row['phoneNum'] . '</td>
-		<td>' . $row['proNo']. '</td>
-    <td>' . $row['proName'] . '</td>
-    <td>' .$row['boughtOn']. '</td>
-    <td>' . $row['comDate']. '</td>
-		<td>' . $row['details'] .'</td>
-    <td>' . $row['actions'] .'</td>';
+		<td data-label="First Name">'. $row["firstname"] . '</td>
+		<td data-label="Last Name">' . $row["lastname"] . '</td>
+		<td data-label="Email">' . $row["email"] . '</td>
+		<td data-label="Phone Number">' . $row['phoneNum'] . '</td>
+		<td data-label="Product Number">' . $row['proNo']. '</td>
+    <td data-label="Product Name">' . $row['proName'] . '</td>
+    <td data-label="Bought On">' .$row['boughtOn']. '</td>
+    <td data-label="Commplaint Date">' . $row['comDate']. '</td>
+		<td data-label="Details">' . $row['details'] .'</td>
+    <td data-label="Proposed Action/s">' . $row['actions'] .'</td>';
     
 ?>
         <td><a href="../pictures/<?php echo $picture?>">view file</a></td>
@@ -48,18 +48,18 @@ $result = $conn->query($sql);
     <?php
     if ($status == "Pending"){
       echo '
-      <td style="background:lightgray;">'.$status.'</td>
+      <td style="background:lightgray;" data-label="Status">'.$status.'</td>
       ';
     }
  
     if ($status == "Done"){
       echo '
-      <td style="background:green;">'.$status.'</td>
+      <td style="background:green;" data-label="Status">'.$status.'</td>
       ';
     }
  
     echo'
-		<td>
+		<td data-label="Actions">
     <form method ="post">
     <button class="btn btn-success">
     <a href="./approval/complaints_done.php?id='.$com_id.'" class="text-light">Accept</a></button>

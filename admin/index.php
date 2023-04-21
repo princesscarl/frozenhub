@@ -43,6 +43,39 @@ if(isset($_POST["delete"]))
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/faf8bee4ee.js" crossorigin="anonymous"></script>
   <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
+
+  <style>
+    @media (max-width: 768px){
+    .table th{
+        display: none;
+    }
+
+    .table, .table tbody, .table tr, .table td{
+        display: block;
+        width: 100%;
+    }
+    .table tr{
+        margin-bottom: 15px;
+    }
+
+    .table tbody tr td{
+        text-align:left;
+        padding-left: 50%;
+        position:relative;
+    }
+
+    .table td::before{
+        content: attr(data-label);
+        position:absolute;
+        left: 0;
+        width:50%;
+        padding-left: 15px;
+        font-weight:600;
+        font-size:14px;
+        text-align:left
+    }
+}
+</style>
  
  
 </head>

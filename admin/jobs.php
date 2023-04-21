@@ -31,33 +31,33 @@ $result = $conn->query($sql);
     $file_content = $row["file"];
 
     echo '<tr>
-		<td>'. $row["firstname"] . '</td>
-		<td>' . $row["lastname"] . '</td>
-		<td>' . $row["email"] . '</td>
-		<td>' . $row['phoneNum'] . '</td>
-		<td>' . $row['address']. '</td>
-    <td>' . $row['position']. '</td>
-    <td>' . $row['interview']. '</td>
-		<td>' . $row['jobTitle'] . '</td>
-		<td>' . $row['comName'] .'</td>
-		<td>'. $row['comAddress'] .'</td>';
+		<td data-label="First name">'. $row["firstname"] . '</td>
+		<td data-label="Last name">' . $row["lastname"] . '</td>
+		<td data-label="Email">' . $row["email"] . '</td>
+		<td data-label="Phone Number">' . $row['phoneNum'] . '</td>
+		<td data-label="Address">' . $row['address']. '</td>
+    <td data-label="Applying For">' . $row['position']. '</td>
+    <td data-label="Interview Date/s">' . $row['interview']. '</td>
+		<td data-label="Job Title">' . $row['jobTitle'] . '</td>
+		<td data-label="Company Name">' . $row['comName'] .'</td>
+		<td data-label="Company Address">'. $row['comAddress'] .'</td>';
 ?>
-        <td> <a href="../files/<?php echo $file_content?>">view file</a></td>
+        <td data-label="Resume"> <a href="../files/<?php echo $file_content?>">view file</a></td>
     <?php
     if ($status == "Pending"){
       echo '
-      <td style="background:lightgray;">'.$status.'</td>
+      <td style="background:lightgray;" data-label="Status">'.$status.'</td>
       ';
     }
  
     if ($status == "Done"){
       echo '
-      <td style="background:green;">'.$status.'</td>
+      <td style="background:green;" data-label="Status">'.$status.'</td>
       ';
     }
  
     echo'
-		<td>
+		<td data-label="Actions">
     <form method ="post">
     <button class="btn btn-success">
     <a href="./approval/job_done.php?id='.$job_id.'" class="text-light">Accept</a></button>

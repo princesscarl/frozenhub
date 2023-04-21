@@ -82,7 +82,7 @@ include './shop/common_functions.php';
                 <input type='submit' name='update-btn' class='btn btn-sm btn-primary'>
 
                 <td>
-                <a href = 'index.php?delete_items=$product_id' class='text-danger' data-toggle='modal' data-target='#exampleModal'><i class='fa-solid fa-trash'></i></a>
+                <a href = 'index.php?delete_items=$product_id' class='text-danger' data-toggle='modal' data-target='#exampleModal'><i class='bi bi-x-circle'></i></a>
                 </td>
               "; ?>
                 

@@ -59,7 +59,7 @@ if(isset($_POST["delete"]))
     }
 
     .table tbody tr td{
-        text-align:left;
+        text-align:center;
         padding-left: 50%;
         position:relative;
     }
@@ -72,7 +72,7 @@ if(isset($_POST["delete"]))
         padding-left: 15px;
         font-weight:600;
         font-size:14px;
-        text-align:left
+        text-align:left;
     }
 }
 </style>

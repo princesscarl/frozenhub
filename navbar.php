@@ -98,13 +98,23 @@ if (!$conn){
 <?php if(isset($_SESSION['email'])){
             echo'
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
+<<<<<<< Updated upstream
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="./user_area/edit_account.php">Edit Account</a>
+            <a class="dropdown-item" href="./user_area/view_orders.php">View Orders</a>
+            <a class="dropdown-item" href="./user_area/change_password.php">Change Password</a>
+            <a class="dropdown-item" href="./user_area/logout.php">Logout</a>
+          </div>
+=======
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">    <i class="bi bi-person-fill" style="font-size:25px;"></i></a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="./user_area/edit_account.php">Edit Account</a>
                 <a class="dropdown-item" href="./user_area/view_orders.php">View Orders</a>
                 <a class="dropdown-item" href="./user_area/change_password.php">Change Password</a>
                 <a class="dropdown-item" href="./user_area/logout.php">Logout</a>
             </div>
+>>>>>>> Stashed changes
           </li>
           ';
           } ?>
@@ -113,12 +123,20 @@ if (!$conn){
           <?php if (!isset($_SESSION['email'])) {
             echo '
             <li class="nav-item dropdown">
+<<<<<<< Updated upstream
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="./user_area/login.php">Login</a>
+              <a class="dropdown-item" href="./user_area/register.php">Register</a>
+            </div>
+=======
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-              <i class="fa fa-user"></i></a>
+             <i class="bi bi-person-fill" style="font-size:25px;"></i></a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="./user_area/login.php">Login</a>
                 <a class="dropdown-item" href="./user_area/register.php">Register</a>
               </div>
+>>>>>>> Stashed changes
             </li>
           ';
           } ?>
@@ -126,7 +144,7 @@ if (!$conn){
           <?php if (!isset($_SESSION['email'])) {
             echo'
      <li class="nav-item">
-          <a class="nav-link"  data-toggle="modal" data-target="#exampleModal"><i class="fa fa-shopping-cart" style="font-size:20px"></i></a>
+          <a class="nav-link"    data-toggle="modal" data-target="#exampleModal"><i class="fa fa-shopping-cart" style="font-size:20px"></i></a>
         </li>
           ';}?>
 
@@ -135,7 +153,7 @@ if (!$conn){
           <?php if (isset($_SESSION['email'])) {
             echo'
      <li class="nav-item">
-          <a class="nav-link" href="index.php?cart"><i class="fa fa-shopping-cart" style="font-size:20px"></i></a>
+          <a class="nav-link" href="index.php?cart"><i class="bi bi-cart-plus-fill" style="font-size:25px;"></i></a>
         </li>
           ';}?>
 

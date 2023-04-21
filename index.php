@@ -29,6 +29,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/faf8bee4ee.js" crossorigin="anonymous"></script>
   <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
+  <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js%22%3E"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js%22%3E"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js%22%3E"></script>
  
   <script src="action.js"></script>
 

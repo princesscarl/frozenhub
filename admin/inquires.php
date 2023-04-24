@@ -1,5 +1,7 @@
 <div class="container-fluid">
   <h1 class="text-center" style="padding: 20px; font-weight:bold">Inquiries</h1>
+  <button class="btn btn-success mb-3" href="download_inquiries.php" style="font-size: 20px; font-weight:bold;">Download</button>
+
         <table id="table" class="table table-bordered text-center" style="width:100%; margin:auto; border-collapse:collapse;">
  
         <tr>

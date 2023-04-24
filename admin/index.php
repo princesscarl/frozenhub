@@ -92,9 +92,6 @@ if(isset($_POST["delete"]))
 
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item ml-4">
-                  <a class="nav-link" href="download.php" style="font-size: 20px; font-weight:bold;">Download</a>
-                </li>
 
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 20px; font-weight:bold;">Forms</a>

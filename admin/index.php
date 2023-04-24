@@ -117,6 +117,9 @@ if(isset($_POST["delete"]))
     elseif (isset($_GET['view_promos'])){
       include ('./shop/view_promos.php');
     }
+    elseif (isset($_GET['view_users'])){
+      include ('./shop/view_users.php');
+    }
   ?>
 
 

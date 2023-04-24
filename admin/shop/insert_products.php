@@ -47,6 +47,11 @@ if($result_product){
 <body class="bg-light">
 <div class="container mt-3">
 <h2 class = "text-center"> Insert Products </h2>
+
+<a href="index.php?view_products" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">All Products</a>
+  <a href="index.php?view_promos" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">All Promos</a>
+  <a href="index.php?view_top" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Top Products</a>
+
     <!--FORM-->
     <form method="POST" enctype="multipart/form-data">
 

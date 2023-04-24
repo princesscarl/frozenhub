@@ -120,6 +120,9 @@ if(isset($_POST["delete"]))
     elseif (isset($_GET['view_users'])){
       include ('./shop/view_users.php');
     }
+    elseif (isset($_GET['view_orders'])){
+      include ('./shop/view_orders.php');
+    }
   ?>
 
 

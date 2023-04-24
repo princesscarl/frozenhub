@@ -1,12 +1,11 @@
 <?php
-include './shop/common_functions.php';
 
 $user_id = $_SESSION['user_id'];
 
+
 if (isset($_POST['submit-btn'])) {
   $invoice =  mt_rand(10000, 99999);
-  $total = 0;
-  // INSERT ORDER - Working
+  $total=0; 
   $order_query = "INSERT INTO order_details(`user_id`,`invoice`,`date`,`status`, `items`,`amount`) 
   VALUES ('$user_id','$invoice',now(), 'Pending', ' $count_cart_items','$total')";
   $result_query = mysqli_query($conn, $order_query);
@@ -30,18 +29,17 @@ if($result_query){
 }
     
     
-    if ($stmt) {
-      $delete_query = "DELETE FROM cart_details WHERE `user_id`=$user_id";
-      $result_delete = mysqli_query($conn, $delete_query);
-      $url = "index.php";
-      echo "<script> alert('Order Confirmed!'); window.location = '$url'; </script>";
-    } else {
-      echo "<script> alert ('ERROR') </script>";
-    }
+    // if ($stmt) {
+    //   $delete_query = "DELETE FROM cart_details WHERE `user_id`=$user_id";
+    //   $result_delete = mysqli_query($conn, $delete_query);
+    //   $url = "index.php";
+    //   echo "<script> alert('Order Confirmed!'); window.location = '$url'; </script>";
+    // } else {
+    //   echo "<script> alert ('ERROR') </script>";
+    // }
 
         // Close the prepared statement and database connection
         mysqli_stmt_close($stmt);
-        mysqli_close($conn);
     
   }
 
@@ -183,7 +181,7 @@ if($result_query){
       <table class="table" style="border-bottom:gray solid 1px;">
         <tr>
           <th>Total:</th>
-          <td><strong><?php total_cart_price() ?></strong></td>
+          <td><strong><?php echo $total?></strong></td>
           <td> <input type="button" value="CONFIRM PAYMENT" class="btn btn-info" data-toggle='modal' data-target='#confirm'></td>
 
         </tr>

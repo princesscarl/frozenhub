@@ -36,8 +36,8 @@ if (isset($_POST["submit"])) {
   $mail->isSMTP();
   $mail->Host = gethostbyname("smtp.gmail.com");
   $mail->SMTPAuth = true;
-  $mail->Username = 'frozenhub2023@gmail.com';
-  $mail->Password = 'gnkyemgmxharaqqb';
+  $mail->Username = 'frozenhubcalamba23@gmail.com';
+  $mail->Password = 'rtxuviyrvkeuouwe';
   $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
   $mail->Port = 587;
   $mail->SMTPOptions = array(
@@ -49,7 +49,7 @@ if (isset($_POST["submit"])) {
   );
 
   //recipients
-  $mail->From = "frozenhub2023@gmail.com";
+  $mail->From = "frozenhubcalamba23@gmail.com";
   $mail->FromName = "Frozen Hub";
   $mail->addAddress($email);
   $mail->isHTML(true);

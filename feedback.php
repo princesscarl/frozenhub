@@ -38,8 +38,8 @@ if (isset($_POST["submit-btn"])) {
   $mail->isSMTP();
   $mail->Host = gethostbyname("smtp.gmail.com");
   $mail->SMTPAuth = true;
-  $mail->Username = 'frozenhub2023@gmail.com';
-  $mail->Password = 'cvltkdpxhbymcabm';
+  $mail->Username = 'frozenhubcalamba23@gmail.com';
+  $mail->Password = 'rtxuviyrvkeuouwe';
   $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
   $mail->Port = 587;
   $mail->SMTPOptions = array(

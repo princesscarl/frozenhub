@@ -7,7 +7,7 @@
   <a href="index.php?view_top" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Top Products</a>
 
         <table id="table" class="table table-stripped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed printTable darkBG" role="grid" cellspacing="0" style="width:100%">
- 
+        <thead style="background-color: #61b0b7;">
         <tr>
             <th>Title</th>
             <th>Image </th>

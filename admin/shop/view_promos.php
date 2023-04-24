@@ -10,7 +10,7 @@
  
 
         <table id="table" class="table table-stripped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed printTable darkBG" role="grid" cellspacing="0" style="width:100%">
- 
+        <thead style="background-color: #0583d2">
         <tr>
             <th>Title</th>
             <th>Image </th>

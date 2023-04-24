@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <h1 class="text-center" style="padding: 20px; font-weight:bold">List of Users</h1>
   <table id="table" class="table table-stripped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed printTable darkBG" role="grid" cellspacing="0" style="width:100%">
-  <thead>
+  <thead style="background-color: #61b0b7">
         <tr>
             <th> Name </th>
             <th> Email</th>

@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <h1 class="text-center" style="padding: 20px; font-weight:bold">List of Users</h1>
   <table id="table" class="table table-stripped table-bordered">
-  <thead>
+  <thead style="background-color: #61b0b7;">
         <tr>
             <th> User ID </th>
             <th> Order ID </th>

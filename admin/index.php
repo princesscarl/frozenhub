@@ -74,6 +74,20 @@ if(isset($_POST["delete"]))
                 </li>
               </ul>
 
+
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 20px; font-weight:bold;">Shop</a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="index.php?insert_products" style="font-size: 20px;">Job Application</a>
+                  <a class="dropdown-item" href="index.php?view_products" style="font-size: 20px;">Complaints</a>
+                  <a class="dropdown-item" href="index.php?insert_categories" style="font-size: 20px;">Inquiries</a>
+                  <a class="dropdown-item" href="index.php?view_categories" style="font-size: 20px;">Feedback</a>
+                  <a class="dropdown-item" href="index.php?inser_categories" style="font-size: 20px;">Inquiries</a>
+                  <a class="dropdown-item" href="index.php?view_categories" style="font-size: 20px;">Feedback</a>
+                  </div>
+                </li>
+              </ul>
+
               <form class="form-inline my-2 my-lg-0 ml-4">
                 <input type="text" name="search" id="search" autocomplete="off" placeholder="Search by name, status... ">
               </form>
@@ -129,7 +143,6 @@ if(isset($_POST["delete"]))
             }
  
         });
- 
     </script>
    </body>
 </html>

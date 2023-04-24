@@ -153,6 +153,9 @@ if(isset($_POST["delete"]))
     elseif (isset($_GET['view_orders'])){
       include ('./shop/view_orders.php');
     }
+    elseif (isset($_GET['insert_products'])){
+      include ('./shop/insert_products.php');
+    }
   ?>
 
 

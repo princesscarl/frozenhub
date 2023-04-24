@@ -38,18 +38,19 @@
             <td> $product_price</td>
             <td>$product_description</td>
 
-            <td> 
-           <a href = 'index.php?edit_products=$product_id' class='text-warning'><i class='fa-solid fa-pen-to-square'></i></a>
-           </td>
-
-           <td>
-           <a href = 'index.php?delete_products=$product_id' class='text-danger'  data-toggle='modal' data-target='#exampleModal'><i class='fa-solid fa-trash'></i></a>
+            <td> ";?>
+            <a href ="./shop/edit_products.php?id= <?php echo $product_id ?>" class='text-warning'><i class='fa-solid fa-pen-to-square'></i></a>
+            <?php
+            echo"
             </td>
-
-            ";
-            
-            }?>  
-            
+ 
+            <td>
+            <a href = '#' class='text-danger'  data-toggle='modal' data-target='#deleteModal'><i class='fa-solid fa-trash'></i></a>
+             </td>
+ 
+             ";
+             
+             }?>  
         
     </tbody>
     <table>

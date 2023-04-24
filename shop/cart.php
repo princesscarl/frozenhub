@@ -1,5 +1,42 @@
 <?php 
+  $email= $_SESSION['email'];
+ 
+      if(isset($_POST['update-btn'])){
+        $user_id = $_SESSION['user_id'];
+        $product_id = $_POST['product_id'];
+        $quantity = $_POST['quantity'];
+        $update_cart = "UPDATE cart_details SET `quantity`='$quantity' WHERE `user_id`=$user_id AND `product_id` =$product_id";
+        $result_update = mysqli_query($conn, $update_cart);
 
+        $update_items = "UPDATE items SET `quantity`='$quantity' WHERE `user_id`=$user_id AND `product_id` =$product_id";
+        $result_items = mysqli_query($conn, $update_items);
+
+        }
+  
+              
+
+  function total_cart_price()
+{
+    global $conn;
+
+    $user_id = $_SESSION['user_id'];
+    $total = 0;
+    $select_cart = "SELECT * FROM cart_details WHERE `user_id`= $user_id";
+    $result_cart = mysqli_query($conn, $select_cart);
+    while ($row = mysqli_fetch_array($result_cart)) {
+        $quantity = $row['quantity'];
+        $product_id = $row['product_id'];
+        $select_products = "SELECT * FROM products WHERE `product_id` = $product_id";
+        $result_products = mysqli_query($conn, $select_products);
+        while ($row_product = mysqli_fetch_array($result_products)) {
+            $product_price = $row_product['product_price'];
+            $product_price_array = array($product_price * $quantity);
+            $product_value = array_sum($product_price_array);
+            $total += $product_value;
+        }
+    }
+    echo $total;
+}
 ?>
 
 <!-- CART TABLE -->
@@ -63,28 +100,20 @@
                     $update_items = "UPDATE items SET `quantity`='$quantity' WHERE `user_id`=$user_id AND `product_id` =$product_id";
                     $result_items = mysqli_query($conn, $update_items);
 
-                    // if($result_update){
-                    //     echo "<script> alert ('Quantity has been updated.') </script>";
-                    // }
-                    // else
-
-                    //   echo "<script> alert ('Error!') </script>";
-                    // }
-                    
                     }
                   }
                 ?>
-
+     
                 <?php $total_price=$product_quantity*$product_price?>
                 <td><?php echo $total_price?></td>
+
                 <?php echo"
                 <td> 
                 <input type='submit' name='update-btn' class='btn btn-sm btn-primary'>
-
+               </td>
                 <td>
-                <a href = 'index.php?delete_items=$product_id' class='text-danger' data-toggle='modal' data-target='#exampleModal'><i class='bi bi-x-circle'></i></a>
-                </td>
-              "; ?>
+                <a href = '#' class='text-danger' data-toggle='modal' data-target='#exampleModal'><i class='bi bi-x-circle'></i></a> 
+                </td>";?>
                 
                 </form>
                
@@ -101,7 +130,29 @@
         </table>
 
 
-        <!-- Modal -->
+     
+        <!-- SUBTOTAL -->
+        <div class="d-flex mb-5">
+            <h4 class="px-3"> Subtotal:<strong class="text-info">&nbsp <?php total_cart_price() ?></strong></h4>
+            <a href="./index.php"  class="btn btn-info p-2 py-2 mr-2 border-0 text-decoration-none text-light">Continue Shopping</a>
+       
+          <a href="index.php?checkout" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light">Checkout</a>
+       
+        
+    
+
+        </div>
+
+    </div>
+</div>
+
+
+ </form>
+
+
+
+
+    <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -112,42 +163,16 @@
         </button>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success"><a class="text-light text-decoration-none" href="./index.php?cart=<?php echo $product_id?>">YES</a></button>
+        <button type="button" class="btn btn-success"><a class="text-light text-decoration-none" href="./shop/delete_item.php?id=<?php echo $product_id?>">YES</a></button>
         <button type="button" class="btn btn-danger" data-dismiss="modal"><a href="index.php?cart.php" class="text-light text-decoration-none">NO</a></button>
        
       </div>
     </div>
   </div>
 </div>
-      
-        <!-- SUBTOTAL -->
-        <div class="d-flex mb-5">
-            <h4 class="px-3"> Subtotal:<strong class="text-info">&nbsp <?php total_cart_price() ?></strong></h4>
-            <a href="./index.php" class="text-light text-decoration-none"><button class="bg-info p-2 py-2 border-0 mx-3">Continue Shopping</a></button>
-
-
-            <a href="index.php?checkout"> <button class="bg-secondary p-2 py-2 border-0">Checkout</button>
-        </div>
-
-    </div>
-</div>
-
-<?php
-if (isset($_GET['cart'])){
-    $user_id = $_SESSION['user_id'];
-    $product = $_GET['cart'];
-    $delete_query = "DELETE FROM cart_details WHERE product_id=$product AND `user_id`=$user_id";
-    $delete_items = "DELETE FROM items WHERE product_id=$product AND `user_id`=$user_id";
-    $result_delete= mysqli_query ($conn, $delete_query);
-    $result_items= mysqli_query ($conn, $delete_items);
-}
-
-?>
-
- </form>
-
 
 </body>
+</html>
 
 <!-- Bootstrap Script-->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

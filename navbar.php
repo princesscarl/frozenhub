@@ -5,7 +5,29 @@ if (!$conn){
     die("Connection Failed. " . mysqli_connect_error());
 }
 
-include './shop/common_functions.php';
+
+
+
+function cart_items()
+{
+    global $conn;
+    if (isset($_SESSION['email'])) {
+        $email = $_SESSION['email'];
+        $select_query = "SELECT * FROM cart_details JOIN user_details WHERE cart_details.user_id = user_details.user_id AND `email`='$email'";
+        $result_query = mysqli_query($conn, $select_query);
+        $count_cart_items = mysqli_num_rows($result_query);
+
+        if ($count_cart_items == 0) {
+            $count_cart_items = 0;
+            echo $count_cart_items;
+        } else {
+            echo $count_cart_items;
+        }
+    }
+}
+
+
+
 ?>
 
 <div class="navigation">
@@ -138,10 +160,19 @@ include './shop/common_functions.php';
      <li class="nav-item">
           <a class="nav-link" href="index.php?cart"><i class="bi bi-cart-plus-fill" style="font-size:25px;">'; ?>
           
-         <?php cart_items()?>
+         <?php   echo cart_items();?>
 
          <?php
          echo' 
+          </i></a>
+        </li>
+          ';} ?>
+
+
+<?php if (!isset($_SESSION['email'])) {
+            echo'
+     <li class="nav-item">
+          <a class="nav-link" href="index.php?cart"><i class="bi bi-cart-plus-fill" style="font-size:25px;">
           </i></a>
         </li>
           ';} ?>

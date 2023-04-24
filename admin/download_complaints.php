@@ -27,7 +27,7 @@ fputcsv($file, $header,',');
 // Loop the authors and put it into the CSV file
 $count = 1;
 while ($row = mysqli_fetch_assoc($result)){
-    fputcsv($file, [$count++, $row['firstName'], $row['lastName'],$row['email'],  $row["phoneNum"], $row["proNo"], $row["comDate"]  ,  $row["proName"] , $row["boughtOn"] , $row["details"], $row["actions"]   ]);
+    fputcsv($file, [$count++, $row['firstname'], $row['lastname'],$row['email'],  $row["phoneNum"], $row["proNo"], $row["comDate"]  ,  $row["proName"] , $row["boughtOn"] , $row["details"], $row["actions"]   ]);
 }
  
 fseek($file,0);

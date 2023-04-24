@@ -86,6 +86,10 @@ $product = $_GET['id'];
 <body class="bg-light">
     <div class="container mt-3">
     <h2 class = "text-center"> Edit Products </h2>
+
+
+    <button type="button" onclick="window.history.back()" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Back</button>
+
         <!--FORM-->
         <form method="POST" enctype="multipart/form-data">
 

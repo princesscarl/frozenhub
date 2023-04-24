@@ -16,22 +16,21 @@
   <link rel="icon" type="images/x-icon" href="https://lh4.googleusercontent.com/jvr_qqBAp9zQzSBzcTX51PygZYcNud6Kj6aBp4XxHeWVzYBIt0AWBGagulBvcnWdhB0=w2400">
  
 
-  <!-- FONT-->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
-  <!-- BOOTSTRAP -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+  <!-- <link rel="stylesheet" href="https://kit.fontawesome.com/faf8bee4ee.css" crossorigin="anonymous"> -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   
+  <!-- <script src='action.js'></script> -->
+  
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/faf8bee4ee.js" crossorigin="anonymous"></script>
+  <!-- <script src="https://kit.fontawesome.com/faf8bee4ee.js" crossorigin="anonymous"></script> -->
   <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
-  <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js%22%3E"></script>
-  <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js%22%3E"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js%22%3E"></script>
  
   <script src="action.js"></script>
 
@@ -63,17 +62,17 @@
   }
 
   elseif(isset($_GET['checkout'])){
-      // $email = $_SESSION['email'];
-      // $select_query = "SELECT * FROM cart_details JOIN user_details WHERE cart_details.user_id = user_details.user_id AND `email`='$email'";
-      // $result_query = mysqli_query($conn, $select_query);
-      // $count_cart_items = mysqli_num_rows($result_query);
+      $email = $_SESSION['email'];
+      $select_query = "SELECT * FROM cart_details JOIN user_details WHERE cart_details.user_id = user_details.user_id AND `email`='$email'";
+      $result_query = mysqli_query($conn, $select_query);
+      $count_cart_items = mysqli_num_rows($result_query);
 
-      // if ($count_cart_items == 0) {
-      //   header("Location:./shop/cart.php");
-      // } else {
+      if ($count_cart_items == 0) {
+        header("Location:./shop/cart.php");
+      } else {
         include ('./shop/payment.php');
       }
-  // }
+  }
 
   elseif (isset($_GET['view_orders'])) {
     include './user_area/view_orders.php';
@@ -148,34 +147,24 @@
         </div>
       </div>
     </div>
-
-
-    <script>
-      
-      // $(document).ready(function() {
-      //     $('#add-to-cart-form').click(function() {
-      //         var product_id = $('input[name="product_id"]').val();
-      //         $.ajax({
-      //             type: 'POST',
-      //             url: 'add_to_cart.php',
-      //             data: { product_id: product_id },
-      //             // success: function(data) {
-      //             //     alert('Product added to cart!');
-      //             }
-      //         // }
-      //             );
-      //     });
-      // });
-      // $(document).ready(function(){
-      //   $("#add-to-cart-form").submit(function(event){
-      //       var product_id =  $('input[name="product_id"]').val();
-      //       $.POST("add_to_cart.php", product_id, functon(response)
-      //       {
-      //         alert(product_id);
-      //       })
-      //       return false;
-      //   });
-      // });
+  <script>
+    $(document).ready(function()
+{
+    $('.add-to-cart-button').on('click', function () {
+      var product_id = $(this).data('id');
+      $.ajax({
+        url: 'add_to_cart.php',
+        method: 'GET',
+        data: { product_id: product_id },
+        success: function (data) {
+          $(document).ajaxStop(function(){
+            window.location.reload();
+            });
+        }
+      })
+    })
+  }
+);
 </script>
 
    

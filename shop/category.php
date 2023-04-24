@@ -52,62 +52,31 @@
 
 <div id="myCarousel" class="carousel slide container" data-bs-ride="carousel" style="font-family: 'Poppins', sans-serif; font-weight:bold; color:white">
     <div class="carousel-inner w-100 text-center">
+
+    <?php
+$conn = mysqli_connect('localhost','root','','frozenhub');
+if (!$conn){
+    die("Connection Failed. " . mysqli_connect_error());
+}
+
+$category = "SELECT * FROM categories";
+$result_category = mysqli_query($conn,$category);
+while ($row = mysqli_fetch_assoc($result_category)) {
+$category_title = $row['category_title'];
+$category_id = $row['category_id']
+?>
         <div class="carousel-item active">
             <div class="col-md-3 p-2">
                 <div class="card card-body" style="background-color: #7BB4BD;">
-                    <div class="flex-column lh-1 imagename"> <span>Meats</span> </div>
+                    <div class="flex-column lh-1 imagename">   
+                   <a href="index.php?category=<?php echo $category_id?>" style="text-decoration-none text-light"><?php echo $category_title?></a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="carousel-item">
-            <div class="col-md-3 p-2">
-                <div class="card card-body" style="background-color: #7BB4BD;">
-                    <div class="flex-column lh-1 imagename"> <span>Meats</span> </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="col-md-3 p-2">
-                <div class="card card-body" style="background-color: #7BB4BD;">
-                <div class="flex-column lh-1 imagename"> <span>Meats</span> </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="col-md-3 p-2">
-                <div class="card card-body" style="background-color: #7BB4BD;">
-                <div class="flex-column lh-1 imagename"> <span>Meats</span> </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="col-md-3 p-2">
-                <div class="card card-body" style="background-color: #7BB4BD;">
-                <div class="flex-column lh-1 imagename"> <span>Meats</span> </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="col-md-3 p-2">
-                <div class="card card-body" style="background-color: #7BB4BD;">
-                    <div class="flex-column lh-1 imagename"> <span>Meats</span> </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="col-md-3 p-2">
-                <div class="card card-body" style="background-color: #7BB4BD;">
-                <div class="flex-column lh-1 imagename"> <span>Meats</span> </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="col-md-3 p-2">
-                <div class="card card-body" style="background-color: #7BB4BD;">
-                <div class="flex-column lh-1 imagename"> <span>Meats</span> </div>
-                </div>
-            </div>
-        </div>
+
+
+        <?php }?>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

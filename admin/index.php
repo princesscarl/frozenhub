@@ -76,8 +76,7 @@ if(isset($_POST["delete"]))
     }
 }
 </style>
- 
- 
+
 </head>
     <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
     	  <!-- ======= Header ======= -->
@@ -100,6 +99,17 @@ if(isset($_POST["delete"]))
                   <a class="dropdown-item" href="index.php?complaints" style="font-size: 20px;">Complaints</a>
                   <a class="dropdown-item" href="index.php?inquiries" style="font-size: 20px;">Inquiries</a>
                   <a class="dropdown-item" href="index.php?feedback" style="font-size: 20px;">Feedback</a>
+                  </div>
+                </li>
+            
+
+
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 20px; font-weight:bold;">Shop</a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="index.php?view_products" style="font-size: 20px;">View Products</a>
+                  <a class="dropdown-item" href="index.php?view_orders" style="font-size: 20px;">List of Orders</a>
+                  <a class="dropdown-item" href="index.php?view_users" style="font-size: 20px;">List of Users</a>
                   </div>
                 </li>
               </ul>
@@ -127,6 +137,21 @@ if(isset($_POST["delete"]))
     }
     elseif (isset($_GET['feedback'])){
       include ('./feedback.php');
+    }
+    elseif (isset($_GET['view_products'])){
+      include ('./shop/view_products.php');
+    }
+    elseif (isset($_GET['view_top'])){
+      include ('./shop/view_top.php');
+    }
+    elseif (isset($_GET['view_promos'])){
+      include ('./shop/view_promos.php');
+    }
+    elseif (isset($_GET['view_users'])){
+      include ('./shop/view_users.php');
+    }
+    elseif (isset($_GET['view_orders'])){
+      include ('./shop/view_orders.php');
     }
   ?>
 
@@ -159,7 +184,6 @@ if(isset($_POST["delete"]))
             }
  
         });
- 
     </script>
    </body>
 </html>

@@ -192,7 +192,7 @@ if (!$conn){
 <?php
 
       $user_id = $_SESSION['user_id'];
-                    $category_query="SELECT * FROM order_details WHERE`user_id` = $user_id ORDER BY `date` DESC";
+                    $category_query="SELECT * FROM order_details WHERE`user_id` = $user_id AND `status` ='Pending' ORDER BY `date` DESC";
                     $result_category= mysqli_query($conn,$category_query);
 
                     $count = mysqli_num_rows($result_category);
@@ -244,7 +244,10 @@ echo'
             <td>'.$status.'</td>
             <td> 
             <button class="btn btn-success">
-            <a href="received.php?id='.$order_id.'" class="text-light">Received</a></button>
+            <a href="received.php?id='.$order_id.'" class="text-light text-decoration-none">Received</a></button>
+            
+            <button class="btn btn-warning">
+            <a href="cancel.php?id='.$order_id.'" class="text-light text-decoration-none">Cancel</a></button>
             </td>
 
             ';

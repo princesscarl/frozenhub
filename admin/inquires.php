@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <h1 class="text-center" style="padding: 20px; font-weight:bold">Inquiries</h1>
-  <a class="nav-link" href="download_inquiries.php" style="font-size: 20px; font-weight:bold; float:right;">
+  <a class="nav-link" href="./csv/download_inquiries.php" style="font-size: 20px; font-weight:bold; float:right;">
   <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> CSV</a>
   
 

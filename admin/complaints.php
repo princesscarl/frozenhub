@@ -1,6 +1,6 @@
 <div class="container-fluid">
         <h1 class="text-center" style="padding: 20px; font-weight:bold">Complaints Data</h1>
-        <a class="nav-link" href="download_complaints.php" style="font-size: 20px; font-weight:bold; float:right;">
+        <a class="nav-link" href="./csv/download_complaints.php" style="font-size: 20px; font-weight:bold; float:right;">
         <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> CSV</a>
         <table id="table" class="table table-bordered text-center" style="width:100%; margin:auto; border-collapse:collapse;">
  

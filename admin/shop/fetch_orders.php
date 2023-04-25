@@ -30,7 +30,7 @@ if (!$conn){
 <table class="table">
     <thead style="background-color: #61b0b7;">
         <tr>
-            <t > Product</th>
+            <th> Product</th>
             <th> Quantity </th>
             
             

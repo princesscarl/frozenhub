@@ -40,7 +40,7 @@
             <td>$product_description</td>
 
             <td> ";?>
-            <a href ="./shop/edit_products.php?id= <?php echo $product_id ?>" class='text-warning'><i class='fa-solid fa-pen-to-square'></i></a>
+             <a href ="./index.php?edit_products= <?php echo $product_id ?>" class='text-warning'><i class='fa-solid fa-pen-to-square'></i></a>
             <?php
             echo"
             </td>

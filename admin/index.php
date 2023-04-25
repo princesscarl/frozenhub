@@ -203,12 +203,16 @@ if(isset($_POST["delete"]))
     elseif (isset($_GET['view_complete'])){
       include ('./shop/view_complete.php');
     }
- 
+    
+    else{
+      echo'
+      <div class="container-fluid text-center" style="width:95%">
+      <img class="image-fluid" src="../pictures/Welcome.png" alt="true" style="width:80%; height:auto;">
+    </div>';
+    }
   ?>
 
-  <div class="container-fluid text-center" style="width:95%">
-    <img class="image-fluid" src="../pictures/Welcome.png" alt="true" style="width:80%; height:auto;">
-  </div>
+ 
 
 
   <script type="text/javascript">

@@ -206,6 +206,10 @@ if(isset($_POST["delete"]))
  
   ?>
 
+  <div class="container-fluid text-center" style="width:95%">
+    <img class="image-fluid" src="../pictures/Welcome.png" alt="true" style="width:80%; height:auto;">
+  </div>
+
 
   <script type="text/javascript">
         $(document).ready(function(){

@@ -72,11 +72,14 @@ if($result_product){
 
     <!--DESCRIPTION-->
         <div class="form-outline mb-4 w-50 m-auto pt-3">
-                <label for="product_description" class="form-label">
-                Product Description
-                </label>
-                <input type="text" name="product_description" id="product_description" class="form-control" placeholder="Enter Product Description" autocomplete="Off" required>
-            </div>
+        <textarea type="text" name="product_description" id="product_description" class="form-control" placeholder="Product Description" maxlength="300" style="font-family: Poppins, sans-serif;font-size: 19px;"></textarea>
+                        
+                        <div class="row" style="padding-top: 0px;">
+                            <div class="col-lg-9 col-xl-10 col-xxl-8 d-flex justify-content-end ms-lg-5" id="charCountCol" style="padding-top: 19px;font-family: Poppins, sans-serif;">
+                                <div id="charCount" style="padding-left: 13px;"><span id="currentCount">0</span><span id="maxCount">/300</span></div>
+                  </div>
+                  </div>
+                  </div>
 
     <!-- KEYWORDS -->
         <!-- <div class="form-outline mb-4 w-50 m-auto pt-3">

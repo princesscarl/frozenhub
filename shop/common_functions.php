@@ -23,6 +23,7 @@ function getproducts()
             $product_description = $row['product_description'];
 
             $short_description = substr($product_description, 0, 25);
+            $full_description = substr($product_description, 275);
 
             $product_price = $row['product_price'];
             $product_image = $row['product_image'];
@@ -34,11 +35,11 @@ function getproducts()
     <div class='card-body'>
     <h5 class='card-title'>$product_title</h5>
 ";?>
- <div class="description">
-  <p><?php echo $short_description; ?></p>
-  <p class="full_description" style="display: none;"><?php echo $product_description; ?></p>
+<div id="description">
+  <p class="short_description"><?php echo $short_description; ?></p>
+  <p class="full_description" style="display: none;"><?php echo $full_description; ?></p>
   <button class="view_more_button" onclick="toggleDescription(this)">View More</button>
-</div>
+  </div>
 
   <?php echo "
     <p class='card-text'><strong>Price:&nbsp$product_price</strong></p>"; ?>

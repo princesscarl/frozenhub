@@ -21,13 +21,15 @@ if (!$conn){
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-
+<!-- ICON-->
+<link rel="icon" type="images/x-icon" href="https://lh4.googleusercontent.com/jvr_qqBAp9zQzSBzcTX51PygZYcNud6Kj6aBp4XxHeWVzYBIt0AWBGagulBvcnWdhB0=w2400">
 
 </head>
 <body>
 
 <h1 class="text-center" id="reqsHeading" style="margin-bottom: 12px;padding-bottom: 8px;padding-top: 12px;">List of Items</h1>
-<table class="table">
+<button type="button" onclick="window.history.back()"  aria-hidden="true"  class="fa fa-arrow-left ml-3  p-2  mb-3" ></button>
+<table table id="table" class="table table-bordered  text-center" style="width:90%; margin:auto; border-collapse:collapse;">
     <thead style="background-color: #61b0b7;">
         <tr>
             <th> Product</th>

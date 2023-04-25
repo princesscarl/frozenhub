@@ -1,8 +1,9 @@
 <div class="container-fluid">
         <h1 class="text-center" style="padding: 20px; font-weight:bold">Complaints Data</h1>
+        
         <table id="table" class="table table-bordered text-center" style="width:100%; margin:auto; border-collapse:collapse;">
         <thead style="background-color: #61b0b7;">
-        <tr>
+        
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
@@ -16,7 +17,7 @@
             <th> Picture </th>
             <th> Status </th>
 		        <th colspan="2">Actions</th>
-        </tr>
+        
 </thead>
 <tbody>
 <?php

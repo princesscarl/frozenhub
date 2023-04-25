@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <h1 class="text-center" style="padding: 20px; font-weight:bold">List of Orders</h1>
+  <h1 class="text-center" style="padding: 20px; font-weight:bold">Complete Orders</h1>
 
   <a href="index.php?view_orders" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">All Orders</a>
   <a href="index.php?view_approved" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Approved</a>
@@ -18,13 +18,13 @@
             <th> Amount </th>
             <th> Order Date </th>  
             <th> Status </th>
-            <th colspan="3"> Actions</th>
+        
         </tr>
     </thead>
     <tbody>
     <?php
   
-                    $category_query="SELECT * FROM order_details";
+                    $category_query="SELECT * FROM order_details WHERE `status` ='Received' ";
                     $result_category= mysqli_query($conn,$category_query);
                     while($row = mysqli_fetch_assoc($result_category)) {
                       $user_id = $row['user_id'];
@@ -45,14 +45,6 @@
                         <td>'. $total.'</td>
                         <td>'.  $date.'</td>
                         <td>'. $status.'</td>
-                        <td> 
-                        <button class="btn btn-success">
-                        <a href="./shop/approved.php?id='.$order_id.'" class="text-light">Approved</a></button>
-                        </td>
-                        <td> 
-                        <button class="btn btn-success">
-                        <a href="./shop/delivery.php?id='.$order_id.'" class="text-light">Delivery</a></button>
-                        </td>
                       
                        
                         

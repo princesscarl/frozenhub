@@ -86,7 +86,7 @@ $product = $_GET['edit_products'];
 
 
 <body class="bg-light">
-    <div class="container mt-3" style="background-color: #E0F1F1;">
+    <div class="container mt-3" style="background-color: #dedede;">
     <h2 class = "text-center mt-5 mb-3" style="font-weight: bold;"> Edit Products </h2>
 
         <!--FORM-->

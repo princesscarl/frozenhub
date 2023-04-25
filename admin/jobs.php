@@ -1,5 +1,8 @@
 <div class="container-fluid">
   <h1 class="text-center" style="padding: 20px; font-weight:bold">Job Applications</h1>
+  <a class="nav-link" href="./csv/download_job.php" style="font-size: 20px; font-weight:bold; float:right;">
+  <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> CSV</a>
+  
         <table id="table" class="table table-stripped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed printTable darkBG" role="grid" cellspacing="0" style="width:100%">
         <thead style="background-color: #61b0b7">
         <tr>

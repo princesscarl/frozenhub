@@ -3,7 +3,7 @@
   <button class="btn btn-success mb-3" href="download_inquiries.php" style="font-size: 20px; font-weight:bold;">Download</button>
 
         <table id="table" class="table table-bordered text-center" style="width:100%; margin:auto; border-collapse:collapse;">
- 
+        <thead style="background-color: #61b0b7;">
         <tr>
             <th>First Name</th>
             <th>Last Name</th>

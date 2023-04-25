@@ -21,18 +21,17 @@ if (!$conn){
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
-
+<!-- ICON-->
+<link rel="icon" type="images/x-icon" href="https://lh4.googleusercontent.com/jvr_qqBAp9zQzSBzcTX51PygZYcNud6Kj6aBp4XxHeWVzYBIt0AWBGagulBvcnWdhB0=w2400">
 </head>
 <body>
 
 <h1 class="text-center" id="reqsHeading" style="margin-bottom: 12px;padding-bottom: 8px;padding-top: 12px;">List of Items</h1>
-<table class="table">
-    <thead>
+<table table id="table" class="table table-bordered  text-center" style="width:90%; margin:auto; border-collapse:collapse;">
+<thead style="background-color: #61b0b7;">
         <tr>
             <th> Product</th>
             <th> Quantity </th>
-            
-            
         </tr>
     </thead>
     <tbody>

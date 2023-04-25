@@ -43,39 +43,24 @@ if(isset($_POST["delete"]))
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/faf8bee4ee.js" crossorigin="anonymous"></script>
   <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
+
+
   <script>
-    $('textarea').keyup(function() {
-    var characterCount = $(this).val().length,
-        current = $('#currentCount'),
-        maximum = $('#maxCount'),
-        theCount = $('#charCount');
-    current.text(characterCount);
-    
-    if (characterCount < 100) {
-        current.css('color', '#666');
-    }
-    if (characterCount > 100 && characterCount < 150) {
-        current.css('color', '#6d5555');
-    }
-    if (characterCount > 150 && characterCount < 180) {
-        current.css('color', '#793535');
-    }
-    if (characterCount > 180 && characterCount < 200) {
-        current.css('color', '#841c1c');
-    }
-    if (characterCount > 200 && characterCount < 250) {
-        current.css('color', '#8f0001');
-    }
-    if (characterCount >= 250) {
-        maximum.css('color', '#8f0001');
-        current.css('color', '#8f0001');
-        theCount.css('font-weight','bold');
-    } else {
-        maximum.css('color','#666');
-        theCount.css('font-weight','normal');
-    }
-});
-  </script>
+  $(document).ready(function(){
+function toggleDescription() {
+  var fullDescription = document.getElementById("full_description");
+  var viewMoreButton = document.getElementById("view_more_button");
+  
+  if (fullDescription.style.display === "none") {
+    fullDescription.style.display = "block";
+    viewMoreButton.innerHTML = "View Less";
+  } else {
+    fullDescription.style.display = "none";
+    viewMoreButton.innerHTML = "View More";
+  }
+}}
+  )
+</script>
 
 
   <style>
@@ -258,5 +243,7 @@ if(isset($_POST["delete"]))
     }
 });
   </script>
+
+
    </body>
 </html>

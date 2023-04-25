@@ -42,7 +42,7 @@ $product = $_GET['edit_products'];
         $product_price = $_POST['product_price'];
         $product_category= $_POST['product_category'];
 
-        $uploadsDir = "./products_images/";
+        $uploadsDir = "../products_images/";
 
         // Velidate if files exist
     if (!empty(array_filter($_FILES['product_image']['name']))) {  
@@ -86,8 +86,11 @@ $product = $_GET['edit_products'];
 
 
 <body class="bg-light">
-    <div class="container mt-3" style="background-color: #E0F1F1;">
-    <h2 class = "text-center mt-5 mb-3" style="font-weight: bold;"> Edit Products </h2>
+    <div class="container mt-3">
+    <h2 class = "text-center"> Edit Products </h2>
+
+
+    <button type="button" onclick="window.history.back()" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Back</button>
 
         <!--FORM-->
         <form method="POST" enctype="multipart/form-data">
@@ -121,7 +124,6 @@ $product = $_GET['edit_products'];
         <!-- CATEGORY -->
             <div class="form-outline mb-4 w-50 m-auto pt-3">
                 <select name="product_category" id="product_category" class="form-select">
-     
                     <?php
                     $category_query="SELECT * FROM categories ";
                     $result_category= mysqli_query($conn,$category_query);
@@ -132,13 +134,15 @@ $product = $_GET['edit_products'];
                         $category_id= $row["category_id"];
                         $category_title= $row["category_title"];
                         ?>
-                   <option value="<?php echo  $category_id; ?>" <?php if ($category_id==$product_category) {echo "selected";}?>> <?php echo $category_title; ?></option>
+
+                    <option value="<?php echo $category_id;?>"> <?php if ($category_id==$product_category) {echo "";}?> <?php echo $category_title;?> </option>
+
                     <?php
                         }
                         ?>
                     </select>
                 </div>
-            
+                
               
         <!-- PICTURE -->
             <div class="form-outline  mb-4 w-50 m-auto pt-3">
@@ -157,10 +161,9 @@ $product = $_GET['edit_products'];
                     </div>
         
         <!-- SUBMIT -->
-           <div class="form-outline d-flex mb-4 w-50 m-auto pt-3 mt-3 justify-content-end"> 
-                <button type="button" onclick="window.history.back()" class="btn btn-secondary p-2 py-2 mr-3 border-0 text-decoration-none text-light mb-3">Back</button>
-                <button type="submit" name="update-btn" class="btn btn-primary p-2 py-2 border-0 text-decoration-none text-light mb-3">Update Product</button>
-            </div>
+           <div class="form-outline mb-4 w-50 m-auto pt-3 mt-3"> 
+                <button type="submit" name="update-btn" class="btn btn-primary">Update Product</button>
+                </div>
         </form>
     </div>
 </body>

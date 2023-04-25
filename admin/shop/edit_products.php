@@ -86,11 +86,8 @@ $product = $_GET['edit_products'];
 
 
 <body class="bg-light">
-    <div class="container mt-3">
-    <h2 class = "text-center"> Edit Products </h2>
-
-
-    <button type="button" onclick="window.history.back()" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Back</button>
+    <div class="container mt-3" style="background-color: #E0F1F1;">
+    <h2 class = "text-center mt-5 mb-3" style="font-weight: bold;"> Edit Products </h2>
 
         <!--FORM-->
         <form method="POST" enctype="multipart/form-data">
@@ -161,9 +158,10 @@ $product = $_GET['edit_products'];
                     </div>
         
         <!-- SUBMIT -->
-           <div class="form-outline mb-4 w-50 m-auto pt-3 mt-3"> 
-                <button type="submit" name="update-btn" class="btn btn-primary">Update Product</button>
-                </div>
+           <div class="form-outline d-flex mb-4 w-50 m-auto pt-3 mt-3 justify-content-end"> 
+                <button type="button" onclick="window.history.back()" class="btn btn-secondary p-2 py-2 mr-3 border-0 text-decoration-none text-light mb-3">Back</button>
+                <button type="submit" name="update-btn" class="btn btn-primary p-2 py-2 border-0 text-decoration-none text-light mb-3">Update Product</button>
+            </div>
         </form>
     </div>
 </body>

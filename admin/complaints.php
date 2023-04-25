@@ -1,35 +1,34 @@
 <div class="container-fluid">
-  <h1 class="text-center" style="padding: 20px; font-weight:bold">Complaints Data</h1>
-  <table id="table" class="table table-bordered text-center" style="width:100%; margin:auto; border-collapse:collapse;">
-    <thead style="background-color: #61b0b7;">
-      <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-        <th>Phone Number</th>
-        <th>Product No.</th>
-        <th>Product Name</th>
-        <th>Bought On</th>
-        <th>Complain Date</th>
-        <th>Complain Details</th>
-        <th> Proposed Action/s </th>
-        <th> Picture </th>
-        <th> Status </th>
-        <th colspan="3">Actions</th>
-        
-      </tr>
-    </thead>
-    <tbody>
-      <?php
-
-      $sql = "SELECT * FROM complaints_table ORDER BY `complaints_table`.`com_id` DESC";
-      $result = $conn->query($sql);
-      while ($row = mysqli_fetch_assoc($result)) {
-
-
-        $com_id = $row["com_id"];
-        $status = $row["status"];
-        $picture = $row['picture'];
+        <h1 class="text-center" style="padding: 20px; font-weight:bold">Complaints Data</h1>
+        <table id="table" class="table table-bordered text-center" style="width:100%; margin:auto; border-collapse:collapse;">
+        <thead style="background-color: #61b0b7;">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Product No.</th>
+            <th>Product Name</th>
+            <th>Bought On</th>
+            <th>Complain Date</th>
+            <th>Complain Details</th>
+            <th> Proposed Action/s </th>
+            <th> Picture </th>
+            <th> Status </th>
+		        <th colspan="2">Actions</th>
+        </tr>
+</thead>
+<tbody>
+<?php
+ 
+$sql = "SELECT * FROM complaints_table ORDER BY `complaints_table`.`com_id` DESC";
+$result = $conn->query($sql);
+    while ($row = mysqli_fetch_assoc($result)){
+ 
+ 
+    $com_id = $row["com_id"];
+    $status = $row["status"];
+    $picture = $row['picture'];
 
         echo '<tr>
 		<td data-label="First Name">' . $row["firstname"] . '</td>

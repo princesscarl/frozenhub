@@ -5,11 +5,17 @@ $user_id = $_SESSION['user_id'];
 
 if (isset($_POST['submit-btn'])) {
   $invoice =  mt_rand(10000, 99999);
-  $total=0; 
+
+  $total = 0;
+  for ($i = 0; $i < $count_cart_items; $i++) {
+    $price = $_POST['price'][$i];
+    $quantity = $_POST['quantity'][$i];
+    $total +=  $price * $quantity;
+  }
+
   $order_query = "INSERT INTO order_details(`user_id`,`invoice`,`date`,`status`, `items`,`amount`) 
   VALUES ('$user_id','$invoice',now(), 'Pending', ' $count_cart_items','$total')";
   $result_query = mysqli_query($conn, $order_query);
-
  
     // Retrieve the submitted form data
     $orders = $_POST['order'];
@@ -29,14 +35,14 @@ if($result_query){
 }
     
     
-    // if ($stmt) {
-    //   $delete_query = "DELETE FROM cart_details WHERE `user_id`=$user_id";
-    //   $result_delete = mysqli_query($conn, $delete_query);
-    //   $url = "index.php";
-    //   echo "<script> alert('Order Confirmed!'); window.location = '$url'; </script>";
-    // } else {
-    //   echo "<script> alert ('ERROR') </script>";
-    // }
+    if ($stmt) {
+      $delete_query = "DELETE FROM cart_details WHERE `user_id`=$user_id";
+      $result_delete = mysqli_query($conn, $delete_query);
+      $url = "index.php?cart";
+      echo "<script> alert('Order Confirmed!'); window.location = '$url'; </script>";
+    } else {
+      echo "<script> alert ('ERROR') </script>";
+    }
 
         // Close the prepared statement and database connection
         mysqli_stmt_close($stmt);
@@ -161,7 +167,7 @@ if($result_query){
       <form method="POST">
       
         <td> <input hidden name="product[]" value=' . $product_id .'>' . $product_title . '</td>
-        <td>' . $product_price . '</td>
+        <td><input hidden name="price[]" value=' . $product_price .' >' . $product_price . '</td>
         <td><input hidden name="quantity[]" value=' . $product_quantity .' >' . $product_quantity . '</td>
         <td><input hidden name="order[]" value=' . $order_id . '></td>
 
@@ -181,7 +187,7 @@ if($result_query){
       <table class="table" style="border-bottom:gray solid 1px;">
         <tr>
           <th>Total:</th>
-          <td><strong><?php echo $total?></strong></td>
+          <td><strong><?php echo total_cart_price()?></strong></td>
           <td> <input type="button" value="CONFIRM PAYMENT" class="btn btn-info" data-toggle='modal' data-target='#confirm'></td>
 
         </tr>

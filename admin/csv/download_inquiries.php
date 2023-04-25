@@ -1,9 +1,16 @@
 <?php
-include 'connect.php';
- 
- 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "frozenhub";
+$tablename = "application_table";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if (!$conn){
+    die("Connection Failed. " . mysqli_connect_error());
+}
 //CSV Filename
-$fname = 'List of Applicants.csv';
+$fname = 'List of Inquries.csv';
  
 // Header Row Data: Array
 $header = ["No.","First Name", "Last Name", "Email","Mobile Number", "Location", "isLookingForSpace", "Business Name", "Years", "Type of Business", "Message"];

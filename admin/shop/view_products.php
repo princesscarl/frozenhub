@@ -1,10 +1,11 @@
 <div class="container-fluid">
   <h1 class="text-center" style="padding: 20px; font-weight:bold">All Products</h1>
 
-
+  <!-- <button type="button" onclick="window.history.back()" class="btn btn-warning p-2 py-2 border-0 text-decoration-none text-light mb-3">Back</button> -->
   <a href="index.php?view_products" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">All Products</a>
   <a href="index.php?view_promos" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">All Promos</a>
   <a href="index.php?view_top" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Top Products</a>
+  <a href="index.php?insert_products" class="btn btn-info p-2 py-2 border-0 text-decoration-none text-light mb-3">Insert Products</a>
 
         <table id="table" class="table table-stripped table-bordered dataTable responsive display nowrap no-footer dtr-inline collapsed printTable darkBG" role="grid" cellspacing="0" style="width:100%">
         <thead style="background-color: #61b0b7;">

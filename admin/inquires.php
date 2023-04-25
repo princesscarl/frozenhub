@@ -1,6 +1,8 @@
 <div class="container-fluid">
   <h1 class="text-center" style="padding: 20px; font-weight:bold">Inquiries</h1>
-  <button class="btn btn-success mb-3" href="download_inquiries.php" style="font-size: 20px; font-weight:bold;">Download</button>
+  <a class="nav-link" href="./csv/download_inquiries.php" style="font-size: 20px; font-weight:bold; float:right;">
+  <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> CSV</a>
+  
 
         <table id="table" class="table table-bordered text-center" style="width:100%; margin:auto; border-collapse:collapse;">
         <thead style="background-color: #61b0b7;">

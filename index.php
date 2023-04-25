@@ -34,7 +34,7 @@
  
   <script src="action.js"></script>
 
-<script>
+<!-- <script>
 function toggleDescription(button) {
   var fullDescription = button.previousElementSibling;
   
@@ -46,6 +46,21 @@ function toggleDescription(button) {
     button.innerHTML = "View More";
   }
 }
+</script> -->
+
+<script>
+$(document).ready(function() {
+  $('.view_more_button').click(function() {
+    var fullDescription = $(this).prev('.description').find('.full_description');
+    if (fullDescription.is(':hidden')) {
+      fullDescription.show();
+      $(this).text('View Less');
+    } else {
+      fullDescription.hide();
+      $(this).text('View More');
+    }
+  });
+});
 </script>
 
 

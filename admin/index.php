@@ -190,6 +190,9 @@ if(isset($_POST["delete"]))
     elseif (isset($_GET['insert_products'])){
       include ('./shop/insert_products.php');
     }
+    elseif (isset($_GET['edit_products'])){
+      include ('./shop/edit_products.php');
+    }
   ?>
 
 

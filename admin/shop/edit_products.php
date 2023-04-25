@@ -5,9 +5,13 @@ $conn = mysqli_connect('localhost','root','','frozenhub');
 if (!$conn){
     die("Connection Failed. " . mysqli_connect_error());
 }
-if(isset($_GET['id'])){
 
-$product = $_GET['id'];
+
+
+
+if(isset($_GET['edit_products'])){
+
+$product = $_GET['edit_products'];
     $category_query="SELECT * FROM products JOIN categories WHERE products.category_id = categories.category_id AND products.product_id = '$product'";
     $result_category= mysqli_query($conn,$category_query);
     if (mysqli_num_rows($result_category) == 0){
@@ -23,7 +27,6 @@ $product = $_GET['id'];
         $product_id = $row["product_id"];
         $product_title = $row["product_title"];
         $product_description = $row["product_description"];
-        // $product_keywords = $row["product_keyword"];
         $product_image = $row["product_image"];
         $product_price = $row["product_price"];
         $category_title= $row["category_title"];
@@ -36,7 +39,6 @@ $product = $_GET['id'];
 
         $product_title= $_POST['product_title'];
         $product_description= $_POST['product_description'];
-        // $product_keywords= $_POST['product_keywords'];
         $product_price = $_POST['product_price'];
         $product_category= $_POST['product_category'];
 
@@ -145,7 +147,7 @@ $product = $_GET['id'];
             <label for="product_image" class="form-label">Product Picture</label>    
             <input type="file" accept=".jpg,.png" name="product_image[]" id="product_image" class="form-control">
             <?php echo"
-            <img src = '../products_images/$product_image' class='m-3' width='100px;' height='100px;'> "; ?>
+            <img src = './products_images/$product_image' class='m-3' width='100px;' height='100px;'> "; ?>
             </div>
 
         <!-- PRICE -->

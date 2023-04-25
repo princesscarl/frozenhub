@@ -45,12 +45,14 @@ if($result_product){
 
 
 <body class="bg-light">
-<div class="container mt-3">
-<h2 class = "text-center"> Insert Products </h2>
-
+<div class="container mt-5 text-center">
 <a href="index.php?view_products" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">All Products</a>
   <a href="index.php?view_promos" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">All Promos</a>
   <a href="index.php?view_top" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Top Products</a>
+</div>
+
+<div class="container mt-3" style="background-color: #dedede;">
+  <h2 class = "text-center mt-3 mb-3" style="font-weight: bold;"> Insert Products </h2>
 
     <!--FORM-->
     <form method="POST" enctype="multipart/form-data">
@@ -127,8 +129,8 @@ if($result_product){
                 </div>
     
     <!-- SUBMIT -->
-       <div class="form-outline mb-4 w-50 m-auto pt-3"> 
-            <button type="submit" name="submit-btn" class="btn btn-primary">Insert Product</button>
+       <div class="form-outline d-flex mb-4 w-50 m-auto pt-3 justify-content-end"> 
+            <button type="submit" name="submit-btn" class="btn btn-primary p-2 py-2 border-0 text-decoration-none text-light mb-3">Insert Product</button>
             </div>
     </form>
 </div>

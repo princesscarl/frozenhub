@@ -4,7 +4,7 @@
 
     <?php include './shop/common_functions.php';
 
-getproducts();
+promo_products();
 ?>
 
 

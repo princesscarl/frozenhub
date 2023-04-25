@@ -27,6 +27,7 @@ if (!$conn){
 <body>
 
 <h1 class="text-center" id="reqsHeading" style="margin-bottom: 12px;padding-bottom: 8px;padding-top: 12px;">List of Items</h1>
+<button type="button" onclick="window.history.back()" class="btn btn-secondary p-2 py-2 mr-3 border-0 text-decoration-none text-light mb-3">Back</button>
 <table table id="table" class="table table-bordered  text-center" style="width:90%; margin:auto; border-collapse:collapse;">
 <thead style="background-color: #61b0b7;">
         <tr>

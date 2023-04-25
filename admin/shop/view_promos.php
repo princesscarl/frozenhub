@@ -5,7 +5,8 @@
   <a href="index.php?view_products" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">All Products</a>
   <a href="index.php?view_promos" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">All Promos</a>
   <a href="index.php?view_top" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Top Products</a>
- 
+  <a href="index.php?insert_products" class="btn btn-info p-2 py-2 border-0 text-decoration-none text-light mb-3">Insert Products</a>
+
  
  
 
@@ -42,7 +43,7 @@
             <td>$product_description</td>
 
             <td> ";?>
-           <a href ="./shop/edit_products.php?id= <?php echo $product_id ?>" class='text-warning'><i class='fa-solid fa-pen-to-square'></i></a>
+           <a href ="./index.php?edit_products= <?php echo $product_id ?>" class='text-warning'><i class='fa-solid fa-pen-to-square'></i></a>
            <?php
            echo"
            </td>

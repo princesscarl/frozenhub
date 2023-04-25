@@ -28,9 +28,9 @@ if (!$conn){
 
 <h1 class="text-center" id="reqsHeading" style="margin-bottom: 12px;padding-bottom: 8px;padding-top: 12px;">List of Items</h1>
 <table class="table">
-    <thead>
+    <thead style="background-color: #61b0b7;">
         <tr>
-            <th> Product</th>
+            <t > Product</th>
             <th> Quantity </th>
             
             

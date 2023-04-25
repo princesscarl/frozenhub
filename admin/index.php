@@ -191,9 +191,19 @@ if(isset($_POST["delete"]))
     elseif (isset($_GET['insert_products'])){
       include ('./shop/insert_products.php');
     }
-    elseif (isset($_GET['edit_products'])){
-      include ('./shop/edit_products.php');
+    elseif (isset($_GET['view_cancel'])){
+      include ('./shop/view_cancel.php');
     }
+    elseif (isset($_GET['view_approved'])){
+      include ('./shop/view_approved.php');
+    }
+    elseif (isset($_GET['view_delivery'])){
+      include ('./shop/view_delivery.php');
+    }
+    elseif (isset($_GET['view_complete'])){
+      include ('./shop/view_complete.php');
+    }
+ 
   ?>
 
 

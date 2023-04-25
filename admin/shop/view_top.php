@@ -48,12 +48,36 @@
             </td>
  
             <td>
-            <a href = '#' class='text-danger'  data-toggle='modal' data-target='#deleteModal'><i class='fa-solid fa-trash'></i></a>
-             </td>
- 
-             ";
-             
-             }?>              
+           <a href = '#' class='text-danger'  data-toggle='modal' data-target='#deleteModal'><i class='fa-solid fa-trash'></i></a>
+            </td>
+
+            ";
+            
+            }?>  
+            
         
     </tbody>
     <table>
+
+
+
+
+    
+    <!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1"  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">    Are you sure you want to delete this item? </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success"><a class="text-light text-decoration-none" href="./shop/delete_products.php?id=<?php echo $product_id?>">YES</a></button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal"><a href="index.php?cart.php" class="text-light text-decoration-none">NO</a></button>
+       
+      </div>
+    </div>
+  </div>
+</div>

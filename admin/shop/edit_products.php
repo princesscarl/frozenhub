@@ -42,7 +42,7 @@ $product = $_GET['edit_products'];
         $product_price = $_POST['product_price'];
         $product_category= $_POST['product_category'];
 
-        $uploadsDir = "../products_images/";
+        $uploadsDir = "./products_images/";
 
         // Velidate if files exist
     if (!empty(array_filter($_FILES['product_image']['name']))) {  
@@ -124,6 +124,7 @@ $product = $_GET['edit_products'];
         <!-- CATEGORY -->
             <div class="form-outline mb-4 w-50 m-auto pt-3">
                 <select name="product_category" id="product_category" class="form-select">
+     
                     <?php
                     $category_query="SELECT * FROM categories ";
                     $result_category= mysqli_query($conn,$category_query);
@@ -134,15 +135,13 @@ $product = $_GET['edit_products'];
                         $category_id= $row["category_id"];
                         $category_title= $row["category_title"];
                         ?>
-
-                    <option value="<?php echo $category_id;?>"> <?php if ($category_id==$product_category) {echo "";}?> <?php echo $category_title;?> </option>
-
+                   <option value="<?php echo  $category_id; ?>" <?php if ($category_id==$product_category) {echo "selected";}?>> <?php echo $category_title; ?></option>
                     <?php
                         }
                         ?>
                     </select>
                 </div>
-                
+            
               
         <!-- PICTURE -->
             <div class="form-outline  mb-4 w-50 m-auto pt-3">

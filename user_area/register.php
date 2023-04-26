@@ -73,6 +73,15 @@ if(isset($_POST['submit-btn'])){
   <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
 
     <title>Frozenhub - Register</title>
+
+
+    
+  <style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      display: none;
+    }
+  </style>
 </head>
 <body style="font-family: 'Poppins', sans-serif; background-color: rgb(247, 247, 247);">
 <section style="width: 95%; margin-top:30px; margin-bottom: 30px; margin-right: auto; margin-left: auto;">

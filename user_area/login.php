@@ -11,10 +11,11 @@ if(isset($_POST['submit-btn'])){
     $select_query = "SELECT * FROM user_details WHERE email = '".$_POST["email"]."'";
     $result = mysqli_query($conn, $select_query);
     $row_count = mysqli_num_rows($result);
-    $row = mysqli_fetch_assoc($result);
-    $passworddb = $row['password'];
-   
 
+    if (mysqli_num_rows($result) > 1 ) {
+      $row = mysqli_fetch_assoc($result);
+      $passworddb = $row['password'];
+   
     if($row_count>0)
         
         if(password_verify($password, $passworddb)){
@@ -26,7 +27,7 @@ if(isset($_POST['submit-btn'])){
         else{
             echo "<script> alert ('Password is wrong. Try again.') </script>";
           
-        }
+        }}
 
 
     else{

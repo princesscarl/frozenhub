@@ -241,7 +241,7 @@ echo'
 <a href="./view_orders.php" class="btn btn-secondary ml-5 p-2 py-2 border-0 text-decoration-none text-light mb-3">Pending</a>
 <a href="./view_for_delivery.php" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">For Delivery</a>
 <a href="./view_received_orders.php" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Received</a>
-<a href="./view_cancelled_orders.php" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Canceled</a>
+<a href="./view_cancelled_orders.php" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Cancelled</a>
 <div class= "container-fluid" style="width: 90%; display: flex; justify-content: center;">
 
 <table class="table">
@@ -254,7 +254,7 @@ echo'
             <th> Date Ordered</th>
             <th> Total </th>
             <th> Status</th>
-            <th> Action </th>
+
           
         </tr>
     </thead>
@@ -281,13 +281,6 @@ echo'
             <td>'.$total.'</td>
 
             <td>'.$status.'</td>
-            <td> 
-            <button class="btn btn-success">
-            <a href="received.php?id='.$order_id.'" class="text-light text-decoration-none">Received</a></button>
-            
-            <button class="btn btn-warning">
-            <a href="cancel.php?id='.$order_id.'" class="text-light text-decoration-none">Cancel</a></button>
-            </td>
 
             ';
              

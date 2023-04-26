@@ -226,7 +226,7 @@ if(isset($_SESSION['email']))
 <?php
 
       $user_id = $_SESSION['user_id'];
-                    $category_query="SELECT * FROM order_details WHERE`user_id` = $user_id AND `status` ='Cancel' ORDER BY `date` DESC";
+                    $category_query="SELECT * FROM order_details WHERE`user_id` = $user_id AND `status` ='Cancelled' ORDER BY `date` DESC";
                     $result_category= mysqli_query($conn,$category_query);
 
                     $count = mysqli_num_rows($result_category);
@@ -253,7 +253,6 @@ echo'
             <th> Date Ordered</th>
             <th> Total </th>
             <th> Status</th>
-            <th> Action </th>
           
         </tr>
     </thead>
@@ -280,13 +279,7 @@ echo'
             <td>'.$total.'</td>
 
             <td>'.$status.'</td>
-            <td> 
-            <button class="btn btn-success">
-            <a href="received.php?id='.$order_id.'" class="text-light text-decoration-none">Received</a></button>
-            
-            <button class="btn btn-warning">
-            <a href="cancel.php?id='.$order_id.'" class="text-light text-decoration-none">Cancel</a></button>
-            </td>
+          
 
             ';
              

@@ -24,7 +24,7 @@
     <tbody>
     <?php
   
-                    $category_query="SELECT * FROM order_details WHERE `status` ='Cancel' ";
+                    $category_query="SELECT * FROM order_details WHERE `status` ='Cancelled' ";
                     $result_category= mysqli_query($conn,$category_query);
                     while($row = mysqli_fetch_assoc($result_category)) {
                       $user_id = $row['user_id'];

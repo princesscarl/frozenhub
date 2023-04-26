@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <h1 class="text-center" style="padding: 20px; font-weight:bold">Canceled Orders</h1>
+  <h1 class="text-center" style="padding: 20px; font-weight:bold">Cancelled Orders</h1>
 
   <a href="index.php?view_orders" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">All Orders</a>
   <a href="index.php?view_approved" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Approved</a>

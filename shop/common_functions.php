@@ -219,7 +219,7 @@ function promo_products()
     $num_of_rows = mysqli_num_rows($result_products);
 
     if ($num_of_rows == 0) {
-        echo "<h2 class='text-center text-danger'>No stock for this category.</h2>";
+        echo "<h2 class='text-center text-danger'>Apologies, we do not currently have any promotions available to offer at this time.</h2>";
     } else {
         // 
 

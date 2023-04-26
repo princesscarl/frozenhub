@@ -35,13 +35,7 @@ function getproducts()
     <div class='card-body'>
     <h5 class='card-title'>$product_title</h5>
 ";?>
-<!-- <div id="description">
-  <p class="short_description">
-    <?php echo $short_description; ?>
-  </p>
-  <p class="full_description" style="display: none;"><?php echo $full_description; ?></p>
-  <button class="view_more_button" onclick="toggleDescription(this)">View More</button>
-  </div> -->
+
   <div id="description">
   <p class="description">
     <span class="short_description"><?php echo $short_description; ?></span>
@@ -146,13 +140,7 @@ function top_products()
     <div class='card-body'>
     <h5 class='card-title'>$product_title</h5>
 ";?>
-<!-- <div id="description">
-  <p class="short_description">
-    <?php echo $short_description; ?>
-  </p>
-  <p class="full_description" style="display: none;"><?php echo $full_description; ?></p>
-  <button class="view_more_button" onclick="toggleDescription(this)">View More</button>
-  </div> -->
+
   <div id="description">
   <p class="description">
     <span class="short_description"><?php echo $short_description; ?></span>
@@ -241,13 +229,7 @@ function promo_products()
     <div class='card-body'>
     <h5 class='card-title'>$product_title</h5>
 ";?>
-<!-- <div id="description">
-  <p class="short_description">
-    <?php echo $short_description; ?>
-  </p>
-  <p class="full_description" style="display: none;"><?php echo $full_description; ?></p>
-  <button class="view_more_button" onclick="toggleDescription(this)">View More</button>
-  </div> -->
+
   <div id="description">
   <p class="description">
     <span class="short_description"><?php echo $short_description; ?></span>

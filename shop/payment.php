@@ -40,7 +40,7 @@ if($result_query){
     if ($stmt) {
       $delete_query = "DELETE FROM cart_details WHERE `user_id`=$user_id";
       $result_delete = mysqli_query($conn, $delete_query);
-      echo "<script> alert('Order Confirmed!'); window.location.href = './index.php?cart'; </script>";
+      echo "<script> alert('Order Confirmed!'); window.location.href = './user_area/view_orders.php'; </script>";
     } else {
       echo "<script> alert ('ERROR') </script>";
     }

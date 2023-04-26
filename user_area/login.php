@@ -4,7 +4,6 @@ include '../connect.php';
 
 if(isset($_POST['submit-btn'])){
   
-
     $email = $_POST['email'];
     $password = $_POST ['password'];
 
@@ -12,7 +11,7 @@ if(isset($_POST['submit-btn'])){
     $result = mysqli_query($conn, $select_query);
     $row_count = mysqli_num_rows($result);
 
-    if (mysqli_num_rows($result) > 1 ) {
+    if (mysqli_num_rows($result) > 0 ) {
       $row = mysqli_fetch_assoc($result);
       $passworddb = $row['password'];
    

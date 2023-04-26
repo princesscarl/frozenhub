@@ -203,6 +203,9 @@ if(isset($_POST["delete"]))
     elseif (isset($_GET['view_complete'])){
       include ('./shop/view_complete.php');
     }
+    elseif (isset($_GET['edit_products'])){
+      include ('./shop/edit_products.php');
+    }
     
     else{
       echo'

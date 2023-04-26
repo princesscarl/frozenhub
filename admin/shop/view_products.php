@@ -45,8 +45,9 @@
             <?php
             echo"
             </td>
+           
             <td>
-            <a href = '#' class='text-danger'  data-toggle='modal' data-target='#deleteModal'><i class='fa-solid fa-trash'></i></a>
+            <a href = './shop/delete_products.php?id=".$product_id."' class='text-danger'><i class='fa-solid fa-trash'></i></a>
              </td>
  
              ";

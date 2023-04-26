@@ -158,7 +158,7 @@ $product = $_GET['edit_products'];
         
         <!-- SUBMIT -->
            <div class="form-outline d-flex mb-4 w-50 m-auto pt-3 mt-3 justify-content-end"> 
-                <button type="button" onclick="window.history.back()" class="btn btn-secondary p-2 py-2 mr-3 border-0 text-decoration-none text-light mb-3">Back</button>
+                <a href="./index.php?view_products" class="btn btn-secondary p-2 py-2 mr-3 border-0 text-decoration-none text-light mb-3">Back</a>
                 <button type="submit" name="update-btn" class="btn btn-primary p-2 py-2 border-0 text-decoration-none text-light mb-3">Update Product</button>
             </div>
         </form>

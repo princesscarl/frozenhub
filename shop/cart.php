@@ -1,4 +1,9 @@
 <?php 
+
+
+
+if(isset($_SESSION['email']))
+{
   $email= $_SESSION['email'];
  
       if(isset($_POST['update-btn'])){
@@ -126,7 +131,14 @@
 
 
  </form>
+<?php 
+}
+else{
+  echo '<script>window.location.href = "./user_area/login.php";</script>';
 
+}
+
+?>
 
 
 

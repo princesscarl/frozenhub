@@ -6,7 +6,24 @@
      die("Connection Failed. " . mysqli_connect_error());
  }
 
-
+ function cart_items()
+ {
+     global $conn;
+     if (isset($_SESSION['email'])) {
+         $email = $_SESSION['email'];
+         $select_query = "SELECT * FROM cart_details JOIN user_details WHERE cart_details.user_id = user_details.user_id AND `email`='$email'";
+         $result_query = mysqli_query($conn, $select_query);
+         $count_cart_items = mysqli_num_rows($result_query);
+ 
+         if ($count_cart_items == 0) {
+             $count_cart_items = 0;
+             return $count_cart_items;
+         } else {
+             return $count_cart_items;
+         }
+     }
+ }
+ 
 
 if(!isset($_SESSION['email'])){
     header("Location: ../index.php");
@@ -219,12 +236,19 @@ else{
 
 
 <?php if (isset($_SESSION['email'])) {
-              echo'
+            echo'
      <li class="nav-item">
-          <a class="nav-link" href="../index.php?cart"><i class="fa fa-shopping-cart" style="font-size:20px"></i></a>
-        </li>';}
+          <a class="nav-link" href="../index.php?cart"><i class="bi bi-cart-plus-fill" style="font-size:25px;">'; ?>
+          
+         <?php   echo cart_items();?>
 
-        elseif(!isset($_SESSION['email'])){
+         <?php
+         echo' 
+          </i></a>
+        </li>
+          ';} ?>
+          <?php
+if(!isset($_SESSION['email'])){
           echo'
           <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-shopping-cart" style="font-size:20px"></i></a>

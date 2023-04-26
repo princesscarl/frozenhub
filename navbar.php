@@ -49,8 +49,6 @@ function total_cart_price()
     }
     echo $total;
 }
-
-
 ?>
 
 <div class="navigation">

@@ -1,5 +1,7 @@
 <?php
 
+if(isset($_SESSION['email'])){
+
 $user_id = $_SESSION['user_id'];
 
 
@@ -199,6 +201,12 @@ if($result_query){
   <?php
     }
   }
+ 
+}
+else{
+  echo '<script>window.location.href = "../user_area/login.php";</script>';
+
+}
 
   ?>
 </body>

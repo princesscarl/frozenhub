@@ -5,6 +5,10 @@ $conn = mysqli_connect('localhost','root','','frozenhub');
 if (!$conn){
     die("Connection Failed. " . mysqli_connect_error());
 }
+
+
+if(isset($_SESSION['email']))
+{
 ?>
 
 <!DOCTYPE html>
@@ -62,4 +66,10 @@ if (!$conn){
         </table>
     <tbody>
 
- 
+    <?php 
+}
+else{
+  echo '<script>window.location.href=login.php";</script>';
+}
+?>
+

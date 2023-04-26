@@ -6,8 +6,8 @@
       <!-- <input name="search_data" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product"> -->
     <input type="text" name="all_products">
-    <button type="submit" class="btn btn-secondary" name="search">Search</button>
-    <a href="index.php?all_products" class="btn btn-info mx-3">Reset</a>
+    <button type="submit" class="btn btn-secondary ml-2" name="search">Search</button>
+    <a href="index.php?all_products" class="btn btn-info mx-2">Reset</a>
     </form>
 
     <div class='row d-flex'>

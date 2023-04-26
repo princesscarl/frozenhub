@@ -1,6 +1,8 @@
 
 <?php
 
+
+
 session_start();
 $conn = mysqli_connect('localhost','root','','frozenhub');
 if (!$conn){
@@ -224,7 +226,7 @@ if(isset($_SESSION['email']))
 <?php
 
       $user_id = $_SESSION['user_id'];
-                    $category_query="SELECT * FROM order_details WHERE`user_id` = $user_id AND `status` ='Pending' ORDER BY `date` DESC";
+                    $category_query="SELECT * FROM order_details WHERE`user_id` = $user_id AND `status` ='For Delivery' ORDER BY `date` DESC";
                     $result_category= mysqli_query($conn,$category_query);
 
                     $count = mysqli_num_rows($result_category);
@@ -235,7 +237,7 @@ if(isset($_SESSION['email']))
                     else { 
 
 echo'
-<h1 class="text-center" id="reqsHeading" style="margin-bottom: 12px;padding-bottom: 8px;padding-top: 12px;">Orders</h1>
+<h1 class="text-center" id="reqsHeading" style="margin-bottom: 12px;padding-bottom: 8px;padding-top: 12px;">For Delivery</h1>
 <a href="./view_orders.php" class="btn btn-secondary ml-5 p-2 py-2 border-0 text-decoration-none text-light mb-3">Pending</a>
 <a href="./view_for_delivery.php" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">For Delivery</a>
 <a href="./view_received_orders.php" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Received</a>

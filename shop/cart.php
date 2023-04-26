@@ -119,8 +119,22 @@ if(isset($_SESSION['email']))
             <h4 class="px-3"> Subtotal:<strong class="text-info">&nbsp <?php total_cart_price() ?></strong></h4>
             <a href="./index.php"  class="btn btn-info p-2 py-2 mr-2 border-0 text-decoration-none text-light">Continue Shopping</a>
        
-          <a href="index.php?checkout" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light">Checkout</a>
+
+            <?php 
+              $select_query = "SELECT * FROM cart_details JOIN user_details WHERE cart_details.user_id = user_details.user_id AND `email`='$email'";
+              $result_query = mysqli_query($conn, $select_query);
+              $count_cart_items = mysqli_num_rows($result_query);
+      
+              if ($count_cart_items == 0) {
+      echo'
+          <a href="#" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light">Checkout</a>
+       ';}
        
+       else{
+        echo'
+        <a href="index.php?checkout" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light">Checkout</a>';
+       }
+       ?>
         
     
 

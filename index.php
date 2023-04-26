@@ -106,6 +106,18 @@ $(document).ready(function() {
     include './user_area/view_orders.php';
   } 
 
+  elseif (isset($_GET['view_cancelled_orders'])) {
+    include './user_area/view_cancelled_orders.php';
+  } 
+
+  elseif (isset($_GET['view_received_orders'])) {
+    include './user_area/view_received_orders.php';
+  } 
+  elseif (isset($_GET['view_for_delivery'])) {
+    include './user_area/view_for_delivery.php';
+  } 
+
+
   elseif (isset($_GET['add_to_cart'])) {
     include './add_to_cart.php';
   } 

@@ -74,9 +74,9 @@
                     $quantity = $_POST['quantity'];
                     $update_cart = "UPDATE cart_details SET `quantity`='$quantity' WHERE `user_id`=$user_id AND `product_id` =$product_id";
                     $result_update = mysqli_query($conn, $update_cart);
-
-                    $update_items = "UPDATE items SET `quantity`='$quantity' WHERE `user_id`=$user_id AND `product_id` =$product_id";
-                    $result_items = mysqli_query($conn, $update_items);
+                    if($result_update){
+                      echo "<script> alert('Quantity of the item is updated.')</script> ";
+                    }
 
                     }
                   }
@@ -90,9 +90,9 @@
                 <input type='submit' name='update-btn' class='btn btn-sm btn-primary'>
                </td>
                 <td>
-                <a href = '#' class='text-danger' data-toggle='modal' data-target='#exampleModal'><i class='bi bi-x-circle'></i></a> 
+                <a href = './shop/delete_item.php?id=".$product_id."' class='text-danger'><i class='bi bi-x-circle'></i></a> 
                 </td>";?>
-                
+                  <!-- <a href = '#' class='text-danger' data-toggle='modal' data-target='#exampleModal'><i class='bi bi-x-circle'></i></a>  -->
                 </form>
                
                   <?php }}

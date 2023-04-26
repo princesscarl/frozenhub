@@ -195,7 +195,7 @@ function total_cart_price()
 <?php if (!isset($_SESSION['email'])) {
             echo'
      <li class="nav-item">
-          <a class="nav-link" href="index.php?cart"><i class="bi bi-cart-plus-fill" style="font-size:25px;">
+          <a class="nav-link" href="#"><i class="bi bi-cart-plus-fill" style="font-size:25px;">
           </i></a>
         </li>
           ';} ?>

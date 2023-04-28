@@ -238,7 +238,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-4 mt-2">
             <div class="acontent" style="background-color: #F7F7F7; padding: 10px; border-radius: 5px; box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19)">
               <img class="img-fluid mt-3" src="https://lh4.googleusercontent.com/joQi_BwZ7IX_br-4P25ZTs5RtoEyr3y-asXIks_SSjlhNO1cjCNEONcjuDCSCJ0v0LA=w2400" width="90%" height="auto">
               <h3 style="font-weight:bold; font-size:1rem; margin-top: 10px;">Food Safety</h3>
@@ -287,6 +287,42 @@
       </div>
     </section>
   </div>
+
+  <div class="text-center p-2"
+        id="btn-back-to-top" 
+        style="position:fixed; bottom: 27px; right: 20px; height: 38px; width:35px; display:none; background-color:#F7f7f7;"
+        >
+  <i class="fa-solid fa-arrow-up" style="font-size:30px;"></i>
+  </div>
+
+<script>
+  //Get the button
+let mybutton = document.getElementById("btn-back-to-top");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 20 ||
+    document.documentElement.scrollTop > 20
+  ) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+// When the user clicks on the button, scroll to the top of the document
+mybutton.addEventListener("click", backToTop);
+
+function backToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
 </body>
 
 <div style=" width: 90%; margin-top:10px; margin-bottom: 20px; margin-right: auto; margin-left: auto; background-color: #439D9E; border-radius: 5px;">

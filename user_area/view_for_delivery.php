@@ -232,6 +232,10 @@ if(isset($_SESSION['email']))
                     $count = mysqli_num_rows($result_category);
                     if ($count == 0){
                       echo'<h1 class="text-center">No orders yet. Shop now!</h1>';
+                      echo'<div class="d-flex">';
+                      echo'<a href="./view_orders.php" class="btn btn-secondary">Back to orders</a>';
+                      echo'<a href="../index.php?all_products" class="btn btn-secondary">Continue Shopping</a>';
+                      echo'</div">';
                     }
 
                     else { 
@@ -254,6 +258,7 @@ echo'
             <th> Date Ordered</th>
             <th> Total </th>
             <th> Status</th>
+            <th> Action</th>
         
           
         </tr>
@@ -281,7 +286,10 @@ echo'
             <td>'.$total.'</td>
 
             <td>'.$status.'</td>
-
+            <td> 
+            <button class="btn btn-success">
+            <a href="received.php?id='.$order_id.'" class="text-light text-decoration-none">Received</a></button>
+            </td>
             ';
              
             }}?>    

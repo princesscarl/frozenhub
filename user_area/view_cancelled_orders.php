@@ -230,8 +230,12 @@ if(isset($_SESSION['email']))
                     $result_category= mysqli_query($conn,$category_query);
 
                     $count = mysqli_num_rows($result_category);
-                    if ($count == 0){
+                    if ($count == 0){   
                       echo'<h1 class="text-center">No orders yet. Shop now!</h1>';
+                      echo'<div class="d-flex">';
+                      echo'<a href="./view_orders.php" class="btn btn-secondary">Back to orders</a>';
+                      echo'<a href="../index.php?all_products" class="btn btn-secondary">Continue Shopping</a>';
+                      echo'</div">';
                     }
 
                     else { 

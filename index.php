@@ -34,20 +34,6 @@
  
   <script src="action.js"></script>
 
-<!-- <script>
-function toggleDescription(button) {
-  var fullDescription = button.previousElementSibling;
-  
-  if (fullDescription.style.display === "none") {
-    fullDescription.style.display = "block";
-    button.innerHTML = "View Less";
-  } else {
-    fullDescription.style.display = "none";
-    button.innerHTML = "View More";
-  }
-}
-</script> -->
-
 <script>
 $(document).ready(function() {
   $('.view_more_button').click(function() {

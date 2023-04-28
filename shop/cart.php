@@ -79,9 +79,6 @@ if(isset($_SESSION['email']))
                     $quantity = $_POST['quantity'];
                     $update_cart = "UPDATE cart_details SET `quantity`='$quantity' WHERE `user_id`=$user_id AND `product_id` =$product_id";
                     $result_update = mysqli_query($conn, $update_cart);
-                    if($result_update){
-                      echo "<script> alert('Quantity of the item is updated.')</script> ";
-                    }
 
                     }
                   }

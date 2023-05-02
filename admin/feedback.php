@@ -37,6 +37,6 @@ $result = $conn->query($sql);
 }
 ?>
 
-        <td data-label="Pictures"> <a href="../pictures/<?php echo $picture?>">view file</a></td>
+        <td data-label="Pictures"> <a href="../pictures/<?php echo $picture ?>">view file</a></td>
       </table>
   </div>

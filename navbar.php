@@ -166,14 +166,7 @@ function total_cart_price()
             </li>
           ';
           } ?>
-          
-          <?php if (!isset($_SESSION['email'])) {
-            echo'
-     <li class="nav-item">
-          <a class="nav-link"    data-toggle="modal" data-target="#exampleModal"><i class="fa fa-shopping-cart" style="font-size:20px"></i></a>
-        </li>
-          ';}?>
-
+     
 
             
           <?php if (isset($_SESSION['email'])) {

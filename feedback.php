@@ -56,13 +56,8 @@ if (isset($_POST["submit-btn"])) {
   $mail->addAddress($email);
   $mail->isHTML(true);
 
-  //template
-  $email_template = 'email_template/contact_email_template.html';
-  $message = file_get_contents($email_template);
-
   //replace string eg. %name%, name, message
   $mail->Subject = 'Product Feedback';
-  $mail->MsgHTML($message);
   $mail->Body = "<p>Good Day, Mr./Ms. {$lastName}!</p>
   <p>Thank you for your valuable feedback.</p>
   <p>We appreciate the time you took to share your experience with us.</p>

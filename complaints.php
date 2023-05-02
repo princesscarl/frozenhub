@@ -60,14 +60,9 @@ if (isset($_POST["submit"])) {
   $mail->addAddress($email);
   $mail->isHTML(true);
 
-  //template
-  $email_template = 'email_template/contact_email_template.html';
-  $message = file_get_contents($email_template);
-
   //replace string eg. %name%, name, message
   $mail->Subject = 'Customer Complaint';
-  $mail->MsgHTML($message);
-  $mail->Body = "<p>Good Day, Mr./Ms. {$lastName}!</p>
+  $mail->Body = "<p>Good Day, Mr./Ms. {$lastname}!</p>
   <p>We are grateful to you for letting us into this matter.</p>
   <p>We apologized for the issues you encountered with our product/service.</p>
   <p>What you shared with us will help us improve our services and products.</p>

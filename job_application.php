@@ -54,13 +54,8 @@ if (isset($_POST["submit"])) {
   $mail->addAddress($email);
   $mail->isHTML(true);
 
-  //template
-  $email_template = 'email_template/contact_email_template.html';
-  $message = file_get_contents($email_template);
-
   //replace string eg. %name%, name, message
   $mail->Subject = 'Frozenhub Job Application';
-  $mail->MsgHTML($message);
   $mail->Body = "<p>Good Day, Mr./Ms. {$lastname}!</p>
   <p>We have received your application for the position of {$position}. Thank you for your interest in our company!</p>
   <p>We are currently in the middle of our recruitment process. Please give us some time to process your application.</p>

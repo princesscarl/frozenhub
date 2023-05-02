@@ -34,9 +34,9 @@ $result = $conn->query($sql);
         <td data-label="Product Name">' . $row["proName"] . '</td>
 		<td data-label="Ratings">' . $row["ratings"] . '</td>
 		<td data-label="Feedback">' . $row["feedback"] . '</td>';
-}
 ?>
-
         <td data-label="Pictures"> <a href="../pictures/<?php echo $picture ?>">view file</a></td>
+        <?php }
+?>
       </table>
   </div>

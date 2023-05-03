@@ -22,18 +22,20 @@ function getproducts()
             $product_title = $row['product_title'];
             $product_description = $row['product_description'];
 
-            $short_description = substr($product_description, 0, 23);
-            $full_description = substr($product_description, 23);
+            $short_description = substr($product_description, 0, 27);
+            $full_description = substr($product_description, 27);
 
             $product_price = $row['product_price'];
             $product_image = $row['product_image'];
             echo "
 
   <div class='col-lg-3 col-md-3 col-sm-6 col-xs-1 d-flex justify-content-center mb-4'>
-    <div class='card' style='width: 18rem;'>
-    <img src='./admin/products_images/$product_image' class='card-img-top'  width='auto;' height='250px;'>
+    <div class='card' style='width: 100%;'>
+    <img src='./admin/products_images/$product_image' class='card-img-top'  width='auto;' height='250px;' 'object-fit= cover;'>
     <div class='card-body'>
     <h5 class='card-title'>$product_title</h5>
+  
+    <p class='card-text'><strong>Price:&nbsp$product_price</strong></p>
 ";?>
 
   <div id="description">
@@ -41,11 +43,10 @@ function getproducts()
     <span class="short_description"><?php echo $short_description; ?></span>
     <span class="full_description" style="display: none;"><?php echo $full_description; ?></span>
   </p>
-  <button class="view_more_button" onclick="toggleDescription(this)">View More</button>
+  <a class="view_more_button" onclick="toggleDescription(this)" >View More...</a>
 </div>
 
-  <?php echo "
-    <p class='card-text'><strong>Price:&nbsp$product_price</strong></p>"; ?>
+  
 <?php
 
             if (isset($_SESSION['email'])) {
@@ -56,7 +57,7 @@ function getproducts()
         
                 if ($rows == 0) {
                 echo "
-          <button class='btn add-to-cart-button' data-id='$product_id' type='button' class='btn btn' style='background-color: #439D9E; color: white;'>Add to Cart</button>
+          <button class='btn add-to-cart-button mt-3' data-id='$product_id' type='button' class='btn btn' style='background-color: #439D9E; color: white;'>Add to Cart</button>
                 ";
                 }
 
@@ -64,7 +65,7 @@ function getproducts()
 
                 else{
                     echo" 
-    <a href='index.php?cart' class='btn btn-warning'>View Cart</a>";
+    <a href='index.php?cart' class='btn btn-warning  mt-3'>View Cart</a>";
                 }
 
 

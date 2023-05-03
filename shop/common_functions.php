@@ -33,17 +33,18 @@ function getproducts()
     <div class='card' style='width: 100%;'>
     <img src='./admin/products_images/$product_image' class='card-img-top'  width='auto;' height='250px;' 'object-fit= cover;'>
     <div class='card-body'>
-    <h5 class='card-title'>$product_title</h5>
+    <h5 class='card-title' style='font-size: 25px;'>$product_title</h5>
   
-    <p class='card-text'><strong>Price:&nbsp$product_price</strong></p>
+    <p class='card-text'><strong  style='font-size: 20px;'>₱$product_price</strong></p>
 ";?>
 
   <div id="description">
   <p class="description">
+    <!-- <span><strong>Product Description</strong></span> <br> -->
     <span class="short_description"><?php echo $short_description; ?></span>
     <span class="full_description" style="display: none;"><?php echo $full_description; ?></span>
   </p>
-  <a class="view_more_button" onclick="toggleDescription(this)" >View More...</a>
+  <a class="view_more_button" onclick="toggleDescription(this)" style="font-size: 15px;">View More...</a>
 </div>
 
   
@@ -57,7 +58,7 @@ function getproducts()
         
                 if ($rows == 0) {
                 echo "
-          <button class='btn add-to-cart-button mt-3' data-id='$product_id' type='button' class='btn btn' style='background-color: #439D9E; color: white;'>Add to Cart</button>
+          <button class='btn add-to-cart-button mt-3' data-id='$product_id' type='button' class='btn btn' style='background-color: #439D9E; color: white; width: 100%;'>Add to Cart</button>
                 ";
                 }
 
@@ -65,7 +66,7 @@ function getproducts()
 
                 else{
                     echo" 
-    <a href='index.php?cart' class='btn btn-warning  mt-3'>View Cart</a>";
+    <a href='index.php?cart' class='btn btn-warning  mt-3' style='width: 100%;'>View Cart</a>";
                 }
 
 

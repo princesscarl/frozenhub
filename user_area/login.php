@@ -33,6 +33,28 @@ if(isset($_POST['submit-btn'])){
         echo "<script> alert ('Email not found. Please register') </script>";
     }
 }
+
+
+
+if(isset($_POST['fp-submit'])){
+
+  $email = $_POST['fp-email'];
+  $password = $_POST['fp-password'];
+
+
+  $select_query = "SELECT * FROM user_details WHERE email = '".$_POST["fp-email"]."'";
+    $result = mysqli_query($conn, $select_query);
+
+    if (mysqli_num_rows($result) > 0 ) {
+      $hash = password_hash($password, PASSWORD_DEFAULT);
+      $update = "UPDATE user_details SET `password`='$hash' WHERE email ='".$_POST["fp-email"]."'";
+      $result = mysqli_query($conn,$update);
+      echo "<script> alert ('Password changed!') </script>";
+    }
+    else{
+      echo "<script> alert ('Email not found. Sorry') </script>";
+    }
+  }
 ?>
 
 
@@ -104,12 +126,9 @@ if(isset($_POST['submit-btn'])){
           <div class="d-flex justify-content-between align-items-center">
             <!-- Checkbox -->
             <div class="form-check mb-0">
-              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-              <label class="form-check-label" for="form2Example3">
-                Remember me
-              </label>
+              
             </div>
-            <a href="#!" class="text-body">Forgot password?</a>
+            <a href="#!" class="text-body" data-bs-toggle="modal" data-bs-target="#forgotpassword">Forgot password?</a>
           </div>
 
           <div class="text-center text-lg-start mt-4 pt-2">
@@ -150,6 +169,37 @@ style="width:100%; background-color:#008080">
     </div>
     <!-- Right -->
 </footer>
+
+
+
+
+<div class="modal fade" id="forgotpassword" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Forgot Password?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Email:</label>
+            <input type="text" class="form-control" name="fp-email" id="fp-email" placeholder="abcd@gmail.com">
+</div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">New Password:</label>
+            <input type="password" class="form-control" name="fp-password"  id="fp-password" placeholder="**********">
+          </div>
+    
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" name="fp-submit">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
 </html>
 
 

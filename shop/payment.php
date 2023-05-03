@@ -84,14 +84,14 @@ if($result_query){
 
     <div class="text-center">
       <a href="index.php?checkout=cod" class="btn btn-info btn-lg mb-3" style="width: 20%; height:auto;"> Cash on Delivery</a> <br>
-      <input type="button" value="Gcash" class="btn btn-outline-info btn-lg mb-5" data-toggle='modal' data-target='#exampleModal' style="width: 20%; height:auto;">
+      <a href="index.php?checkout=gcash" class="btn btn-outline-info btn-lg mb-5" style="width: 20%; height:auto;"> Gcash</a> <br>
     </div>
   </div>
 
   <?php
   if (isset($_GET['checkout'])) {
     $cod = $_GET['checkout'];
-    if ($cod == "cod") {
+    if (($cod == "cod") ||  ($cod == "gcash")) {
       $user_query = "SELECT * FROM user_details WHERE `user_id` = $user_id";
       $result = mysqli_query($conn, $user_query);
       $rows = mysqli_fetch_assoc($result);
@@ -184,13 +184,23 @@ if($result_query){
 
       <br>
       <h3>Product Total:</h3>
-
       <table class="table" style="border-bottom:gray solid 1px;">
         <tr>
           <th>Total:</th>
           <td><strong><?php echo total_cart_price()?></strong></td>
-          <td> <input type="button" value="CONFIRM PAYMENT" class="btn btn-info" data-toggle='modal' data-target='#confirm'></td>
 
+
+          <?php
+  if (isset($_GET['checkout'])) {
+    $cod = $_GET['checkout'];
+    if ($cod == "cod") { ?>
+          <td> <input type="button" value="CONFIRM PAYMENT" class="btn btn-info" data-toggle='modal' data-target='#confirm'></td>
+    <?php }?>
+    <?php
+      if ($cod == "gcash") { ?>
+       <td> <input type="button" value="PROCEED" class="btn btn-info" data-toggle='modal' data-target='#gcash'></td>
+     <?php }}  ?>
+  
         </tr>
 
       </table>
@@ -213,24 +223,6 @@ else{
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"> Sorry! This payment method has not yet been utilized. </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success"><a class="text-light text-decoration-none" href="./index.php?checkout=">BACK</a></button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Modal -->
 <div class="modal fade" id="confirm" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -244,6 +236,43 @@ else{
         <button type="submit" name="submit-btn" class="btn btn-success">YES</button>
         <button type="button" class="btn btn-danger" data-dismiss="modal"><a href="./index.php?cart" class="text-light text-decoration-none">NO</a></button>
 
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="gcash" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> Gcash Payment Method</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="GET">
+        <div class="mb-3">
+       
+          
+            <label for="recipient-name" class="col-form-label">Amount:</label>
+            <div class="input-group-prepend">
+            <div class="input-group-text">₱</div>
+            <input readonly type="text" class="form-control" name="fp-amount" value="<?php echo total_cart_price()?>">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Mobile Number:</label>
+            <input type="number" class="form-control" name="fp-mobile" value="">
+</div>
+</div>
+      <div class="modal-footer">
+      
+        <button type="button" class="btn btn-danger" data-dismiss="modal"><a class="text-light text-decoration-none">NO</a></button>
+        <a href="shop/gcash.php" class="btn btn-success"  class="text-light text-decoration-none" >YES</a>
       </div>
     </div>
   </div>

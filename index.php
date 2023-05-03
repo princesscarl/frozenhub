@@ -52,6 +52,26 @@ $(document).ready(function() {
 
 
   <style>
+
+    
+    #decrementBtn {
+  width: 40px;
+  height: 40px;
+  background-color: teal;
+  border: none;
+  color: white;
+  font-size: 20px;
+}
+
+
+#incrementBtn {
+  width: 40px;
+  height: 40px;
+  background-color: teal;
+  border: none;
+  color: white;
+  font-size: 20px;
+}
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
       display: none;

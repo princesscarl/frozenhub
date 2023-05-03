@@ -9,8 +9,7 @@
     
    
    
-
-    <div class='row d-flex'>
+<div class='row'>
   
     <?php include './shop/common_functions.php';
 

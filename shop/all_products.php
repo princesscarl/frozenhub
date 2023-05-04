@@ -7,8 +7,7 @@
   <a href="index.php?all_products" class="bi bi-arrow-counterclockwise mt-2 pl-2 pr-2" style="background-color: #439D9E; padding:3px;  color: white; border-radius: 3px; "></a>
 </form>
     
-   
-   
+
 <div class='row'>
   
     <?php include './shop/common_functions.php';

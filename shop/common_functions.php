@@ -2,10 +2,6 @@
 
 function getproducts()
 {
-  //     if(isset($_GET['all_products']) || isset($_GET['all_promos'])){
-
-  //     include './shop/category.php';
-  //         }
   global $conn;
 
   $products_query = "SELECT * FROM products ORDER BY date";
@@ -27,31 +23,16 @@ function getproducts()
 
       $product_price = $row['product_price'];
       $product_image = $row['product_image'];
-      echo "
+?>
 
-    <div class='col-lg-3 col-md-3 col-sm-6 col-xs-1  mb-4'>
+    <div class='product-card mb-4'>
     <div class='card' style='width: 100%;'>
-    <div class='card-body'>
-    <img src='./admin/products_images/$product_image' class='card-img-top'  width='auto ;'  height='250px;' object-fit='cover;'>
-    <h5 class='card-title' style='font-size: 25px;'>$product_title</h5>
-  
-    <p class='card-text'><strong  style='font-size: 20px;'>₱$product_price</strong></p>
-"; ?>
-
-      <!-- <div id="description">
-  <p class="description"> -->
-      <!-- <span><strong>Product Description</strong></span> <br> -->
-      <!-- <span class="short_description"><?php echo $short_description; ?></span>
-    <span class="full_description" style="display: none;"><?php echo $full_description; ?></span>
-  </p>
-  <a class="view_more_button" onclick="toggleDescription(this)" style="font-size: 15px; float:right;">View More...</a>
-</div> -->
-      <div class="d-flex">
-        <button id="decrementBtn">-</button>
-        <input name="quantity" style="text-align: center;" value="1">
-        <button id="incrementBtn">+</button>
-      </div>
-
+    <div class="product-image-container">
+    <img src='./admin/products_images/<?php echo $product_image?>' class='card-img-top product-image' alt='<?php echo $product_title?>'>
+    </div>
+    <div class='card-body pt-0'>
+    <h5 class='' style='font-size: 25px;'><?php echo $product_title?></h5>
+    <p class='card-text'><strong  style='font-size: 20px;'>₱<?php echo $product_price?></strong></p>
 
       <?php
 
@@ -63,11 +44,9 @@ function getproducts()
 
         if ($rows == 0) {
           echo "
-          <button class='btn add-to-cart-button mt-3' data-id='$product_id' type='bsutton' class='btn btn' style='background-color: #439D9E; color: white; width: 100%;'>Add to Cart</button>
+          <button class='btn add-to-cart-button mt-3' data-id='$product_id' style='background-color: #439D9E; color: white; width: 100%;'>Add to Cart</button>
                 ";
         }
-
-        // <a href='index.php?add_to_cart=$product_id' class='btn btn' style='background-color: #439D9E; color: white;'>Add to Cart</a>";
 
         else {
           echo " 
@@ -93,22 +72,6 @@ function getproducts()
       }
     }
   }
-  //     echo'
-  // <nav aria-label="Page navigation example" >
-  //   <ul class="pagination justify-content-end"  >
-  //     <li class="page-item disabled" style="border-style: solid;">
-  //       <a class="page-link" href="#" tabindex="-1" style="background-color: #439D9E; color: white;">Previous</a>
-  //     </li>
-  //     <li class="page-item"  style="border-style: solid;" ><a class="page-link" href="#">1</a></li>
-  //     <li class="page-item"  style="border-style: solid;"><a class="page-link" href="#">2</a></li>
-  //     <li class="page-item"  style="border-style: solid;"><a class="page-link" href="#">3</a></li>
-  //     <li class="page-item" style="border-style: solid;" >
-  //       <a class="page-link" href="#" style="background-color: #439D9E; color: white; ">Next</a>
-  //     </li>
-  //   </ul>
-  // </nav>
-  // ';
-
 }
 
 
@@ -394,3 +357,17 @@ background:red;
 color: green;
 }
 </style>
+
+      <!-- <div id="description">
+  <p class="description"> -->
+      <!-- <span><strong>Product Description</strong></span> <br> -->
+      <!-- <span class="short_description"><?php echo $short_description; ?></span>
+    <span class="full_description" style="display: none;"><?php echo $full_description; ?></span>
+  </p>
+  <a class="view_more_button" onclick="toggleDescription(this)" style="font-size: 15px; float:right;">View More...</a>
+</div> -->
+      <!-- <div class="d-flex">
+        <button id="decrementBtn">-</button>
+        <input name="quantity" style="text-align: center;" value="1">
+        <button id="incrementBtn">+</button>
+      </div> -->

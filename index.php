@@ -51,9 +51,67 @@ $(document).ready(function() {
 
 
 
-  <style>
+<style>
+.product-card {
+  width: 100%;
+  max-width: 23%;
+  margin: 0 1%;
+  float: left;
+}
+.product-image-container {
+    position: relative;
+    width: 100%;
+    height: 250px;
+  }
+  
+  .product-image {
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
 
-    
+  /* Medium screens */
+@media only screen and (max-width: 768px) {
+  .card-title {
+    font-size: 20px;
+  }
+  
+  .card-text strong {
+    font-size: 16px;
+  }
+  
+  /* .add-to-cart-button {
+    width: 80%;
+  } */
+}
+
+/* Small screens */
+@media only screen and (max-width: 576px) {
+  .card-title {
+    font-size: 16px;
+  }
+  
+  .card-text strong {
+    font-size: 14px;
+  }
+  
+  /* .add-to-cart-button {
+    width: 60%;
+  } */
+}
+@media (max-width: 768px) {
+  .product-card {
+    max-width: 46%;
+  }
+}
+
+
+@media (max-width: 320px) {
+  .product-card {
+    max-width: 46%;
+  }
+}
     #decrementBtn {
   width: 40px;
   height: 40px;

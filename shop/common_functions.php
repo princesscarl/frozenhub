@@ -30,12 +30,12 @@ function getproducts()
     <div class="product-image-container">
     <img src='./admin/products_images/<?php echo $product_image?>' class='card-img-top product-image' alt='<?php echo $product_title?>'>
     </div>
-    <div class='card-body pt-0'>
-    <h5 class='' style='font-size: 25px;'><?php echo $product_title?></h5>
-    <p class='card-text'><strong  style='font-size: 20px;'>₱<?php echo $product_price?></strong></p>
-
+    <div class='card-body'>
+    <h5 class='card-title'><?php echo $product_title?></h5>
+    <p class='card-text'><strong>₱<?php echo $product_price?></strong></p>
+  
+   
       <?php
-
       if (isset($_SESSION['email'])) {
         $user_id = $_SESSION['user_id'];
         $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_id=$product_id";
@@ -43,25 +43,19 @@ function getproducts()
         $rows = mysqli_num_rows($result_query);
 
         if ($rows == 0) {
-          echo "
-          <button class='btn add-to-cart-button mt-3' data-id='$product_id' style='background-color: #439D9E; color: white; width: 100%;'>Add to Cart</button>
-                ";
-        }
+          ?>
+         
+          <button class='btn add-to-cart-button mt-3 text-center' data-id='<?php echo $product_id?>' style='background-color: #439D9E; color: white;'>Add to Cart</button>
+          </div>
+      <?php 
+    } else {?>
 
-        else {
-          echo " 
     <a href='index.php?cart' class='btn btn-warning mt-3' style='width: 100%;'>View Cart</a>";
-        }
-
-
-
-        echo "
-    </div>
-    </div>
-    </div> 
-";
-      } ?>
+  
+    <?php } ?>
+    
       <?php
+      } 
       if (!isset($_SESSION['email'])) {
         echo "
 <a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info'>Add to Cart</a>    

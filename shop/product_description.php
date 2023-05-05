@@ -36,10 +36,7 @@ if(isset($_GET['product_description'])){
       <div class="product-description-column">
         <h2 class="title" style="margin-top:25px; "><?php echo $product_title ?></h2>
         <h6 style="margin-top:50px;">Description:</h6>
-        <div>
-        <textarea class="description" style="margin-top: 20px; max-width: 650px; width: 600px; height: 200px; resize: none; border: none;"><?php echo $product_description ?></textarea>
-
-        </div>  
+        <textarea readonly class="description" style="margin-top: 20px; max-width: 650px; width: 600px; height: 200px; resize: none; border: none; outline:none;"><?php echo $product_description ?></textarea>
 
 
         <p class="price" style="margin-top: 40px;">₱<?php echo $product_price ?></p>

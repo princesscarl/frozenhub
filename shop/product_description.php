@@ -26,17 +26,17 @@ if(isset($_GET['product_description'])){
 <div style="width: 90%; margin-top:30px; margin-bottom: 30px; margin-right: auto; margin-left: auto; overflow: hidden; background-color:white;">
 
 
-<div class="row">
+<div class="row p-2">
     <div class="col-md-6">
       <div class="product-image-column" style=" max-width: 100%; height: 500px; float: center;">
         <img src="./admin/products_images/<?php echo $product_image?>" alt="Product Image" style="width:100%; height:500px; object-fit:cover;">
       </div>
     </div>
-    <div class="col-md-6 p-4">
-      <div class="product-description-column" style="padding-right:30px;">
+    <div class="col-md-6">
+      <div class="product-description-column">
         <h2 class="title" style="margin-top:25px; "><?php echo $product_title ?></h2>
         <h6 style="margin-top:60px;">Description:</h6>
-        <div style="padding-right:20px;">
+        <div>
         <textarea class="description" style="margin-top: 20px; max-width: 650px; width: 600px; height: 200px; resize: none; border: none;"><?php echo $product_description ?></textarea>
 
         </div>  

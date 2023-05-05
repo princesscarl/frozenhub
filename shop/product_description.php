@@ -42,7 +42,7 @@ if(isset($_GET['product_description'])){
         </div>  
 
 
-        <p class="price" style="margin-top:120px;">₱<?php echo $product_price ?></p>
+        <p class="price">₱<?php echo $product_price ?></p>
    
 
         

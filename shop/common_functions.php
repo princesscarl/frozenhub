@@ -25,342 +25,298 @@ function getproducts()
       $product_image = $row['product_image'];
 ?>
 
-    <div class='product-card mb-4'>
-    <div class='card' style='width: 100%;'>
-    <div class="product-image-container">
-    <img src='./admin/products_images/<?php echo $product_image?>' class='card-img-top product-image' alt='<?php echo $product_title?>'>
-    </div>
-    <div class='card-body'>
-    <h5 class='card-title'><?php echo $product_title?></h5>
-    <p class='card-text'><strong>₱<?php echo $product_price?></strong></p>
-  
-   
-      <?php
-      if (isset($_SESSION['email'])) {
-        $user_id = $_SESSION['user_id'];
-        $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_id=$product_id";
-        $result_query = mysqli_query($conn, $select_query);
-        $rows = mysqli_num_rows($result_query);
+    <div class="product-card mb-4 text-decoration-none">
+        <div class='card' style='width: 100%;'>
+          <div class="product-image-container">
+          <a href="index.php?product_description=<?php echo $product_id?>"> <img src='./admin/products_images/<?php echo $product_image ?>' class='card-img-top product-image' alt='<?php echo $product_title ?>'>
+          </div></a>
+          <div class='card-body text-center'>
+            <h5 class='card-title'><?php echo $product_title ?></h5>
+            <p class='card-text'><strong>₱<?php echo $product_price ?></strong></p>
 
-        if ($rows == 0) {
-          ?>
-         
-          <button class='btn add-to-cart-button mt-3 text-center' data-id='<?php echo $product_id?>' style='background-color: #439D9E; color: white;'>Add to Cart</button>
-          </div>
-      <?php 
-    } else {?>
 
-    <a href='index.php?cart' class='btn btn-warning mt-3' style='width: 100%;'>View Cart</a>";
-  
-    <?php } ?>
-    
+            <?php
+            if (isset($_SESSION['email'])) {
+              $user_id = $_SESSION['user_id'];
+              $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_id=$product_id";
+              $result_query = mysqli_query($conn, $select_query);
+              $rows = mysqli_num_rows($result_query);
+
+              if ($rows == 0) {
+                echo "
+                <button class='btn add-to-cart-button mt-3' data-id='$product_id' style='background-color: #439D9E; color: white; width: 100%;'>
+                Add to Cart</button>
+                </div>
+                </div> 
+                </div> "; }
+            
+                elseif($rows >=1) { 
+          echo"
+          <a href='index.php?cart' class='btn btn-warning mt-3' style='width: 100%;'>View Cart</a> 
+        </div>
+        </div> 
+        </div> ";  } ?>
+ 
+
       <?php
-      } 
-      if (!isset($_SESSION['email'])) {
-        echo "
-<a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info'>Add to Cart</a>    
+            }
+            if (!isset($_SESSION['email'])) {
+              echo "
+<a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info' style='background-color: #439D9E; color: white; width:100%;'>Add to Cart</a>    
 </div>
 </div>
 </div> 
 ";
+            }
+          }
+        }
       }
-    }
-  }
-}
 
 
-function top_products()
-{
-  //     if(isset($_GET['all_products']) || isset($_GET['all_promos'])){
+      function top_products()
+      {
+        //     if(isset($_GET['all_products']) || isset($_GET['all_promos'])){
 
-  //     include './shop/category.php';
-  //         }
-  global $conn;
+        //     include './shop/category.php';
+        //         }
+        global $conn;
 
-  $products_query = "SELECT * FROM products  WHERE category_id = '1' ORDER BY date";
-  $result_products = mysqli_query($conn, $products_query);
-  $num_of_rows = mysqli_num_rows($result_products);
+        $products_query = "SELECT * FROM products  WHERE category_id = '1' ORDER BY date";
+        $result_products = mysqli_query($conn, $products_query);
+        $num_of_rows = mysqli_num_rows($result_products);
 
-  if ($num_of_rows == 0) {
-    echo "<h2 class='text-center text-danger'>No stock for this category.</h2>";
-  } else {
-    // 
+        if ($num_of_rows == 0) {
+          echo "<h2 class='text-center text-danger'>No stock for this category.</h2>";
+        } else {
+          // 
 
-    while ($row = mysqli_fetch_assoc($result_products)) {
-      $product_id = $row['product_id'];
-      $product_title = $row['product_title'];
-      $product_description = $row['product_description'];
-
-      $short_description = substr($product_description, 0, 23);
-      $full_description = substr($product_description, 23);
-
-      $product_price = $row['product_price'];
-      $product_image = $row['product_image'];
-      echo "
-
-  <div class='col-lg-3 col-md-3 col-sm-6 col-xs-1 d-flex justify-content-center mb-4'>
-    <div class='card' style='width: 33%;'>
-    <img src='./admin/products_images/$product_image' class='card-img-top'  width='auto;' height='250px;'>
-    <div class='card-body'>
-    <h5 class='card-title'>$product_title</h5>
-"; ?>
-
-      <div id="description">
-        <p class="description">
-          <span class="short_description"><?php echo $short_description; ?></span>
-          <span class="full_description" style="display: none;"><?php echo $full_description; ?></span>
-        </p>
-        <button class="view_more_button" onclick="toggleDescription(this)">View More</button>
+          while ($row = mysqli_fetch_assoc($result_products)) {
+            $product_id = $row['product_id'];
+            $product_title = $row['product_title'];
+            $product_description = $row['product_description'];
+      
+            $short_description = substr($product_description, 0, 27);
+            $full_description = substr($product_description, 27);
+      
+            $product_price = $row['product_price'];
+            $product_image = $row['product_image'];
+      ?>
+      
+          <div class="product-card mb-4 text-decoration-none">
+              <div class='card' style='width: 100%;'>
+                <div class="product-image-container">
+                <a href="index.php?product_description=<?php echo $product_id?>"> <img src='./admin/products_images/<?php echo $product_image ?>' class='card-img-top product-image' alt='<?php echo $product_title ?>'>
+                </div></a>
+                <div class='card-body text-center'>
+                  <h5 class='card-title'><?php echo $product_title ?></h5>
+                  <p class='card-text'><strong>₱<?php echo $product_price ?></strong></p>
+      
+      
+                  <?php
+                  if (isset($_SESSION['email'])) {
+                    $user_id = $_SESSION['user_id'];
+                    $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_id=$product_id";
+                    $result_query = mysqli_query($conn, $select_query);
+                    $rows = mysqli_num_rows($result_query);
+      
+                    if ($rows == 0) {
+                      echo "
+                      <button class='btn add-to-cart-button mt-3' data-id='$product_id' style='background-color: #439D9E; color: white; width: 100%;'>
+                      Add to Cart</button>
+                      </div>
+                      </div> 
+                      </div> "; }
+                  
+                      elseif($rows >=1) { 
+                echo"
+                <a href='index.php?cart' class='btn btn-warning mt-3' style='width: 100%;'>View Cart</a> 
+              </div>
+              </div> 
+              </div> ";  } ?>
+       
+      
+            <?php
+                  }
+                  if (!isset($_SESSION['email'])) {
+                    echo "
+      <a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info' style='background-color: #439D9E; color: white; width:100%;'>Add to Cart</a>    
       </div>
-
-      <?php echo "
-    <p class='card-text'><strong>Price:&nbsp$product_price</strong></p>"; ?>
-      <?php
-
-      if (isset($_SESSION['email'])) {
-        $user_id = $_SESSION['user_id'];
-        $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_id=$product_id";
-        $result_query = mysqli_query($conn, $select_query);
-        $rows = mysqli_num_rows($result_query);
-
-        if ($rows == 0) {
-          echo "
-          <button class='btn add-to-cart-button' data-id='$product_id' type='button' class='btn btn' style='background-color: #439D9E; color: white;'>Add to Cart</button>
-                ";
-        }
-
-        // <a href='index.php?add_to_cart=$product_id' class='btn btn' style='background-color: #439D9E; color: white;'>Add to Cart</a>";
-
-        else {
-          echo " 
-    <a href='index.php?cart' class='btn btn-warning'>View Cart</a>";
-        }
-
-
-
-        echo "
-    </div>
-    </div>
-    </div> 
-";
-      } ?>
-      <?php
-      if (!isset($_SESSION['email'])) {
-        echo "
-<a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info'>Add to Cart</a>    
-</div>
-</div>
-</div> 
-";
-      }
-    }
-  }
-}
-
-function promo_products()
-{
-  //     if(isset($_GET['all_products']) || isset($_GET['all_promos'])){
-
-  //     include './shop/category.php';
-  //         }
-  global $conn;
-
-  $products_query = "SELECT * FROM products  WHERE category_id = '2' ORDER BY date";
-  $result_products = mysqli_query($conn, $products_query);
-  $num_of_rows = mysqli_num_rows($result_products);
-
-  if ($num_of_rows == 0) {
-    echo "<h2 class='text-center text-danger'>Apologies, we do not currently have any promotions available to offer at this time.</h2>";
-  } else {
-    // 
-
-    while ($row = mysqli_fetch_assoc($result_products)) {
-      $product_id = $row['product_id'];
-      $product_title = $row['product_title'];
-      $product_description = $row['product_description'];
-
-      $short_description = substr($product_description, 0, 23);
-      $full_description = substr($product_description, 23);
-
-      $product_price = $row['product_price'];
-      $product_image = $row['product_image'];
-      echo "
-
-  <div class='col-lg-3 col-md-3 col-sm-6 col-xs-1 d-flex justify-content-center mb-4'>
-    <div class='card' style='width: 18rem;'>
-    <img src='./admin/products_images/$product_image' class='card-img-top'  width='auto;' height='250px;'>
-    <div class='card-body'>
-    <h5 class='card-title'>$product_title</h5>
-"; ?>
-
-      <div id="description">
-        <p class="description">
-          <span class="short_description"><?php echo $short_description; ?></span>
-          <span class="full_description" style="display: none;"><?php echo $full_description; ?></span>
-        </p>
-        <button class="view_more_button" onclick="toggleDescription(this)">View More</button>
       </div>
+      </div> 
+      ";
+                  }
+                }
+              }
+            }
+      
 
-      <?php echo "
-    <p class='card-text'><strong>Price:&nbsp$product_price</strong></p>"; ?>
-      <?php
+      function promo_products()
+      {
+        //     if(isset($_GET['all_products']) || isset($_GET['all_promos'])){
 
-      if (isset($_SESSION['email'])) {
-        $user_id = $_SESSION['user_id'];
-        $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_id=$product_id";
-        $result_query = mysqli_query($conn, $select_query);
-        $rows = mysqli_num_rows($result_query);
+        //     include './shop/category.php';
+        //         }
+        global $conn;
 
-        if ($rows == 0) {
-          echo "
-          <button class='btn add-to-cart-button' data-id='$product_id' type='button' class='btn btn' style='background-color: #439D9E; color: white;'>Add to Cart</button>
-                ";
-        }
+        $products_query = "SELECT * FROM products  WHERE category_id = '2' ORDER BY date";
+        $result_products = mysqli_query($conn, $products_query);
+        $num_of_rows = mysqli_num_rows($result_products);
 
-        // <a href='index.php?add_to_cart=$product_id' class='btn btn' style='background-color: #439D9E; color: white;'>Add to Cart</a>";
+        if ($num_of_rows == 0) {
+          echo "<h2 class='text-center text-danger'>Apologies, we do not currently have any promotions available to offer at this time.</h2>";
+        } else {
+          // 
 
-        else {
-          echo " 
-    <a href='index.php?cart' class='btn btn-warning'>View Cart</a>";
-        }
-
-
-
-        echo "
-    </div>
-    </div>
-    </div> 
-";
-      } ?>
-      <?php
-      if (!isset($_SESSION['email'])) {
-        echo "
-<a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info'>Add to Cart</a>    
-</div>
-</div>
-</div> 
-";
-      }
-    }
-  }
-}
-
-
-function search_products()
-{
-  //     if(isset($_GET['all_products']) || isset($_GET['all_promos'])){
-
-  //     include './shop/category.php';
-  //         }
-  global $conn;
-  $search_query = $_POST['all_products'];
-  $products_query = "SELECT * FROM products  WHERE product_title LIKE '%$search_query%'";
-  $result_products = mysqli_query($conn, $products_query);
-  $num_of_rows = mysqli_num_rows($result_products);
-
-  if ($num_of_rows == 0) {
-    echo "<h2 class='text-center text-danger'>Apologies, we do not currently have any promotions available to offer at this time.</h2>";
-  } else {
-    // 
-
-    while ($row = mysqli_fetch_assoc($result_products)) {
-      $product_id = $row['product_id'];
-      $product_title = $row['product_title'];
-      $product_description = $row['product_description'];
-
-      $short_description = substr($product_description, 0, 23);
-      $full_description = substr($product_description, 23);
-
-      $product_price = $row['product_price'];
-      $product_image = $row['product_image'];
-      echo "
-
-  <div class='col-lg-3 col-md-3 col-sm-6 col-xs-1 d-flex justify-content-center mb-4'>
-    <div class='card' style='width: 18rem;'>
-    <img src='./admin/products_images/$product_image' class='card-img-top'  width='auto;' height='250px;'>
-    <div class='card-body'>
-    <h5 class='card-title'>$product_title</h5>
-"; ?>
-      <!-- <div id="description">
-  <p class="short_description">
-    <?php echo $short_description; ?>
-  </p>
-  <p class="full_description" style="display: none;"><?php echo $full_description; ?></p>
-  <button class="view_more_button" onclick="toggleDescription(this)">View More</button>
-  </div> -->
-      <div id="description">
-        <p class="description">
-          <span class="short_description"><?php echo $short_description; ?></span>
-          <span class="full_description" style="display: none;"><?php echo $full_description; ?></span>
-        </p>
-        <button class="view_more_button" onclick="toggleDescription(this)">View More</button>
+          while ($row = mysqli_fetch_assoc($result_products)) {
+            $product_id = $row['product_id'];
+            $product_title = $row['product_title'];
+            $product_description = $row['product_description'];
+      
+            $short_description = substr($product_description, 0, 27);
+            $full_description = substr($product_description, 27);
+      
+            $product_price = $row['product_price'];
+            $product_image = $row['product_image'];
+      ?>
+      
+          <div class="product-card mb-4 text-decoration-none">
+              <div class='card' style='width: 100%;'>
+                <div class="product-image-container">
+                <a href="index.php?product_description=<?php echo $product_id?>"> <img src='./admin/products_images/<?php echo $product_image ?>' class='card-img-top product-image' alt='<?php echo $product_title ?>'>
+                </div></a>
+                <div class='card-body text-center'>
+                  <h5 class='card-title'><?php echo $product_title ?></h5>
+                  <p class='card-text'><strong>₱<?php echo $product_price ?></strong></p>
+      
+      
+                  <?php
+                  if (isset($_SESSION['email'])) {
+                    $user_id = $_SESSION['user_id'];
+                    $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_id=$product_id";
+                    $result_query = mysqli_query($conn, $select_query);
+                    $rows = mysqli_num_rows($result_query);
+      
+                    if ($rows == 0) {
+                      echo "
+                      <button class='btn add-to-cart-button mt-3' data-id='$product_id' style='background-color: #439D9E; color: white; width: 100%;'>
+                      Add to Cart</button>
+                      </div>
+                      </div> 
+                      </div> "; }
+                  
+                      elseif($rows >=1) { 
+                echo"
+                <a href='index.php?cart' class='btn btn-warning mt-3' style='width: 100%;'>View Cart</a> 
+              </div>
+              </div> 
+              </div> ";  } ?>
+       
+      
+            <?php
+                  }
+                  if (!isset($_SESSION['email'])) {
+                    echo "
+      <a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info' style='background-color: #439D9E; color: white; width:100%;'>Add to Cart</a>    
       </div>
-
-      <?php echo "
-    <p class='card-text'><strong>Price:&nbsp$product_price</strong></p>"; ?>
-      <?php
-
-      if (isset($_SESSION['email'])) {
-        $user_id = $_SESSION['user_id'];
-        $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_id=$product_id";
-        $result_query = mysqli_query($conn, $select_query);
-        $rows = mysqli_num_rows($result_query);
-
-        if ($rows == 0) {
-          echo "
-          <button class='btn add-to-cart-button' data-id='$product_id' type='button' class='btn btn' style='background-color: #439D9E; color: white;'>Add to Cart</button>
-                ";
-        }
-
-        // <a href='index.php?add_to_cart=$product_id' class='btn btn' style='background-color: #439D9E; color: white;'>Add to Cart</a>";
-
-        else {
-          echo " 
-    <a href='index.php?cart' class='btn btn-warning'>View Cart</a>";
-        }
+      </div>
+      </div> 
+      ";
+                  }
+                }
+              }
+            }
+      
 
 
+      function search_products()
+      {
+        //     if(isset($_GET['all_products']) || isset($_GET['all_promos'])){
 
-        echo "
-    </div>
-    </div>
-    </div> 
-";
-      } ?>
-<?php
-      if (!isset($_SESSION['email'])) {
-        echo "
-<a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info'>Add to Cart</a>    
-</div>
-</div>
-</div> 
-";
-      }
-    }
-  }
-}
+        //     include './shop/category.php';
+        //         }
+        global $conn;
+        $search_query = $_POST['all_products'];
+        $products_query = "SELECT * FROM products  WHERE product_title LIKE '%$search_query%'";
+        $result_products = mysqli_query($conn, $products_query);
+        $num_of_rows = mysqli_num_rows($result_products);
 
+        if ($num_of_rows == 0) {
+          echo "<h2 class='text-center text-danger'>Apologies, we do not currently have any promotions available to offer at this time.</h2>";
+        } else {
+          // 
 
-
+          while ($row = mysqli_fetch_assoc($result_products)) {
+            $product_id = $row['product_id'];
+            $product_title = $row['product_title'];
+            $product_description = $row['product_description'];
+      
+            $short_description = substr($product_description, 0, 27);
+            $full_description = substr($product_description, 27);
+      
+            $product_price = $row['product_price'];
+            $product_image = $row['product_image'];
+      ?>
+      
+          <div class="product-card mb-4 text-decoration-none">
+              <div class='card' style='width: 100%;'>
+                <div class="product-image-container">
+                <a href="index.php?product_description=<?php echo $product_id?>"> <img src='./admin/products_images/<?php echo $product_image ?>' class='card-img-top product-image' alt='<?php echo $product_title ?>'>
+                </div></a>
+                <div class='card-body text-center'>
+                  <h5 class='card-title'><?php echo $product_title ?></h5>
+                  <p class='card-text'><strong>₱<?php echo $product_price ?></strong></p>
+      
+      
+                  <?php
+                  if (isset($_SESSION['email'])) {
+                    $user_id = $_SESSION['user_id'];
+                    $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_id=$product_id";
+                    $result_query = mysqli_query($conn, $select_query);
+                    $rows = mysqli_num_rows($result_query);
+      
+                    if ($rows == 0) {
+                      echo "
+                      <button class='btn add-to-cart-button mt-3' data-id='$product_id' style='background-color: #439D9E; color: white; width: 100%;'>
+                      Add to Cart</button>
+                      </div>
+                      </div> 
+                      </div> "; }
+                  
+                      elseif($rows >=1) { 
+                echo"
+                <a href='index.php?cart' class='btn btn-warning mt-3' style='width: 100%;'>View Cart</a> 
+              </div>
+              </div> 
+              </div> ";  } ?>
+       
+      
+            <?php
+                  }
+                  if (!isset($_SESSION['email'])) {
+                    echo "
+      <a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info' style='background-color: #439D9E; color: white; width:100%;'>Add to Cart</a>    
+      </div>
+      </div>
+      </div> 
+      ";
+                  }
+                }
+              }
+            }
+      
 
 ?>
 
-<style>
-#product{
-background:red;
-color: green;
-}
-</style>
 
-      <!-- <div id="description">
+<!-- <div id="description">
   <p class="description"> -->
-      <!-- <span><strong>Product Description</strong></span> <br> -->
-      <!-- <span class="short_description"><?php echo $short_description; ?></span>
+<!-- <span><strong>Product Description</strong></span> <br> -->
+<!-- <span class="short_description"><?php echo $short_description; ?></span>
     <span class="full_description" style="display: none;"><?php echo $full_description; ?></span>
   </p>
   <a class="view_more_button" onclick="toggleDescription(this)" style="font-size: 15px; float:right;">View More...</a>
 </div> -->
-      <!-- <div class="d-flex">
+<!-- <div class="d-flex">
         <button id="decrementBtn">-</button>
         <input name="quantity" style="text-align: center;" value="1">
         <button id="incrementBtn">+</button>

@@ -1,4 +1,4 @@
-
+<?php session_start ();?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -56,6 +56,7 @@ $(document).ready(function() {
   width: 100%;
   max-width: 23%;
   margin: 0 1%;
+  border-radius: 10px;
 
 }
 .product-image-container {
@@ -124,6 +125,8 @@ $(document).ready(function() {
     max-width: 46%;
   }
 }
+
+
     #decrementBtn {
   width: 40px;
   height: 40px;

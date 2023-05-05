@@ -32,13 +32,14 @@ if(isset($_GET['product_description'])){
         <img src="./admin/products_images/<?php echo $product_image?>" alt="Product Image" style="width:100%; height:500px; object-fit:cover;">
       </div>
     </div>
-    <div class="col-md-6 p-4">
+    <div class="col-md-6">
       <div class="product-description-column" style="padding-right:30px;">
         <h2 class="title" style="margin-top:25px; "><?php echo $product_title ?></h2>
         <h6 style="margin-top:60px;">Description:</h6>
         <div style="padding-right:20px;">
-        <p class="description" style="margin-top: 20px;"><?php echo $product_description ?></p>
+        <p class="description" style="margin-top: 20px;  max-width: 600px;"><?php echo $product_description ?></p>
         </div>  
+
 
         <p class="price" style="margin-top:120px;">₱<?php echo $product_price ?></p>
    

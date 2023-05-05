@@ -75,10 +75,6 @@ function getproducts()
 
       function top_products()
       {
-        //     if(isset($_GET['all_products']) || isset($_GET['all_promos'])){
-
-        //     include './shop/category.php';
-        //         }
         global $conn;
 
         $products_query = "SELECT * FROM products  WHERE category_id = '1' ORDER BY date";
@@ -108,7 +104,7 @@ function getproducts()
               <img src='./admin/products_images/<?php echo $product_image ?>' class='card-img-top product-image' alt='<?php echo $product_title ?>'>
                 </div>
                 <div class='card-body text-center'>
-                <a href="index.php?product_description=<?php echo $product_id?>" style="color:black;"> <h5 class='card-title'><?php echo $product_title ?></h5></a> <h5 class='card-title'><?php echo $product_title ?></h5>
+                <a href="index.php?product_description=<?php echo $product_id?>" style="color:black;"> <h5 class='card-title'><?php echo $product_title ?></h5></a>
                   <p class='card-text'><strong>₱<?php echo $product_price ?></strong></p>
       
       

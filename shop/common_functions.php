@@ -28,10 +28,10 @@ function getproducts()
     <div class="product-card mb-4 text-decoration-none">
         <div class='card' style='width: 100%;'>
           <div class="product-image-container">
-          <a href="index.php?product_description=<?php echo $product_id?>"> <img src='./admin/products_images/<?php echo $product_image ?>' class='card-img-top product-image' alt='<?php echo $product_title ?>'>
-          </div></a>
+         <img src='./admin/products_images/<?php echo $product_image ?>' class='card-img-top product-image' alt='<?php echo $product_title ?>'>
+          </div>
           <div class='card-body text-center'>
-            <h5 class='card-title'><?php echo $product_title ?></h5>
+          <a href="index.php?product_description=<?php echo $product_id?>" style="color:black;"> <h5 class='card-title'><?php echo $product_title ?></h5></a>
             <p class='card-text'><strong>₱<?php echo $product_price ?></strong></p>
 
 
@@ -105,10 +105,10 @@ function getproducts()
           <div class="product-card mb-4 text-decoration-none">
               <div class='card' style='width: 100%;'>
                 <div class="product-image-container">
-                <a href="index.php?product_description=<?php echo $product_id?>"> <img src='./admin/products_images/<?php echo $product_image ?>' class='card-img-top product-image' alt='<?php echo $product_title ?>'>
-                </div></a>
+              <img src='./admin/products_images/<?php echo $product_image ?>' class='card-img-top product-image' alt='<?php echo $product_title ?>'>
+                </div>
                 <div class='card-body text-center'>
-                  <h5 class='card-title'><?php echo $product_title ?></h5>
+                <a href="index.php?product_description=<?php echo $product_id?>" style="color:black;"> <h5 class='card-title'><?php echo $product_title ?></h5></a> <h5 class='card-title'><?php echo $product_title ?></h5>
                   <p class='card-text'><strong>₱<?php echo $product_price ?></strong></p>
       
       
@@ -182,10 +182,10 @@ function getproducts()
           <div class="product-card mb-4 text-decoration-none">
               <div class='card' style='width: 100%;'>
                 <div class="product-image-container">
-                <a href="index.php?product_description=<?php echo $product_id?>"> <img src='./admin/products_images/<?php echo $product_image ?>' class='card-img-top product-image' alt='<?php echo $product_title ?>'>
-                </div></a>
+                   <img src='./admin/products_images/<?php echo $product_image ?>' class='card-img-top product-image' alt='<?php echo $product_title ?>'>
+                </div>
                 <div class='card-body text-center'>
-                  <h5 class='card-title'><?php echo $product_title ?></h5>
+                <a href="index.php?product_description=<?php echo $product_id?>" style="color:black;"> <h5 class='card-title'><?php echo $product_title ?></h5></a>
                   <p class='card-text'><strong>₱<?php echo $product_price ?></strong></p>
       
       
@@ -260,10 +260,10 @@ function getproducts()
           <div class="product-card mb-4 text-decoration-none">
               <div class='card' style='width: 100%;'>
                 <div class="product-image-container">
-                <a href="index.php?product_description=<?php echo $product_id?>"> <img src='./admin/products_images/<?php echo $product_image ?>' class='card-img-top product-image' alt='<?php echo $product_title ?>'>
-                </div></a>
+              <img src='./admin/products_images/<?php echo $product_image ?>' class='card-img-top product-image' alt='<?php echo $product_title ?>'>
+                </div>
                 <div class='card-body text-center'>
-                  <h5 class='card-title'><?php echo $product_title ?></h5>
+                <a href="index.php?product_description=<?php echo $product_id?>" style="color:black;"> <h5 class='card-title'><?php echo $product_title ?></h5></a>
                   <p class='card-text'><strong>₱<?php echo $product_price ?></strong></p>
       
       

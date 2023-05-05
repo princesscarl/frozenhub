@@ -31,8 +31,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <!-- <script src="https://kit.fontawesome.com/faf8bee4ee.js" crossorigin="anonymous"></script> -->
   <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
- 
   <script src="action.js"></script>
+
 
 <script>
 $(document).ready(function() {
@@ -200,6 +200,11 @@ $(document).ready(function() {
   elseif (isset($_GET['add_to_cart'])) {
     include './add_to_cart.php';
   } 
+
+  elseif (isset($_GET['product_description'])) {
+    include './shop/product_description.php';
+  } 
+
 
   else {
     echo '

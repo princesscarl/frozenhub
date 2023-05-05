@@ -52,6 +52,21 @@ $(document).ready(function() {
 
 
 <style>
+
+.title{
+
+}
+
+.description{
+
+}
+
+.price{
+  font-size:  25px;
+}
+
+
+
 .product-card {
   width: 100%;
   max-width: 23%;

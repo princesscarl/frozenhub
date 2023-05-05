@@ -52,18 +52,182 @@ $(document).ready(function() {
 
 
 <style>
+.home{
+  margin-left: 80px;
+}
+
+
+@media screen and (max-width: 1260px) {
+  .home{
+    margin-left: 70px;
+
+  }
+}
+
+
+@media screen and (max-width: 1080px) {
+  .home{
+    margin-left: 60px;
+
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .home{
+    margin-left: 50px;
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .home{
+    margin-left: 40px;
+
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home{
+    margin-left: 30px;
+
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .home{
+    margin-left: 20px;
+
+  }
+}
+
+
 
 .title{
 
 }
 
 .description{
-
+margin-top: 20px; 
+max-width: 650px; 
+width: 600px; 
+height: 200px;
+resize:none;
+border: none; 
+outline:none;
 }
 
+@media screen and (max-width: 1260px) {
+  .description{
+    width: 500px; 
+
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .description{
+    width: 420px; 
+
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .description{
+    width: 400px; 
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .description {
+    width: 600px; 
+   
+  }
+}
+
+
+@media screen and (max-width: 680px) {
+  .description {
+    width: 480px; 
+   
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .description {
+    width: 390px; 
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .description {
+    width: 320px; 
+  }
+}
 .price{
   font-size:  25px;
 }
+
+
+
+
+
+
+
+
+
+
+
+.product-info {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 768px) {
+  .product-info {
+    flex-direction: column;
+  }
+}
+.product-image-column {
+  max-width: 100%;
+  height: 500px;
+  flex-basis: 50%;
+  flex-grow: 1;
+}
+
+.product-image-column img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-description-column {
+  flex-basis: 50%;
+  flex-grow: 1;
+}
+
+.product-description-column textarea {
+  width: 100%;
+  height: 200px;
+  resize: none;
+  border: none;
+  outline:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -86,7 +250,6 @@ $(document).ready(function() {
     height: 250px;
     object-fit: cover;
   }
-
 
   @media only screen and (max-width: 834px) {
   .card-title {

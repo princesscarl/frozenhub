@@ -15,31 +15,26 @@ if(isset($_GET['product_description'])){
  $product_description= $row['product_description'];
 }
 ?>
-
-<a href="index.php" style="margin-left:80px; color:black;">Home</a>   &nbsp/
+<div class="home">
+<a href="index.php" style="color:black;">Home</a>   &nbsp/
 <a href="#" onclick="history.back()" style="margin-left:10px; color:black;">Back to Products</a>  &nbsp/
 <a disabled href="#" style="margin-left:10px;color:gray;  text-decoratione-none;pointer-events: none;"><?php echo $product_title ?></a>  
-
+</div>
 
 
 
 <div style="width: 90%; margin-top:30px; margin-bottom: 30px; margin-right: auto; margin-left: auto; overflow: hidden; background-color:white;">
 
+<div class="product-info p-2">
+  <div class="product-image-column">
+    <img src="./admin/products_images/<?php echo $product_image?>" alt="Product Image">
+  </div>
+  <div class="product-description-column pl-3">
+    <h2 class="title" style="margin-top:25px;"><?php echo $product_title ?></h2>
+    <h6 style="margin-top:50px;">Description:</h6>
+    <textarea readonly class="description"><?php echo $product_description ?></textarea>
 
-<div class="row p-2">
-    <div class="col-md-6">
-      <div class="product-image-column" style=" max-width: 100%; height: 500px; float: center;">
-        <img src="./admin/products_images/<?php echo $product_image?>" alt="Product Image" style="width:100%; height:500px; object-fit:cover;">
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="product-description-column">
-        <h2 class="title" style="margin-top:25px; "><?php echo $product_title ?></h2>
-        <h6 style="margin-top:50px;">Description:</h6>
-        <textarea readonly class="description" style="margin-top: 20px; max-width: 650px; width: 600px; height: 200px; resize: none; border: none; outline:none;"><?php echo $product_description ?></textarea>
-
-
-        <p class="price" style="margin-top: 40px;">₱<?php echo $product_price ?></p>
+        <p class="price" style="margin-top: 25px;">₱<?php echo $product_price ?></p>
    
 
         

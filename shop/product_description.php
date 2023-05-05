@@ -27,7 +27,7 @@ if(isset($_GET['product_description'])){
 
 
 <div class="row">
-    <div class="col-md-6" style="margin-right:20px;">
+    <div class="col-md-6">
       <div class="product-image-column" style=" max-width: 100%; height: 500px; float: center;">
         <img src="./admin/products_images/<?php echo $product_image?>" alt="Product Image" style="width:100%; height:500px; object-fit:cover;">
       </div>
@@ -36,7 +36,7 @@ if(isset($_GET['product_description'])){
       <div class="product-description-column" style="padding-right:30px;">
         <h2 class="title" style="margin-top:25px; "><?php echo $product_title ?></h2>
         <h6 style="margin-top:60px;">Description:</h6>
-        <div style="margin-right:20px;">
+        <div style="padding-right:20px;">
         <p class="description" style="margin-top: 20px;  max-width: 600px;"><?php echo $product_description ?></p>
         </div>  
 
@@ -44,7 +44,7 @@ if(isset($_GET['product_description'])){
         <p class="price" style="margin-top:120px;">₱<?php echo $product_price ?></p>
    
 
-        z
+        
         <?php
                   if (isset($_SESSION['email'])) {
                     $user_id = $_SESSION['user_id'];

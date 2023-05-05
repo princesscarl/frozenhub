@@ -32,7 +32,7 @@ if(isset($_GET['product_description'])){
         <img src="./admin/products_images/<?php echo $product_image?>" alt="Product Image" style="width:100%; height:500px; object-fit:cover;">
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 p-4">
       <div class="product-description-column" style="padding-right:30px;">
         <h2 class="title" style="margin-top:25px; "><?php echo $product_title ?></h2>
         <h6 style="margin-top:60px;">Description:</h6>

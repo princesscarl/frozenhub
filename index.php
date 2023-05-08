@@ -621,6 +621,8 @@ function total_cart_price()
         </div>
       </div>
     </div>
+
+
   <script>
     $(document).ready(function()
 {

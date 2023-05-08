@@ -41,7 +41,7 @@ if(isset($_GET['product_description'])){
         <?php
                   if (isset($_SESSION['email'])) {
                     $user_id = $_SESSION['user_id'];
-                    $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_id=$id";
+                    $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_code=$id";
                     $result_query = mysqli_query($conn, $select_query);
                     $rows = mysqli_num_rows($result_query);
       

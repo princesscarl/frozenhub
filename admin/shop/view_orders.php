@@ -24,7 +24,7 @@
     <tbody>
     <?php
   
-                    $category_query="SELECT * FROM order_details";
+                    $category_query="SELECT * FROM order_details WHERE order_id >1";
                     $result_category= mysqli_query($conn,$category_query);
                     while($row = mysqli_fetch_assoc($result_category)) {
                       $user_id = $row['user_id'];

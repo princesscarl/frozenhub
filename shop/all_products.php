@@ -1,4 +1,4 @@
-<div class="container-fluid" style="width: 90%;">
+<div class="container-fluid" >
     <h2 style="text-align: center; font-weight: bold; padding:10px;">All Products</h2>
 
 <form class="form-inline mr-auto mb-3 d-flex  justify-content-end" method="POST" >

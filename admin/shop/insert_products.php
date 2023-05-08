@@ -76,9 +76,14 @@ if($result_product){
           <!--TITLE -->
           <div class="form-outline mb-4 w-50 m-auto pt-3">
             <label for="product_title" class="form-label">
-            Product Code
+            Product Code  <div id="validation-results" style="color:red;"></div>
             </label>
-            <input type="number" name="product_code" id="product_code" class="form-control" placeholder="123456789" autocomplete="Off" required>
+            
+          
+
+<form>
+<input type="number" name="product_code" id="product_code" class="form-control" placeholder="123456789" autocomplete="off" required>
+</form>
         </div>
 
     <!--DESCRIPTION-->

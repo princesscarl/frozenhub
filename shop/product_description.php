@@ -5,7 +5,7 @@ if(isset($_GET['product_description'])){
  $id = $_GET['product_description'];
 
 
- $products_query = "SELECT * FROM products  WHERE product_id = '$id'";
+ $products_query = "SELECT * FROM products  WHERE product_code = '$id'";
  $result = mysqli_query($conn,$products_query);
  $row = mysqli_fetch_assoc($result);
 

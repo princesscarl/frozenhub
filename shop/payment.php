@@ -25,7 +25,7 @@ if (isset($_POST['submit-btn'])) {
     $quantities = $_POST['quantity'];
 if($result_query){
       // Prepare the SQL statement with placeholders for each value
-      $sql = 'INSERT INTO items (`user_id`, `order_id`, `product_id`, `quantity`) VALUES (?, ?, ?, ?)';
+      $sql = 'INSERT INTO items (`user_id`, `order_id`, `product_code`, `quantity`) VALUES (?, ?, ?, ?)';
       $stmt = mysqli_prepare($conn, $sql);
 
       // Loop through the arrays and execute the SQL statement for each set of values
@@ -144,13 +144,14 @@ if($result_query){
           $result = mysqli_query($conn, $cart_query);
           while ($row = mysqli_fetch_array($result)) {
 
-            $product_id = $row['product_id'];
-            $select_products = "SELECT * FROM products JOIN cart_details WHERE products.product_id=$product_id AND cart_details.product_id=$product_id AND `user_id` = $user_id";
+            $product_code = $row['product_code'];
+            $select_products = "SELECT * FROM products JOIN cart_details WHERE products.product_code=$product_code AND cart_details.product_code=$product_code AND `user_id` = $user_id";
             $result_products = mysqli_query($conn, $select_products);
 
 
             while ($row = mysqli_fetch_array($result_products)) {
               $product_id = $row['product_id'];
+              $product_code = $row['product_code'];
               $product_title = $row['product_title'];
               $product_price = $row['product_price'];
               $product_quantity = $row['quantity'];
@@ -167,7 +168,7 @@ if($result_query){
       
       <form method="POST">
       
-        <td> <input hidden name="product[]" value=' . $product_id .'>' . $product_title . '</td>
+        <td> <input hidden name="product[]" value=' . $product_code .'>' . $product_title . '</td>
         <td><input hidden name="price[]" value=' . $product_price .' >' . $product_price . '</td>
         <td><input hidden name="quantity[]" value=' . $product_quantity .' >' . $product_quantity . '</td>
         <td><input hidden name="order[]" value=' . $order_id . '></td>

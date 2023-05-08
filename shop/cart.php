@@ -8,17 +8,15 @@ if(isset($_SESSION['email']))
  
       if(isset($_POST['update-btn'])){
         $user_id = $_SESSION['user_id'];
-        $product_id = $_POST['product_id'];
+        $product_code = $_POST['product_code'];
         $quantity = $_POST['quantity'];
-        $update_cart = "UPDATE cart_details SET `quantity`='$quantity' WHERE `user_id`=$user_id AND `product_id` =$product_id";
+        $update_cart = "UPDATE cart_details SET `quantity`='$quantity' WHERE `user_id`=$user_id AND `product_code` =$product_code";
         $result_update = mysqli_query($conn, $update_cart);
 
-        $update_items = "UPDATE items SET `quantity`='$quantity' WHERE `user_id`=$user_id AND `product_id` =$product_id";
+        $update_items = "UPDATE items SET `quantity`='$quantity' WHERE `user_id`=$user_id AND `product_code` =$product_code";
         $result_items = mysqli_query($conn, $update_items);
 
-        }
-  
-              
+        }        
 
 ?>
 
@@ -49,11 +47,11 @@ if(isset($_SESSION['email']))
 
             $result = mysqli_query($conn,$cart_query);
             while($row = mysqli_fetch_array($result)){
-                $product_id = $row['product_id'];
-                $select_products="SELECT * FROM products JOIN cart_details WHERE products.product_id=$product_id AND cart_details.product_id=$product_id AND `user_id` = $user_id";
+                $product_code = $row['product_code'];
+                $select_products="SELECT * FROM products JOIN cart_details WHERE products.product_code=$product_code AND cart_details.product_code=$product_code AND `user_id` = $user_id";
                 $result_products = mysqli_query($conn, $select_products);
                 while($row = mysqli_fetch_array($result_products)){
-                    $product_id=$row['product_id'];
+                    $product_code=$row['product_code'];
                     $product_title = $row['product_title'];
                     $product_image = $row['product_image'];
                     $product_price = $row['product_price'];
@@ -69,18 +67,11 @@ if(isset($_SESSION['email']))
                 <td>
                     <form action="" method="POST">
                         <input type ='number' name='quantity' id='quantity' value="<?php echo $product_quantity?>" class='form-input w-50'>
-                        <input type="hidden" name="product_id" value="<?php echo $product_id?>">
+                        <input type="hidden" name="product_code" value="<?php echo $product_code?>">
                 </td>
 
                 <?php
-                  if(isset($_POST['update-btn'])){
-                    $user_id = $_SESSION['user_id'];
-                    $product_id = $_POST['product_id'];
-                    $quantity = $_POST['quantity'];
-                    $update_cart = "UPDATE cart_details SET `quantity`='$quantity' WHERE `user_id`=$user_id AND `product_id` =$product_id";
-                    $result_update = mysqli_query($conn, $update_cart);
-
-                    }
+              
                   }
                 ?>
      
@@ -92,7 +83,7 @@ if(isset($_SESSION['email']))
                 <input type='submit' name='update-btn' class='btn btn-sm btn-primary'>
                </td>
                 <td>
-                <a href = './shop/delete_item.php?id=".$product_id."' class='text-danger'><i class='bi bi-x-circle'></i></a> 
+                <a href = './shop/delete_item.php?id=".$product_code."' class='text-danger'><i class='bi bi-x-circle'></i></a> 
                 </td>";?>
                   <!-- <a href = '#' class='text-danger' data-toggle='modal' data-target='#exampleModal'><i class='bi bi-x-circle'></i></a>  -->
                 </form>

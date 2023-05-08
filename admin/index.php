@@ -44,42 +44,15 @@ if(isset($_POST["delete"]))
   <script src="https://kit.fontawesome.com/faf8bee4ee.js" crossorigin="anonymous"></script>
   <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
 
-  <script>
-    $('textarea').keyup(function() {
-    var characterCount = $(this).val().length,
-        current = $('#currentCount'),
-        maximum = $('#maxCount'),
-        theCount = $('#charCount');
-    current.text(characterCount);
-    
-    if (characterCount < 100) {
-        current.css('color', '#666');
-    }
-    if (characterCount > 100 && characterCount < 150) {
-        current.css('color', '#6d5555');
-    }
-    if (characterCount > 150 && characterCount < 180) {
-        current.css('color', '#793535');
-    }
-    if (characterCount > 180 && characterCount < 200) {
-        current.css('color', '#841c1c');
-    }
-    if (characterCount > 200 && characterCount < 250) {
-        current.css('color', '#8f0001');
-    }
-    if (characterCount >= 250) {
-        maximum.css('color', '#8f0001');
-        current.css('color', '#8f0001');
-        theCount.css('font-weight','bold');
-    } else {
-        maximum.css('color','#666');
-        theCount.css('font-weight','normal');
-    }
-});
-  </script>
 
 
   <style>
+
+
+input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      display: none;
+    }
     @media (max-width: 768px){
     .table th{
         display: none;
@@ -258,19 +231,19 @@ if(isset($_POST["delete"]))
     if (characterCount < 100) {
         current.css('color', '#666');
     }
-    if (characterCount > 100 && characterCount < 150) {
+    if (characterCount > 150 && characterCount < 200) {
         current.css('color', '#6d5555');
     }
-    if (characterCount > 150 && characterCount < 180) {
+    if (characterCount > 200 && characterCount < 250) {
         current.css('color', '#793535');
     }
-    if (characterCount > 180 && characterCount < 200) {
+    if (characterCount > 250 && characterCount < 300) {
         current.css('color', '#841c1c');
     }
-    if (characterCount > 200 && characterCount < 250) {
+    if (characterCount > 300 && characterCount < 350) {
         current.css('color', '#8f0001');
     }
-    if (characterCount >= 250) {
+    if (characterCount >= 400) {
         maximum.css('color', '#8f0001');
         current.css('color', '#8f0001');
         theCount.css('font-weight','bold');

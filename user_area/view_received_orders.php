@@ -231,10 +231,10 @@ if(isset($_SESSION['email']))
 
                     $count = mysqli_num_rows($result_category);
                     if ($count == 0){
-                      echo'<h1 class="text-center">No orders yet. Shop now!</h1>';
-                      echo'<div class="d-flex">';
-                      echo'<a href="./view_orders.php" class="btn btn-secondary">Back to orders</a>';
-                      echo'<a href="../index.php?all_products" class="btn btn-secondary">Continue Shopping</a>';
+                      echo'<h1 class="text-center">No orders done yet. Shop now!</h1>';
+                      echo'<div class="container text-center">';
+                      echo'<a href="./view_orders.php" class="btn btn-secondary m-2 py-2 border-0 text-decoration-none text-light">Back to orders</a>';
+                      echo'<a href="../index.php?all_products" class="btn btn-secondary m-2 py-2 border-0 text-decoration-none text-light">Continue Shopping</a>';
                       echo'</div">';
                     }
 
@@ -242,10 +242,15 @@ if(isset($_SESSION['email']))
 
 echo'
 <h1 class="text-center" id="reqsHeading" style="margin-bottom: 12px;padding-bottom: 8px;padding-top: 12px;"> Received Orders</h1>
+
+
+<div class= "container-fluid" style="width:90%; margin-left:10px;">
 <a href="./view_orders.php" class="btn btn-secondary ml-5 p-2 py-2 border-0 text-decoration-none text-light mb-3">Pending</a>
 <a href="./view_for_delivery.php" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">For Delivery</a>
 <a href="./view_received_orders.php" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Received</a>
 <a href="./view_cancelled_orders.php" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Cancelled</a>
+</div>
+
 <div class= "container-fluid" style="width: 90%; display: flex; justify-content: center;">
 
 <table class="table">

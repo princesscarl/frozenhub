@@ -15,6 +15,7 @@ function getproducts()
 
     while ($row = mysqli_fetch_assoc($result_products)) {
       $product_id = $row['product_id'];
+      $product_code = $row['product_code'];
       $product_title = $row['product_title'];
       $product_description = $row['product_description'];
 
@@ -31,20 +32,20 @@ function getproducts()
          <img src='./admin/products_images/<?php echo $product_image ?>' class='card-img-top product-image' alt='<?php echo $product_title ?>'>
           </div>
           <div class='card-body text-center'>
-          <a href="index.php?product_description=<?php echo $product_id?>" style="color:black;"> <h5 class='card-title'><?php echo $product_title ?></h5></a>
+          <a href="index.php?product_description=<?php echo $product_code?>" style="color:black;"> <h5 class='card-title'><?php echo $product_title ?></h5></a>
             <p class='card-text'><strong>₱<?php echo $product_price ?></strong></p>
 
 
             <?php
             if (isset($_SESSION['email'])) {
               $user_id = $_SESSION['user_id'];
-              $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_id=$product_id";
+              $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_code=$product_code";
               $result_query = mysqli_query($conn, $select_query);
               $rows = mysqli_num_rows($result_query);
 
               if ($rows == 0) {
                 echo "
-                <button class='btn add-to-cart-button mt-3' data-id='$product_id' style='background-color: #439D9E;   color: white; width: 100%;'>
+                <button class='btn add-to-cart-button mt-3' data-id='$product_code' style='background-color: #439D9E;   color: white; width: 100%;'>
                 Add to Cart</button>
                 </div>
                 </div> 
@@ -88,6 +89,7 @@ function getproducts()
 
           while ($row = mysqli_fetch_assoc($result_products)) {
             $product_id = $row['product_id'];
+            $product_code = $row['product_code'];
             $product_title = $row['product_title'];
             $product_description = $row['product_description'];
       
@@ -104,20 +106,20 @@ function getproducts()
               <img src='./admin/products_images/<?php echo $product_image ?>' class='card-img-top product-image' alt='<?php echo $product_title ?>'>
                 </div>
                 <div class='card-body text-center'>
-                <a href="index.php?product_description=<?php echo $product_id?>" style="color:black;"> <h5 class='card-title'><?php echo $product_title ?></h5></a>
+                <a href="index.php?product_description=<?php echo $product_code?>" style="color:black;"> <h5 class='card-title'><?php echo $product_title ?></h5></a>
                   <p class='card-text'><strong>₱<?php echo $product_price ?></strong></p>
       
       
                   <?php
                   if (isset($_SESSION['email'])) {
                     $user_id = $_SESSION['user_id'];
-                    $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_id=$product_id";
+                    $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_code=$product_code";
                     $result_query = mysqli_query($conn, $select_query);
                     $rows = mysqli_num_rows($result_query);
       
                     if ($rows == 0) {
                       echo "
-                      <button class='btn add-to-cart-button mt-3' data-id='$product_id' style='background-color: #439D9E; color: white; width: 100%;'>
+                      <button class='btn add-to-cart-button mt-3' data-id='$product_code' style='background-color: #439D9E; color: white; width: 100%;'>
                       Add to Cart</button>
                       </div>
                       </div> 
@@ -148,10 +150,7 @@ function getproducts()
 
       function promo_products()
       {
-        //     if(isset($_GET['all_products']) || isset($_GET['all_promos'])){
-
-        //     include './shop/category.php';
-        //         }
+       
         global $conn;
 
         $products_query = "SELECT * FROM products  WHERE category_id = '2' ORDER BY date";
@@ -165,6 +164,7 @@ function getproducts()
 
           while ($row = mysqli_fetch_assoc($result_products)) {
             $product_id = $row['product_id'];
+            $product_code = $row['product_code'];
             $product_title = $row['product_title'];
             $product_description = $row['product_description'];
       
@@ -181,20 +181,20 @@ function getproducts()
                    <img src='./admin/products_images/<?php echo $product_image ?>' class='card-img-top product-image' alt='<?php echo $product_title ?>'>
                 </div>
                 <div class='card-body text-center'>
-                <a href="index.php?product_description=<?php echo $product_id?>" style="color:black;"> <h5 class='card-title'><?php echo $product_title ?></h5></a>
+                <a href="index.php?product_description=<?php echo $product_code?>" style="color:black;"> <h5 class='card-title'><?php echo $product_title ?></h5></a>
                   <p class='card-text'><strong>₱<?php echo $product_price ?></strong></p>
       
       
                   <?php
                   if (isset($_SESSION['email'])) {
                     $user_id = $_SESSION['user_id'];
-                    $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_id=$product_id";
+                    $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_code=$product_code";
                     $result_query = mysqli_query($conn, $select_query);
                     $rows = mysqli_num_rows($result_query);
       
                     if ($rows == 0) {
                       echo "
-                      <button class='btn add-to-cart-button mt-3' data-id='$product_id' style='background-color: #439D9E; color: white; width: 100%;'>
+                      <button class='btn add-to-cart-button mt-3' data-id='$product_code' style='background-color: #439D9E; color: white; width: 100%;'>
                       Add to Cart</button>
                       </div>
                       </div> 
@@ -239,6 +239,7 @@ function getproducts()
 
           while ($row = mysqli_fetch_assoc($result_products)) {
             $product_id = $row['product_id'];
+            $product_code = $row['product_code'];
             $product_title = $row['product_title'];
             $product_description = $row['product_description'];
       
@@ -255,20 +256,20 @@ function getproducts()
               <img src='./admin/products_images/<?php echo $product_image ?>' class='card-img-top product-image' alt='<?php echo $product_title ?>'>
                 </div>
                 <div class='card-body text-center'>
-                <a href="index.php?product_description=<?php echo $product_id?>" style="color:black;"> <h5 class='card-title'><?php echo $product_title ?></h5></a>
+                <a href="index.php?product_description=<?php echo $product_code?>" style="color:black;"> <h5 class='card-title'><?php echo $product_title ?></h5></a>
                   <p class='card-text'><strong>₱<?php echo $product_price ?></strong></p>
       
       
                   <?php
                   if (isset($_SESSION['email'])) {
                     $user_id = $_SESSION['user_id'];
-                    $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_id=$product_id";
+                    $select_query = "SELECT * FROM cart_details WHERE  `user_id`= $user_id AND product_code=$product_code";
                     $result_query = mysqli_query($conn, $select_query);
                     $rows = mysqli_num_rows($result_query);
       
                     if ($rows == 0) {
                       echo "
-                      <button class='btn add-to-cart-button mt-3' data-id='$product_id' style='background-color: #439D9E; color: white; width: 100%;'>
+                      <button class='btn add-to-cart-button mt-3' data-id='$product_code' style='background-color: #439D9E; color: white; width: 100%;'>
                       Add to Cart</button>
                       </div>
                       </div> 

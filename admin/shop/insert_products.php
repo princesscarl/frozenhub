@@ -9,6 +9,7 @@ if(isset($_FILES['product_image']) && isset($_POST["submit-btn"])) {
 
     
 $product_title= $_POST['product_title'];
+$product_code= $_POST['product_code'];
 $product_description= $_POST['product_description'];
 // $product_keywords= $_POST['product_keywords'];
 $product_price= $_POST['product_price'];
@@ -29,7 +30,7 @@ foreach(array_filter($_FILES['product_image']['name']) as $id=>$val){
     $fileType        = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
 
 if(move_uploaded_file( $tempLocation  , $targetFilePath)){
-$insert_products= "INSERT INTO `products`(`product_title`, `product_description`, `product_price`, `product_image`, `category_id`, `date`) VALUES ('$product_title','$product_description','$product_price', '$fileName','$product_category', now())";
+$insert_products= "INSERT INTO `products`(`product_title`,`product_code`, `product_description`, `product_price`, `product_image`, `category_id`, `date`) VALUES ('$product_title','$product_code','$product_description','$product_price', '$fileName','$product_category', now())";
  
 $result_product = mysqli_query($conn,$insert_products);
 
@@ -67,18 +68,27 @@ if($result_product){
     <!--TITLE -->
         <div class="form-outline mb-4 w-50 m-auto pt-3">
             <label for="product_title" class="form-label">
-            Product Title
+            Product Name
             </label>
-            <input type="text" name="product_title" id="product_title" class="form-control" placeholder="Enter Product Title" autocomplete="Off" required>
+            <input type="text" name="product_title" id="product_title" class="form-control" placeholder="Enter Product Name" autocomplete="Off" required>
+        </div>
+
+          <!--TITLE -->
+          <div class="form-outline mb-4 w-50 m-auto pt-3">
+            <label for="product_title" class="form-label">
+            Product Code
+            </label>
+            <input type="number" name="product_code" id="product_code" class="form-control" placeholder="123456789" autocomplete="Off" required>
         </div>
 
     <!--DESCRIPTION-->
         <div class="form-outline mb-4 w-50 m-auto pt-3">
-        <textarea type="text" name="product_description" id="product_description" class="form-control" placeholder="Product Description" maxlength="300" style="font-family: Poppins, sans-serif;font-size: 19px;"></textarea>
+        <label for="product_title" class="form-label"> Description</label>
+        <textarea type="text" name="product_description" id="product_description" class="form-control" placeholder="Product Description" maxlength="500" style="font-family: Poppins, sans-serif;font-size: 19px;"></textarea>
                         
                         <div class="row" style="padding-top: 0px;">
                             <div class="col-lg-9 col-xl-10 col-xxl-8 d-flex justify-content-end ms-lg-5" id="charCountCol" style="padding-top: 19px;font-family: Poppins, sans-serif;">
-                                <div id="charCount" style="padding-left: 13px;"><span id="currentCount">0</span><span id="maxCount">/300</span></div>
+                                <div id="charCount" style="padding-left: 13px;"><span id="currentCount">0</span><span id="maxCount">/500</span></div>
                   </div>
                   </div>
                   </div>
@@ -94,7 +104,7 @@ if($result_product){
     <!-- CATEGORY -->
         <div class="form-outline mb-4 w-50 m-auto pt-3">
             <select name="product_category" class="form-select" required>
-            <option value="" selected="" disabled="">Select Category</option>
+            <option value="" selected="" disabled="">Select Promo</option>
                 <?php
                 $category_query="SELECT * FROM categories ";
                 $result_category= mysqli_query($conn,$category_query);

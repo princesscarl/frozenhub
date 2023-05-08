@@ -44,7 +44,7 @@ function getproducts()
 
               if ($rows == 0) {
                 echo "
-                <button class='btn add-to-cart-button mt-3' data-id='$product_id' style='background-color: #439D9E; color: white; width: 100%;'>
+                <button class='btn add-to-cart-button mt-3' data-id='$product_id' style='background-color: #439D9E;   color: white; width: 100%;'>
                 Add to Cart</button>
                 </div>
                 </div> 
@@ -62,7 +62,7 @@ function getproducts()
             }
             if (!isset($_SESSION['email'])) {
               echo "
-<a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info' style='background-color: #439D9E; color: white; width:100%;'>Add to Cart</a>    
+<a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info add-to-cart-button' style='background-color: #439D9E; color: white; width:100%;'>Add to Cart</a>    
 </div>
 </div>
 </div> 
@@ -135,7 +135,7 @@ function getproducts()
                   }
                   if (!isset($_SESSION['email'])) {
                     echo "
-      <a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info' style='background-color: #439D9E; color: white; width:100%;'>Add to Cart</a>    
+      <a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info add-to-cart-button' style='background-color: #439D9E; color: white; width:100%;'>Add to Cart</a>    
       </div>
       </div>
       </div> 
@@ -212,7 +212,7 @@ function getproducts()
                   }
                   if (!isset($_SESSION['email'])) {
                     echo "
-      <a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info' style='background-color: #439D9E; color: white; width:100%;'>Add to Cart</a>    
+      <a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info add-to-cart-button' style='background-color: #439D9E; color: white; width:100%;'>Add to Cart</a>    
       </div>
       </div>
       </div> 
@@ -226,10 +226,6 @@ function getproducts()
 
       function search_products()
       {
-        //     if(isset($_GET['all_products']) || isset($_GET['all_promos'])){
-
-        //     include './shop/category.php';
-        //         }
         global $conn;
         $search_query = $_POST['all_products'];
         $products_query = "SELECT * FROM products  WHERE product_title LIKE '%$search_query%'";
@@ -280,7 +276,7 @@ function getproducts()
                   
                       elseif($rows >=1) { 
                 echo"
-                <a href='index.php?cart' class='btn btn-warning mt-3' style='width: 100%;'>View Cart</a> 
+                <a href='index.php?cart' class='btn btn-warning mt-3 ' style='width: 100%;'>View Cart</a> 
               </div>
               </div> 
               </div> ";  } ?>
@@ -290,7 +286,7 @@ function getproducts()
                   }
                   if (!isset($_SESSION['email'])) {
                     echo "
-      <a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info' style='background-color: #439D9E; color: white; width:100%;'>Add to Cart</a>    
+      <a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info add-to-cart-button' style='background-color: #439D9E; color: white; width:100%;'>Add to Cart</a>    
       </div>
       </div>
       </div> 
@@ -302,18 +298,3 @@ function getproducts()
       
 
 ?>
-
-
-<!-- <div id="description">
-  <p class="description"> -->
-<!-- <span><strong>Product Description</strong></span> <br> -->
-<!-- <span class="short_description"><?php echo $short_description; ?></span>
-    <span class="full_description" style="display: none;"><?php echo $full_description; ?></span>
-  </p>
-  <a class="view_more_button" onclick="toggleDescription(this)" style="font-size: 15px; float:right;">View More...</a>
-</div> -->
-<!-- <div class="d-flex">
-        <button id="decrementBtn">-</button>
-        <input name="quantity" style="text-align: center;" value="1">
-        <button id="incrementBtn">+</button>
-      </div> -->

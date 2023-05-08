@@ -52,7 +52,7 @@ function total_cart_price()
 ?>
 
 <div class="navigation">
-  <section class="header mt-3">
+  <section class="header">
     <div class="container-fluid">
       <div class="row d-flex justify-content-center">
         <div class="col-lg-9">

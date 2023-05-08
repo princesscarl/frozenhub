@@ -163,19 +163,19 @@ outline:none;
   .description {
     width: 320px; 
   }
+.add-to-cart-button {
+  font-size:12px;
+
 }
+}
+
+
+
+
+
 .price{
   font-size:  25px;
 }
-
-
-
-
-
-
-
-
-
 
 
 .product-info {
@@ -213,23 +213,6 @@ outline:none;
   border: none;
   outline:none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .product-card {
   width: 100%;
@@ -302,26 +285,6 @@ outline:none;
   .product-card {
     max-width: 46%;
   }
-}
-
-
-    #decrementBtn {
-  width: 40px;
-  height: 40px;
-  background-color: teal;
-  border: none;
-  color: white;
-  font-size: 20px;
-}
-
-
-#incrementBtn {
-  width: 40px;
-  height: 40px;
-  background-color: teal;
-  border: none;
-  color: white;
-  font-size: 20px;
 }
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {

@@ -101,12 +101,6 @@ $(document).ready(function() {
   }
 }
 
-
-
-.title{
-
-}
-
 .description{
 margin-top: 20px; 
 max-width: 650px; 
@@ -165,7 +159,10 @@ outline:none;
   }
 .add-to-cart-button {
   font-size:12px;
-
+}
+.no-session{
+  font-size:12px;
+}
 }
 }
 

@@ -66,7 +66,7 @@ function getproducts()
             }
             if (!isset($_SESSION['email'])) {
               echo "
-      <a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info' style='background-color: #439D9E; color: white; width:95%;'>Add to Cart</a>    
+      <a href='' data-toggle='modal' data-target='#exampleModal'  class='btn no-session btn-info' style='background-color: #439D9E; color: white; width:95%;'>Add to Cart</a>    
       </div>
       </div>
       </div> 
@@ -143,7 +143,7 @@ function getproducts()
                   }
                   if (!isset($_SESSION['email'])) {
                     echo "
-      <a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info' style='background-color: #439D9E; color: white; width:95%;'>Add to Cart</a>    
+      <a href='' data-toggle='modal' data-target='#exampleModal'  class='btn no-session btn-info' style='background-color: #439D9E; color: white; width:95%;'>Add to Cart</a>    
       </div>
       </div>
       </div> 
@@ -221,7 +221,7 @@ function getproducts()
                         }
                         if (!isset($_SESSION['email'])) {
                           echo "
-      <a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info' style='background-color: #439D9E; color: white; width:95%;'>Add to Cart</a>    
+      <a href='' data-toggle='modal' data-target='#exampleModal'  class='btn no-session btn-info' style='background-color: #439D9E; color: white; width:95%;'>Add to Cart</a>    
       </div>
       </div>
       </div> 
@@ -299,7 +299,7 @@ function getproducts()
                               }
                               if (!isset($_SESSION['email'])) {
                                 echo "
-      <a href='' data-toggle='modal' data-target='#exampleModal'  class='btn btn-info' style='background-color: #439D9E; color: white; width:95%;'>Add to Cart</a>    
+      <a href='' data-toggle='modal' data-target='#exampleModal'  class='btn no-session btn-info' style='background-color: #439D9E; color: white; width:95%;'>Add to Cart</a>    
       </div>
       </div>
       </div> 

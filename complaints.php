@@ -134,7 +134,7 @@ if (isset($_POST["submit"])) {
         id="btn-back-to-top" 
         style="position:fixed; bottom: 30px; right: 20px; height: 35px; width:35px; display:none; background-color:#439D9E; border-radius:50%; font-size:23px;"
         >
-        <i class="bi bi-arrow-up" style="position:fixed; bottom: 27px; right: 20px; height: 38px; width:35px;"></i>
+        <i class="bi bi-arrow-up" style="position:fixed; bottom: 25px; right: 20.5px; height: 38px; width:35px;"></i>
 </button>
 
 

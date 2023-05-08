@@ -82,7 +82,7 @@ if($result_product){
           
 
 <form>
-<input type="number" name="product_code" id="product_code" class="form-control" placeholder="123456789" autocomplete="off" required>
+<input type="number" name="product_code" id="product_code" class="form-control" placeholder="0000000" autocomplete="off" required>
 </form>
         </div>
 

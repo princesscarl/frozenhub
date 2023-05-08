@@ -3,7 +3,6 @@ $(document).ready(function()
     $('#product_code').on('keyup', function() {
         // Get the value of the product code field
         var product_code = $(this).val();
-        console.log (product_code)
         // Make an AJAX request to the validation script
         $.ajax({
           type: 'POST',

@@ -46,7 +46,7 @@ if (!$conn){
 //  echo $date;
 
   $see_query= "SELECT * FROM items JOIN products 
-  WHERE items.product_id = products.product_id 
+  WHERE items.product_code = products.product_code
   AND `order_id` = $order_id";
 
   $result = mysqli_query($conn,$see_query);

@@ -599,9 +599,9 @@ function total_cart_price()
         type="button"
         class="btn btn-floating btn-lg p-3 text-center"
         id="btn-back-to-top" 
-        style="position:fixed; bottom: 27px; right: 20px; height: 38px; width:35px; display:none; background-color:#439D9E; border-radius:50%; font-size:23px;"
+        style="position:fixed; bottom: 30px; right: 20px; height: 35px; width:35px; display:none; background-color:#439D9E; border-radius:50%; font-size:23px;"
         >
-  <i class="fas fa-angle-up"></i>
+        <i class="bi bi-arrow-up" style="position:fixed; bottom: 27px; right: 20px; height: 38px; width:35px;"></i>
 </button>
 
     <!-- Modal -->

@@ -42,13 +42,13 @@
             <td>$product_description</td>
 
             <td> "; ?>
-        <a href="./shop/edit_products.php?id= <?php echo $product_id ?>" class='text-warning'><i class='fa-solid fa-pen-to-square'></i></a>
+        <a href="./shop/edit_products.php?id= <?php echo $product_id ?>" class='text-warning'><i class='bi bi-pencil-square'></i></a>
       <?php
         echo "
            </td>
 
            <td>
-           <a href = './shop/delete_products.php?id=".$product_id."' class='text-danger'><i class='fa-solid fa-trash'></i></a>
+           <a href = './shop/delete_products.php?id=".$product_id."' class='text-danger'><i class='bi bi-x-circle'></i></a>
             </td>
 
             ";

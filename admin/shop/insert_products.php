@@ -79,12 +79,8 @@ if($result_product){
             Product Code  <div id="validation-results" style="color:red;"></div>
             </label>
             
-          
-
-<form>
-<input type="number" name="product_code" id="product_code" class="form-control" placeholder="0000000" autocomplete="off" required>
-</form>
-        </div>
+        <input type="number" name="product_code" id="product_code" class="form-control" placeholder="0000000" autocomplete="off" required>
+    
 
     <!--DESCRIPTION-->
         <div class="form-outline mb-4 w-50 m-auto pt-3">

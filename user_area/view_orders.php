@@ -223,21 +223,6 @@ if(isset($_SESSION['email']))
 
 <?php
 
-      $user_id = $_SESSION['user_id'];
-                    $category_query="SELECT * FROM order_details WHERE`user_id` = $user_id AND `status` ='Pending' ORDER BY `date` DESC";
-                    $result_category= mysqli_query($conn,$category_query);
-
-                    $count = mysqli_num_rows($result_category);
-                    if ($count == 0){
-                      echo'<h1 class="text-center">No orders yet. Shop now!</h1>';
-                      echo'<div class="container text-center">';
-                      echo'<a href="./view_orders.php" class="btn btn-secondary m-2 py-2 border-0 text-decoration-none text-light">Back to orders</a>';
-                      echo'<a href="../index.php?all_products" class="btn btn-secondary m-2 py-2 border-0 text-decoration-none text-light">Continue Shopping</a>';
-                      echo'</div">';
-                    }
-
-                    else { 
-
 echo'
 <h1 class="text-center" id="reqsHeading" style="margin-bottom: 12px;padding-bottom: 8px;padding-top: 12px;">Orders</h1>
 
@@ -264,6 +249,7 @@ echo'
         </tr>
     </thead>
     <tbody>';
+    
 
 
                     while($row = mysqli_fetch_assoc($result_category)) {
@@ -310,7 +296,7 @@ echo'
   </footer>
 
   <?php 
-}
+
 else{
 
   echo '<script>window.location.href = "./login.php";</script>';

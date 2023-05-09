@@ -14,14 +14,9 @@ function getproducts()
     // 
 
     while ($row = mysqli_fetch_assoc($result_products)) {
-      $product_id = $row['product_id'];
+
       $product_code = $row['product_code'];
       $product_title = $row['product_title'];
-      $product_description = $row['product_description'];
-
-      $short_description = substr($product_description, 0, 27);
-      $full_description = substr($product_description, 27);
-
       $product_price = $row['product_price'];
       $product_image = $row['product_image'];
 ?>
@@ -91,14 +86,9 @@ function getproducts()
           // 
 
           while ($row = mysqli_fetch_assoc($result_products)) {
-            $product_id = $row['product_id'];
+      
             $product_code = $row['product_code'];
             $product_title = $row['product_title'];
-            $product_description = $row['product_description'];
-
-            $short_description = substr($product_description, 0, 27);
-            $full_description = substr($product_description, 27);
-
             $product_price = $row['product_price'];
             $product_image = $row['product_image'];
             ?>
@@ -169,13 +159,9 @@ function getproducts()
                 // 
 
                 while ($row = mysqli_fetch_assoc($result_products)) {
-                  $product_id = $row['product_id'];
+        
                   $product_code = $row['product_code'];
                   $product_title = $row['product_title'];
-                  $product_description = $row['product_description'];
-
-                  $short_description = substr($product_description, 0, 27);
-                  $full_description = substr($product_description, 27);
 
                   $product_price = $row['product_price'];
                   $product_image = $row['product_image'];
@@ -247,13 +233,9 @@ function getproducts()
                       // 
 
                       while ($row = mysqli_fetch_assoc($result_products)) {
-                        $product_id = $row['product_id'];
+         
                         $product_code = $row['product_code'];
                         $product_title = $row['product_title'];
-                        $product_description = $row['product_description'];
-
-                        $short_description = substr($product_description, 0, 27);
-                        $full_description = substr($product_description, 27);
 
                         $product_price = $row['product_price'];
                         $product_image = $row['product_image'];

@@ -25,7 +25,7 @@
                     while($row = mysqli_fetch_assoc($result_category)) {
 
                         //get grant info
-                        $product_id = $row["product_id"];
+                        $product_code = $row["product_code"];
                         $product_title = $row["product_title"];
                         $product_image = $row["product_image"];
                         $product_price = $row["product_price"];
@@ -40,14 +40,14 @@
             <td>$product_description</td>
 
             <td> 
-             <a href ='./index.php?edit_products=".$product_id."' class='text-warning'><i class='bi bi-pencil-square'></i></a>";?>
+             <a href ='./index.php?edit_products=".$product_code."' class='text-warning'><i class='bi bi-pencil-square'></i></a>";?>
 
             <?php
             echo"
             </td>
            
             <td>
-            <a href = './shop/delete_products.php?id=".$product_id."' class='text-danger'><i class='bi bi-x-circle'></i></a>
+            <a href = './shop/delete_products.php?id=".$product_code."' class='text-danger'><i class='bi bi-x-circle'></i></a>
              </td>
  
              ";

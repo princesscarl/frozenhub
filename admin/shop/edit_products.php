@@ -8,14 +8,14 @@ if (!$conn){
 
 
 
+$product = $_GET['edit_products'];
 
 if(isset($_GET['edit_products'])){
 
-$product = $_GET['edit_products'];
-    $category_query="SELECT * FROM products JOIN categories WHERE products.category_id = categories.category_id AND products.product_id = '$product'";
+    $category_query="SELECT * FROM products JOIN categories WHERE products.category_id = categories.category_id AND products.product_code = '$product'";
     $result_category= mysqli_query($conn,$category_query);
     if (mysqli_num_rows($result_category) == 0){
-        echo"NO ROWS TO RETURN";
+        echo"";
     }
     
     else { 
@@ -24,7 +24,7 @@ $product = $_GET['edit_products'];
     }
 
 
-        $product_id = $row["product_id"];
+        $product_code= $row["product_code"];
         $product_title = $row["product_title"];
         $product_description = $row["product_description"];
         $product_image = $row["product_image"];
@@ -35,12 +35,13 @@ $product = $_GET['edit_products'];
 
     // UPDATE QUERY
 
-    if(isset($_FILES['product_image']) && isset($_POST["update-btn"])) {
+    if(isset($_POST["update-btn"])) {
 
         $product_title= $_POST['product_title'];
         $product_description= $_POST['product_description'];
         $product_price = $_POST['product_price'];
         $product_category= $_POST['product_category'];
+        $product_code= $_POST['product_code'];
 
         $uploadsDir = "./products_images/";
 
@@ -65,13 +66,14 @@ $product = $_GET['edit_products'];
         product_price ='$product_price',
         category_id ='$product_category',
         product_image ='$fileName',
+        product_code = '$product_code',
         date = now()
-        WHERE product_id = $product";
+        WHERE product_code= $product";
 
         $result_update = mysqli_query($conn, $update_query);
 
         if($result_update){
-            echo "<script> alert ('Product was successfully updated! $product_category) </script>";
+            echo "<script> alert ('Product was successfully updated!) </script>";
         }
 
         else{
@@ -100,23 +102,27 @@ $product = $_GET['edit_products'];
                 <input type="text" name="product_title" id="product_title" class="form-control" value="<?php echo $product_title ?>" autocomplete="Off">
             </div>
 
+         <!--PRODUCT CODE -->
+         <div class="form-outline mb-4 w-50 m-auto pt-3">
+            <label for="product_title" class="form-label">
+            Product Code  <div id="validation-results" style="color:red;"></div>
+            </label>
+            
+        <input type="number" name="product_code" id="product_code" class="form-control"  value = "<?php echo $product_code ?>" autocomplete="off">
+        </div>
+
+
         <!--DESCRIPTION-->
         <div class="form-outline mb-4 w-50 m-auto pt-3">
-        <textarea type="text" name="product_description" id="product_description" class="form-control" maxlength="300" style="font-family: Poppins, sans-serif;font-size: 19px;"><?php echo $product_description;?> </textarea>
+        <textarea type="text" name="product_description" id="product_description" class="form-control" maxlength="500" style="resize:none; height: 160px; font-family: Poppins, sans-serif;font-size: 19px;"><?php echo $product_description;?> </textarea>
                         
                         <div class="row" style="padding-top: 0px;">
                             <div class="col-lg-9 col-xl-10 col-xxl-8 d-flex justify-content-end ms-lg-5" id="charCountCol" style="padding-top: 19px;font-family: Poppins, sans-serif;">
-                                <div id="charCount" style="padding-left: 13px;"><span id="currentCount">0</span><span id="maxCount">/300</span></div>
+                                <div id="charCount" style="padding-left: 13px;"><span id="currentCount"><?php echo strlen($product_description)?></span><span id="maxCount">/500</span></div>
                   </div>
                   </div>
                   </div>
-        <!-- KEYWORDS -->
-            <!-- <div class="form-outline mb-4 w-50 m-auto pt-3">
-                    <label for="product_keywords" class="form-label">
-                    Product Keywords
-                    </label>
-                    <input type="text" name="product_keywords" id="product_keywords" class="form-control" value="<?php echo $product_keywords ?>" autocomplete="Off">
-                </div> -->
+      
 
         <!-- CATEGORY -->
             <div class="form-outline mb-4 w-50 m-auto pt-3">

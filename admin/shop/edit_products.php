@@ -6,11 +6,9 @@ if (!$conn){
     die("Connection Failed. " . mysqli_connect_error());
 }
 
-
-
-$product = $_GET['edit_products'];
-
 if(isset($_GET['edit_products'])){
+    
+$product = $_GET['edit_products'];
 
     $category_query="SELECT * FROM products JOIN categories WHERE products.category_id = categories.category_id AND products.product_code = '$product'";
     $result_category= mysqli_query($conn,$category_query);
@@ -36,53 +34,45 @@ if(isset($_GET['edit_products'])){
     // UPDATE QUERY
 
     if(isset($_POST["update-btn"])) {
+        
+    $product = $_GET['edit_products'];
 
         $product_title= $_POST['product_title'];
-        $product_description= $_POST['product_description'];
-        $product_price = $_POST['product_price'];
-        $product_category= $_POST['product_category'];
         $product_code= $_POST['product_code'];
+        $product_description= $_POST['product_description'];
+        $product_category= $_POST['product_category'];
+        $product_price = $_POST['product_price'];
 
         $uploadsDir = "./products_images/";
-
-        // Velidate if files exist
-    if (!empty(array_filter($_FILES['product_image']['name']))) {  
-      
-      // Loop through file items
-      foreach(array_filter($_FILES['product_image']['name']) as $id=>$val){
-  
-          // Get files upload path
-          $fileName        = $_FILES['product_image']['name'][$id];
-          $tempLocation    = $_FILES['product_image']['tmp_name'][$id];
-          $targetFilePath  = $uploadsDir . $fileName;
-          $fileType        = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
-  
-  if(move_uploaded_file( $tempLocation  , $targetFilePath)){
-
-
-        $update_query = "UPDATE products SET
-        product_title = '$product_title',
-        product_description ='$product_description',
-        product_price ='$product_price',
-        category_id ='$product_category',
-        product_image ='$fileName',
-        product_code = '$product_code',
-        date = now()
-        WHERE product_code= $product";
-
-        $result_update = mysqli_query($conn, $update_query);
-
-        if($result_update){
-            echo "<script> alert ('Product was successfully updated!) </script>";
-        }
-
-        else{
-            echo "<script> alert ('Not updated!') </script>";
-        }
-        
-}}
-}}  
-?>
+        foreach(array_filter($_FILES['product_image']['name']) as $id=>$val){
+            $fileName        = $_FILES['product_image']['name'][$id];
+            $tempLocation    = $_FILES['product_image']['tmp_name'][$id];
+            $targetFilePath  = $uploadsDir . $fileName;
+            $fileType        = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
+    
+            (move_uploaded_file($tempLocation, $targetFilePath));
+       
+        // date = now()
+                $update_query = "UPDATE products SET
+                    product_title = '$product_title',
+                    product_code = '$product_code',
+                    product_description ='$product_description',
+                    category_id ='$product_category',
+                    product_price ='$product_price',
+                    product_image ='$fileName'
+                    WHERE product_code = '$product'"; 
+    
+                $result_update = mysqli_query($conn, $update_query);
+    
+                if($result_update){
+                    echo "<script> alert('Product was successfully updated!'); window.location.href='./index.php?view_products'; </ script>";
+                } else{
+                    echo "<script> alert ('Not updated!') </script>";
+                }
+            }
+       }
+    // }
+?>    
 
 
 
@@ -145,7 +135,14 @@ if(isset($_GET['edit_products'])){
                     </select>
                 </div>
             
-              
+      <!-- PRICE -->
+            <div class="form-outline mb-4 w-50 m-auto pt-3">
+                        <label for="product_price" class="form-label">
+                        Product Price
+                        </label>
+                        <input type="number" name="product_price" id="product_price" class="form-control" value="<?php echo $product_price ?>" autocomplete="Off">
+                    </div>
+
         <!-- PICTURE -->
             <div class="form-outline  mb-4 w-50 m-auto pt-3">
             <label for="product_image" class="form-label">Product Picture</label>    
@@ -154,13 +151,7 @@ if(isset($_GET['edit_products'])){
             <img src = './products_images/$product_image' class='m-3' width='100px;' height='100px;'> "; ?>
             </div>
 
-        <!-- PRICE -->
-            <div class="form-outline mb-4 w-50 m-auto pt-3">
-                        <label for="product_price" class="form-label">
-                        Product Price
-                        </label>
-                        <input type="number" name="product_price" id="product_price" class="form-control" value="<?php echo $product_price ?>" autocomplete="Off">
-                    </div>
+      
         
         <!-- SUBMIT -->
            <div class="form-outline d-flex mb-4 w-50 m-auto pt-3 mt-3 justify-content-end"> 

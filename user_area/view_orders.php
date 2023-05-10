@@ -224,7 +224,7 @@ if(isset($_SESSION['email']))
 <?php
 
 echo'
-<h1 class="text-center" id="reqsHeading" style="margin-bottom: 12px;padding-bottom: 8px;padding-top: 12px;">Orders</h1>
+<h1 class="text-center" id="reqsHeading" style="margin-bottom: 12px;padding-bottom: 8px;padding-top: 12px;">Pending Orders</h1>
 
 <div class= "container-fluid" style="width:90%; margin-left:10px;">
 <a href="./view_orders.php" class="btn btn-secondary ml-5 p-2 py-2 border-0 text-decoration-none text-light mb-3">Pending</a>
@@ -232,9 +232,24 @@ echo'
 <a href="./view_received_orders.php" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Received</a>
 <a href="./view_cancelled_orders.php" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Cancelled</a>
 </div>
-<div class= "container-fluid" style="width: 90%; display: flex; justify-content: center;">
+<div class= "container-fluid" style="width: 90%; display: flex; justify-content: center;">';
 
-<table class="table">
+
+    
+    $user_id = $_SESSION['user_id'];
+    $category_query="SELECT * FROM order_details WHERE`user_id` = $user_id AND `status` ='Pending' ORDER BY `date` DESC";
+    $result_category= mysqli_query($conn,$category_query);
+
+    $count = mysqli_num_rows($result_category);
+    $count = mysqli_num_rows($result_category);
+    if ($count == 0){
+      echo'<h1 class="text-center">No pending orders. <a href="../index.php?all_products">Shop now!</a></h1>';
+      echo'</div>';
+    }
+
+    elseif ($count  != 0){
+?>
+     <table class="table">
 
     <thead>
         <tr>
@@ -248,10 +263,9 @@ echo'
           
         </tr>
     </thead>
-    <tbody>';
-    
+    <tbody>
 
-
+<?php
                     while($row = mysqli_fetch_assoc($result_category)) {
 
                       $order_id = $row['order_id'];
@@ -296,7 +310,7 @@ echo'
   </footer>
 
   <?php 
-
+}
 else{
 
   echo '<script>window.location.href = "./login.php";</script>';

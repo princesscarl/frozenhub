@@ -1,8 +1,6 @@
 
 <?php
 
-
-
 session_start();
 $conn = mysqli_connect('localhost','root','','frozenhub');
 if (!$conn){
@@ -68,7 +66,7 @@ if(isset($_SESSION['email']))
     <div class="container-fluid">
       <div class="row d-flex justify-content-center">
         <div class="col-lg-9">
-        <a href="../index.php"><img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEORwsoHzWxoEoNlJ4n1bR4aji_r7jA7WPbQOMth5REabik_rDa7pptnu1lFtHraszS04eNS4JYmXW5SNTKBZsK4H7D2vRg=s1600?fbclid=IwAR3h2V1bSwN87w2jWtMFhMPDet3eL-U8KSNIyguxKKjN3oRmny296FI5G8s" width="100%" height="auto"></a>
+        <a href="../index.php"> <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEORwsoHzWxoEoNlJ4n1bR4aji_r7jA7WPbQOMth5REabik_rDa7pptnu1lFtHraszS04eNS4JYmXW5SNTKBZsK4H7D2vRg=s1600?fbclid=IwAR3h2V1bSwN87w2jWtMFhMPDet3eL-U8KSNIyguxKKjN3oRmny296FI5G8s" width="100%" height="auto"></a>
         
         </div>
       </div>
@@ -225,24 +223,8 @@ if(isset($_SESSION['email']))
 
 <?php
 
-      $user_id = $_SESSION['user_id'];
-                    $category_query="SELECT * FROM order_details WHERE`user_id` = $user_id AND `status` ='Received' ORDER BY `date` DESC";
-                    $result_category= mysqli_query($conn,$category_query);
-
-                    $count = mysqli_num_rows($result_category);
-                    if ($count == 0){
-                      echo'<h1 class="text-center">No orders done yet. Shop now!</h1>';
-                      echo'<div class="container text-center">';
-                      echo'<a href="./view_orders.php" class="btn btn-secondary m-2 py-2 border-0 text-decoration-none text-light">Back to orders</a>';
-                      echo'<a href="../index.php?all_products" class="btn btn-secondary m-2 py-2 border-0 text-decoration-none text-light">Continue Shopping</a>';
-                      echo'</div">';
-                    }
-
-                    else { 
-
 echo'
-<h1 class="text-center" id="reqsHeading" style="margin-bottom: 12px;padding-bottom: 8px;padding-top: 12px;"> Received Orders</h1>
-
+<h1 class="text-center" id="reqsHeading" style="margin-bottom: 12px;padding-bottom: 8px;padding-top: 12px;">Received Orders</h1>
 
 <div class= "container-fluid" style="width:90%; margin-left:10px;">
 <a href="./view_orders.php" class="btn btn-secondary ml-5 p-2 py-2 border-0 text-decoration-none text-light mb-3">Pending</a>
@@ -250,10 +232,24 @@ echo'
 <a href="./view_received_orders.php" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Received</a>
 <a href="./view_cancelled_orders.php" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Cancelled</a>
 </div>
+<div class= "container-fluid" style="width: 90%; display: flex; justify-content: center;">';
 
-<div class= "container-fluid" style="width: 90%; display: flex; justify-content: center;">
 
-<table class="table">
+    
+    $user_id = $_SESSION['user_id'];
+    $category_query="SELECT * FROM order_details WHERE`user_id` = $user_id AND `status` ='Received' ORDER BY `date` DESC";
+    $result_category= mysqli_query($conn,$category_query);
+
+    $count = mysqli_num_rows($result_category);
+    $count = mysqli_num_rows($result_category);
+    if ($count == 0){
+      echo'<h1 class="text-center">No cancelled orders. <a href="../index.php?all_products">Shop now!</a></h1>';
+      echo'</div>';
+    }
+
+    elseif ($count  != 0){
+?>
+     <table class="table">
 
     <thead>
         <tr>
@@ -263,13 +259,12 @@ echo'
             <th> Date Ordered</th>
             <th> Total </th>
             <th> Status</th>
-
           
         </tr>
     </thead>
-    <tbody>';
+    <tbody>
 
-
+<?php
                     while($row = mysqli_fetch_assoc($result_category)) {
 
                       $order_id = $row['order_id'];
@@ -290,7 +285,6 @@ echo'
             <td>'.$total.'</td>
 
             <td>'.$status.'</td>
-
             ';
              
             }}?>    

@@ -18,6 +18,7 @@
             <th> Amount </th>
             <th> Order Date </th>  
             <th> Status </th>
+            <th> Action </th>
         </tr>
     </thead>
     <tbody>
@@ -44,6 +45,11 @@
                         <td>'. $total.'</td>
                         <td>'.  $date.'</td>
                         <td>'. $status.'</td>
+
+                        <td>
+                        <button class="btn btn-info">
+                        <a href="./shop/waybill.php?order_id='.$order_id.'&user_id='.$user_id.'"  class="text-light">Way Bill</a></button>
+                        </td>
                     ';}?>
     </tbody>
         </table>

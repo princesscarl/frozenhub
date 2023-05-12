@@ -18,13 +18,13 @@
             <th> Amount </th>
             <th> Order Date </th>  
             <th> Status </th>
-            <th colspan="3"> Actions</th>
+            <th> Actions</th>
         </tr>
     </thead>
     <tbody>
     <?php
   
-                    $category_query="SELECT * FROM order_details WHERE order_id >1";
+                    $category_query="SELECT * FROM order_details WHERE order_id >1 and `status` ='Pending'";
                     $result_category= mysqli_query($conn,$category_query);
                     while($row = mysqli_fetch_assoc($result_category)) {
                       $user_id = $row['user_id'];
@@ -49,13 +49,14 @@
                         <button class="btn btn-success">
                         <a href="./shop/approved.php?id='.$order_id.'" class="text-light">Approved</a></button>
                         </td>
-                        <td> 
-                        <button class="btn btn-success">
-                        <a href="./shop/delivery.php?id='.$order_id.'" class="text-light">Delivery</a></button>
-                        </td>
+                      
+                     
                       
                        
                         
                     ';}?>
     </tbody>
-        </table>
+        </table>   <td>
+                        <button class="btn btn-info">
+                        <a href="./shop/waybill.php?id='.$order_id.'"  class="text-light">Way Bill</a></button>
+                        </td>

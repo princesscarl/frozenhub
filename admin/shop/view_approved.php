@@ -18,7 +18,7 @@
             <th> Amount </th>
             <th> Order Date </th>  
             <th> Status </th>
-            <th colspan="3"> Actions</th>
+            <th> Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -45,10 +45,7 @@
                         <td>'. $total.'</td>
                         <td>'.  $date.'</td>
                         <td>'. $status.'</td>
-                        <td> 
-                        <button class="btn btn-success">
-                        <a href="./shop/approved.php?id='.$order_id.'" class="text-light">Approved</a></button>
-                        </td>
+                       
                         <td> 
                         <button class="btn btn-success">
                         <a href="./shop/delivery.php?id='.$order_id.'" class="text-light">Delivery</a></button>

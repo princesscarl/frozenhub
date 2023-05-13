@@ -87,10 +87,10 @@ if(isset($_GET['order_id']) && isset($_GET['user_id'])){
         $city = $rows["user_city"];
         $zip = $rows["user_zip"];
 ?>
-                        <h4 class="mb-0"><?php echo $fname?> &nbsp <?php echo $lname ?></h4>
+                        <h4 class="mb-0"><?php echo mb_convert_case($fname,MB_CASE_TITLE)?> &nbsp <?php echo mb_convert_case($lname,MB_CASE_TITLE) ?></h4>
                         <?php echo $mobile ?> </br>
-                        <?php echo $address?><br/>
-                        <?php echo $city?>, &nbsp <?php echo $province ?>,&nbsp <?php echo $zip ?><br/>
+                        <?php echo mb_convert_case($address,MB_CASE_UPPER)?><br/>
+                        <?php echo mb_convert_case($city,MB_CASE_UPPER)?>, &nbsp <?php echo mb_convert_case($province,MB_CASE_UPPER) ?>,&nbsp <?php echo mb_convert_case($zip,MB_CASE_UPPER) ?><br/>
                        <?php echo $email ?><br/>
 
   <?php }

@@ -89,11 +89,12 @@ while($order = mysqli_fetch_array($orders_result)){
                                     <h1>Billed To</h1>
                                 </span>
 
-                                <h4 class="mb-0"><?php echo $fname?> &nbsp <?php echo $lname ?></h4>
-                                <?php echo $mobile ?> </br>
-                                <?php echo $address?><br/>
-                                <?php echo $city?>, &nbsp <?php echo $province ?>,&nbsp <?php echo $zip ?><br/>
-                                <?php echo $email ?><br/>
+                            
+                        <h4 class="mb-0"><?php echo mb_convert_case($fname,MB_CASE_TITLE)?> &nbsp <?php echo mb_convert_case($lname,MB_CASE_TITLE) ?></h4>
+                        <?php echo $mobile ?> </br>
+                        <?php echo mb_convert_case($address,MB_CASE_UPPER)?><br/>
+                        <?php echo mb_convert_case($city,MB_CASE_UPPER)?>, &nbsp <?php echo mb_convert_case($province,MB_CASE_UPPER) ?>,&nbsp <?php echo mb_convert_case($zip,MB_CASE_UPPER) ?><br/>
+                       <?php echo $email ?><br/>
 
                                 <h5 class="mb-0 mt-3"><?php $timestamp = time();
                                 echo date("F j, Y",$timestamp)?></h5>

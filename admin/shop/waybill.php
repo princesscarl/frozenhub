@@ -137,17 +137,17 @@ $total += $product_value;
                 <h5 class="mb-1"><?php echo $product_title?></h5>
                 Quantity: <?php echo $product_quantity?>x
             </td>
-            <td class="font-weight-bold align-middle text-right text-nowrap">₱<?php echo $product_price ?>.00</td>
+            <td class="font-weight-bold align-middle text-right text-nowrap">₱<?php echo $product_price*$product_quantity ?>.00</td>
         </tr>
      <?php }} ?>  
      <tr>
-            <td colspan="2" class="text-right border-0 pt-4"><h5>₱<?php echo $total?>.00</h5></td>
+            <td colspan="2" class="text-right border-0 pt-4"><h5>Total Amount: &nbsp ₱<?php echo $total?>.00</h5></td>
         </tr>
     </table>
 
     <!-- Thank you note -->
 
-    <h5 class="text-center pt-2">
+    <h5 class="text-center">
         Thank you for your purchase!
     </h5>
 
@@ -158,6 +158,11 @@ $total += $product_value;
 </div>
     <style>
   @media print {
+    html, body {
+        height: 297mm;
+        width: 210mm;
+        margin: 0;
+    }
     #print-btn {
       display: none;
     }

@@ -6,7 +6,7 @@
   <a href="index.php?view_delivery" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">For Delivery</a>
   <a href="index.php?view_cancel" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Cancelled</a>
   <a href="index.php?view_complete" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Delivered</a>
-  <a href="./shop/all_waybill.php" onclick="printAllWaybill(event)" class="btn btn-success p-2 py-2 border-0 text-decoration-none text-light mb-3" style="float: right;">Print All Way Bill</a>
+  <a href="./shop/all_waybill.php" class="btn btn-success p-2 py-2 border-0 text-decoration-none text-light mb-3" style="float: right;">Print All Way Bill</a>
 
 
   <table id="table" class="table table-stripped table-bordered">
@@ -48,29 +48,10 @@
                         <td>'. $status.'</td>
 
                         <td>
-                        <button class="btn btn-info" type="button" onclick="printWaybill(event)">
-                        <a href="./shop/waybill.php?order_id='.$order_id.'&user_id='.$user_id.'" class="text-light text-decoration-none">Way Bill</a>
-                    </button>
+                        <a href="./shop/waybill.php?order_id='.$order_id.'&user_id='.$user_id.'" class="btn btn-info text-light text-decoration-none">Way Bill</a>
+            
                     
                         </td>
                     ';}?>
     </tbody>
         </table>
-
-        <script>
-                    function printWaybill(event) {
-                      event.preventDefault(); // prevent the link from opening in the current window
-                      var waybillWindow = window.open(event.target.href, '_blank'); // open the waybill page in a new window
-                      waybillWindow.onload = function() { // wait for the waybill page to finish loading
-                        waybillWindow.print(); // print the waybill page
-                      }
-                    }
-
-                    function printAllWaybill(event) {
-                      event.preventDefault(); // prevent the link from opening in the current window
-                      var waybillWindow = window.open(event.target.href, '_blank'); // open the waybill page in a new window
-                      waybillWindow.onload = function() { // wait for the waybill page to finish loading
-                        waybillWindow.print(); // print the waybill page
-                      }
-                    }
-                    </script>

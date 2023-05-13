@@ -16,7 +16,7 @@ while($order = mysqli_fetch_array($orders_result)){
     $order_id = $order['order_id'];
     $user_id = $order['user_id'];
 
-    $waybill_query = "SELECT * FROM order_details JOIN user_details WHERE order_details.order_id = $order_id AND user_details.user_id = $user_id";
+    $waybill_query = "SELECT * FROM order_details JOIN user_details WHERE order_details.order_id = $order_id AND user_details.user_id = $user_id AND `status` = 'For Delivery'";
     $waybill_result = mysqli_query($conn,$waybill_query);
 
     while($rows = mysqli_fetch_array($waybill_result)){
@@ -135,32 +135,35 @@ $total += $product_value;
                 <h5 class="mb-1"><?php echo $product_title?></h5>
                 Quantity: <?php echo $product_quantity?>x
             </td>
-            <td class="font-weight-bold align-middle text-right text-nowrap">₱<?php echo $product_price ?>.00</td>
+            <td class="font-weight-bold align-middle text-right text-nowrap">₱<?php echo $product_price*$product_quantity ?>.00</td>
         </tr>
      <?php } ?>  
      <tr>
-            <td colspan="2" class="text-right border-0 pt-4"><h5>₱<?php echo $total?>.00</h5></td>
+            <td colspan="2" class="text-right border-0 pt-4"><h5>Total Amount: &nbsp ₱<?php echo $total?>.00</h5></td>
         </tr>
     </table>
 
     <!-- Thank you note -->
 
-    <h5 class="text-center pt-2 pb-3">
+    <h5 class="text-center pb-3">
         Thank you for your purchase!
     </h5>
     <div class="dotted-line" style=" border-top: 2px dotted black; margin-bottom:20px;"></div>
 
 
-
     <style>
   @media print {
+    html, body {
+        height: 297mm;
+        width: 210mm;
+        margin: 0;
+    }
     #print-btn {
       display: none;
     }
     #back-btn {
       display: none;
     }
-
   }
 </style>
 

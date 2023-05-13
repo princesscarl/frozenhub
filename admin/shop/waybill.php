@@ -152,7 +152,7 @@ $total += $product_value;
     </h5>
 
     <div class="text-right">
-    <button id="print-btn" class="btn btn-info" onclick="window.print()">Print</button>
+    <button id="print-btn" class="btn btn-info mx-3" onclick="window.print()">Print</button>
     <button id="back-btn" class="btn btn-secondary" onclick="window.location.href = document.referrer">Back</button>
 
 </div>

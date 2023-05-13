@@ -1,6 +1,8 @@
 
+
+<div style="background-color: #000000; height: 10px;"></div>
 <div class="text-center">
-    <button id="print-btn" class="btn btn-info" onclick="window.print()">Print</button>
+    <button id="print-btn" class="btn btn-info m-3" onclick="window.print()">Print</button>
     <button id="back-btn" class="btn btn-secondary" onclick="window.location.href = document.referrer">Back</button>
 
 </div>
@@ -149,10 +151,11 @@ $total += $product_value;
     <h5 class="text-center pb-3">
         Thank you for your purchase!
     </h5>
-    <div class="dotted-line" style=" border-top: 2px dotted black; margin-bottom:20px;"></div>
+    <div class="dotted-line" style=" border-top: 2px dotted black; margin-bottom:20px; margin-top:20px;"></div>
 
 
     <style>
+        
   @media print {
     html, body {
         height: 297mm;

@@ -141,7 +141,7 @@ $total += $product_value;
         </tr>
      <?php }} ?>  
      <tr>
-            <td colspan="2" class="text-right border-0 pt-4"><h5>Total Amount: &nbsp ₱<?php echo $total?>.00</h5></td>
+            <td colspan="2" class="text-right border-0 pt-4"><h5 style="font-size:18px;">Total Amount: &nbsp ₱<?php echo $total?>.00</h5></td>
         </tr>
     </table>
 

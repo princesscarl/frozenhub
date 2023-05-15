@@ -667,7 +667,11 @@ function backToTop() {
   document.documentElement.scrollTop = 0;
 }
 </script>
-
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
    
           
 

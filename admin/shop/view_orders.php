@@ -56,7 +56,4 @@
                         
                     ';}?>
     </tbody>
-        </table>   <td>
-                        <button class="btn btn-info">
-                        <a href="./shop/waybill.php?id='.$order_id.'"  class="text-light">Way Bill</a></button>
-                        </td>
+        </table>   

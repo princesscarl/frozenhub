@@ -18,13 +18,13 @@
             <th> Amount </th>
             <th> Order Date </th>  
             <th> Status </th>
-            <th> Actions</th>
+          
         </tr>
     </thead>
     <tbody>
     <?php
   
-                    $category_query="SELECT * FROM order_details WHERE order_id >1 and `status` ='Pending'";
+                    $category_query="SELECT * FROM order_details WHERE order_id >1 ";
                     $result_category= mysqli_query($conn,$category_query);
                     while($row = mysqli_fetch_assoc($result_category)) {
                       $user_id = $row['user_id'];
@@ -45,10 +45,7 @@
                         <td>'. $total.'</td>
                         <td>'.  $date.'</td>
                         <td>'. $status.'</td>
-                        <td> 
-                        <button class="btn btn-success">
-                        <a href="./shop/approved.php?id='.$order_id.'" class="text-light">Approved</a></button>
-                        </td>
+                        
                       
                      
                       

@@ -2,29 +2,44 @@
 session_start();
 session_destroy();
 session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "frozenhub";
-$tablename = "application_table";
-$conn = new mysqli($servername, $username, $password, $dbname);
 
-if(isset($_POST["submit"]))
-{
-	$username = $_POST["username"];
-	$password = $_POST["password"];
-	$getQuery = "select * from users where username = '$username' and password = '$password'";
-	$result = mysqli_query($conn,$getQuery);
-	if(mysqli_num_rows($result) > 0)
-	{
-		$_SESSION["loggedin"] = "true";
-		header("Location: index.php");
-	}
-	else
-	{
-		header("Location: login.php?error=nouser");
-	}	
+include '../connect.php';
+
+if(isset($_POST['submit'])){
+  
+    $username = $_POST['username'];
+    $password = $_POST ['password'];
+
+    $select_query = "SELECT * FROM admin_table WHERE admin_username = '".$_POST["username"]."'";
+    $result = mysqli_query($conn, $select_query);
+    $row_count = mysqli_num_rows($result);
+
+    if (mysqli_num_rows($result) > 0 ) {
+      $row = mysqli_fetch_assoc($result);
+      $passworddb = $row['admin_password'];
+   
+    if($row_count>0)
+    $_SESSION["loggedin"] = "true";
+        if(password_verify($password, $passworddb)){
+          echo "
+          <script>
+  alert('Successful Login');
+  window.location.href = './index.php';
+  </script>
+          ";
+      
+        }
+        else{
+            echo "<script> alert ('Password is wrong. Try again.') </script>";
+          
+        }}
+
+
+    else{
+        echo "<script> alert ('Email not found. Please register') </script>";
+    }
 }
+
 
 ?>
 

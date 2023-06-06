@@ -108,7 +108,10 @@ if($result_query){
       echo '
         <div class="container" style="width:80%;background-color: #f2f2f2; border: gray solid 2px;">
         <br>
-        <h3>Personal Information:</h3>
+        <h3>Personal Information:</h3> 
+        <div style="text-align:right;">
+        <a href="./user_area/edit_account.php" class="text-decoration-none" > Edit Account</a>
+      </div>
 
         <table class="table" style="border-bottom:gray solid 1px;">
           <tr>
@@ -123,10 +126,13 @@ if($result_query){
 
           <tr>
             <th>Address:</th>
-            <td>' . $address . ' <br>' . $province . ' ' . $city . ' ' . $zip . '</td>
+            <td>' . $address . ' <br>' . $province . ' ' . $city . ' ' . $zip . ' 
+           
+            </td>
+          
           </tr>
         </table> '; ?>
-
+      
       <h3>Cart details:</h3>
 
       <table class="table" style="border-bottom:gray solid 1px;">

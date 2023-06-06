@@ -1,28 +1,33 @@
 <div class="container-fluid">
-  <h1 class="text-center" style="padding: 20px; font-weight:bold">List of Orders</h1>
+    <h1 class="text-center" style="padding: 20px; font-weight:bold">List of Orders</h1>
 
-  <a href="index.php?view_orders" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">All Orders</a>
-  <a href="index.php?view_approved" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Approved</a>
-  <a href="index.php?view_delivery" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">For Delivery</a>
-  <a href="index.php?view_cancel" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Canceled</a>
-  <a href="index.php?view_complete" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Delivered</a>
+    <a href="index.php?view_orders" class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">All
+        Orders</a>
+    <a href="index.php?view_approved"
+        class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Approved</a>
+    <a href="index.php?view_delivery"
+        class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">For Delivery</a>
+    <a href="index.php?view_cancel"
+        class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Canceled</a>
+    <a href="index.php?view_complete"
+        class="btn btn-secondary p-2 py-2 border-0 text-decoration-none text-light mb-3">Delivered</a>
 
 
-  <table id="table" class="table table-stripped table-bordered">
-  <thead style="background-color: #61b0b7;">
-        <tr>
-            <th> User ID </th>
-            <th> Order ID </th>
-            <th> Invoice Number</th>
-            <th colspan ="2"> Total Products </th>
-            <th> Amount </th>
-            <th> Order Date </th>  
-            <th> Status </th>
-          
-        </tr>
-    </thead>
-    <tbody>
-    <?php
+    <table id="table" class="table table-stripped table-bordered">
+        <thead style="background-color: #61b0b7;">
+            <tr>
+                <th> User ID </th>
+                <th> Order ID </th>
+                <th> Invoice Number</th>
+                <th colspan="2"> Total Products </th>
+                <th> Amount </th>
+                <th> Order Date </th>
+                <th> Status </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <?php
   
                     $category_query="SELECT * FROM order_details WHERE order_id >1 ";
                     $result_category= mysqli_query($conn,$category_query);
@@ -34,7 +39,6 @@
                       $items = $row['items'];
                       $status = $row['status'];
                       $total = $row['amount'];
-
                       echo'
                     <tr>
                         <td>'. $user_id .'</td>
@@ -47,10 +51,8 @@
                         <td>'. $status.'</td>
                         
                       
-                     
                       
-                       
                         
                     ';}?>
-    </tbody>
-        </table>   
+        </tbody>
+    </table>

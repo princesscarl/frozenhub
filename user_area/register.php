@@ -88,8 +88,9 @@ if(isset($_POST['submit-btn'])){
   <div class="container-fluid">
     <div class="row d-flex justify-content-center align-items-center">
       <div class="col-lg-6" style="border-right: solid #E8E6E6 1px;">
+      <a href="../index.php">
         <img src="../pictures/login.png"
-          class="img-fluid" alt="Sample image" style="width: 91%;">
+          class="img-fluid" alt="Sample image" style="width: 91%;"></a>
       </div>
       <div class="col-md-9 col-lg-6">
           <div class="d-flex align-items-center justify-content-center" style="margin:auto; width:50%;">

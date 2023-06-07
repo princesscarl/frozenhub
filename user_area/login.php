@@ -21,7 +21,16 @@ if(isset($_POST['submit-btn'])){
             $_SESSION["email"] = $_POST["email"];
             $email = $_SESSION["email"];
             // echo $email;
-            header('Location: ../index.php');
+            
+echo "<script>
+alert('Logging you in. Please wait...');
+setTimeout(function(){
+  window.location.href = '../index.php';
+}, 1000);
+setTimeout(function(){
+  window.location.href = '../index.php';
+}, 3000); // Additional fallback redirect after 6 seconds
+</script>";
         }
         else{
             echo "<script> alert ('Password is wrong. Try again.') </script>";

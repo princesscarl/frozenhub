@@ -1,13 +1,16 @@
 <?php
-
 session_start();
-echo "Logging you out. Please wait...";
 
 unset($_SESSION["email"]);
 unset($_SESSION["user_id"]);
 
-// session_unset();
-// session_destroy();
-
-header("location: ../index.php");
+echo "<script>
+  alert('Logging you out. Please wait...');
+  setTimeout(function(){
+    window.location.href = '../index.php';
+  }, 1000);
+  setTimeout(function(){
+    window.location.href = '../index.php';
+  }, 3000); // Additional fallback redirect after 6 seconds
+</script>";
 ?>

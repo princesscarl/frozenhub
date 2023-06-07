@@ -88,7 +88,7 @@ if(isset($_POST['submit-btn'])){
   <div class="container-fluid">
     <div class="row d-flex justify-content-center align-items-center">
       <div class="col-lg-6" style="border-right: solid #E8E6E6 1px;">
-        <img src="https://lh3.googleusercontent.com/drive-viewer/AAOQEOQrtES5zI9uck9Eib1zx7TYRa8mWInjfIlPV5P5HWLsMSQEuAfpz1XZWxyvOlz_pwdIM2J3Wn1C73GPkCs1Y0PN9c9X=s2560"
+        <img src="../pictures/login.png"
           class="img-fluid" alt="Sample image" style="width: 91%;">
       </div>
       <div class="col-md-9 col-lg-6">

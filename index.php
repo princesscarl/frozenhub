@@ -579,16 +579,18 @@ function total_cart_price()
       </div>
       <div class=" col-lg-4" id="contactUs">
         <div class="contacts container-fluid">
-        <img class="d-block w-100" src="./pictures/cover.png" alt="First slide">
+        <img class="d-block w-100" src="./pictures/promo.png" alt="First slide">
         </div>
-        <div class="contacts container-fluid " style=" margin-top: 20px;">
-        <img class="d-block w-100" src="./pictures/cover.png" alt="First slide">
-        </div>
+      
       </div>
     </div>
   </div>';
     include './shop/top_products.php';
   } ?>
+
+  <!--  <div class="contacts container-fluid " style=" margin-top: 20px;">
+        <img class="d-block w-100" src="./pictures/.png" alt="First slide">
+        </div> -->
 
   </div>
   </div>

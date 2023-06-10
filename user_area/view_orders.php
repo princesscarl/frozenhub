@@ -287,9 +287,7 @@ echo'
 
             <td>'.$status.'</td>
             <td> 
-            <button class="btn btn-success">
-            <a href="received.php?id='.$order_id.'" class="text-light text-decoration-none">Received</a></button>
-          
+            
             <button class="btn btn-warning">
             <a href="cancel.php?id='.$order_id.'" class="text-light text-decoration-none">Cancel</a></button>
             </td>

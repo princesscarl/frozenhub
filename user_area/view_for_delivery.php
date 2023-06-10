@@ -259,6 +259,7 @@ echo'
             <th> Date Ordered</th>
             <th> Total </th>
             <th> Status</th>
+            <th> Action </th>
           
         </tr>
     </thead>
@@ -285,6 +286,13 @@ echo'
             <td>'.$total.'</td>
 
             <td>'.$status.'</td>
+
+
+            <td>
+            <button class="btn btn-success">
+            <a href="received.php?id='.$order_id.'" class="text-light text-decoration-none">Received</a></button>
+          
+            </td>
             ';
              
             }}?>    

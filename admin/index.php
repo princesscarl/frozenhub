@@ -185,6 +185,9 @@ input::-webkit-outer-spin-button,
     elseif (isset($_GET['edit_products'])){
       include ('./shop/edit_products.php');
     }
+    elseif (isset($_GET['view_pending'])){
+      include ('./shop/view_pending.php');
+    }
     
     else{
       echo'

@@ -1,24 +1,27 @@
 <div class="container-fluid">
-  <h1 class="text-center" style="padding: 20px; font-weight:bold">Approved Orders</h1>
+    <h1 class="text-center" style="padding: 20px; font-weight:bold">Pending Orders</h1>
 
-  <?php include 'insert.php';?>
-  <table id="table" class="table table-stripped table-bordered">
-  <thead style="background-color: #61b0b7;">
-        <tr>
-            <th> User ID </th>
-            <th> Order ID </th>
-            <th> Invoice Number</th>
-            <th colspan ="2"> Total Products </th>
-            <th> Amount </th>
-            <th> Order Date </th>  
-            <th> Status </th>
-            <th> Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-    <?php
   
-                    $category_query="SELECT * FROM order_details WHERE `status` ='Approved' ";
+    <?php include 'insert.php';?>
+
+    <table id="table" class="table table-stripped table-bordered">
+        <thead style="background-color: #61b0b7;">
+            <tr>
+                <th> User ID </th>
+                <th> Order ID </th>
+                <th> Invoice Number</th>
+                <th colspan="2"> Total Products </th>
+                <th> Amount </th>
+                <th> Order Date </th>
+                <th> Status </th>
+                <th> Action </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+  
+                    $category_query="SELECT * FROM order_details WHERE `status` ='Pending' ";
                     $result_category= mysqli_query($conn,$category_query);
                     while($row = mysqli_fetch_assoc($result_category)) {
                       $user_id = $row['user_id'];
@@ -28,7 +31,6 @@
                       $items = $row['items'];
                       $status = $row['status'];
                       $total = $row['amount'];
-
                       echo'
                     <tr>
                         <td>'. $user_id .'</td>
@@ -39,14 +41,16 @@
                         <td>'. $total.'</td>
                         <td>'.  $date.'</td>
                         <td>'. $status.'</td>
-                       
-                        <td> 
-                        <button class="btn btn-success">
-                        <a href="./shop/delivery.php?id='.$order_id.'" class="text-light">Delivery</a></button>
+
+                        <td>
+                        <a href="./shop/approved.php?id='.$order_id.'" class="btn btn-info text-light text-decoration-none">Approved</a>
+            
+                    
                         </td>
+                        
                       
-                       
+                      
                         
                     ';}?>
-    </tbody>
-        </table>
+        </tbody>
+    </table>
